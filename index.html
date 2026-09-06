@@ -7,16 +7,130 @@
 
     <title>Project Nova</title>
 
-    <!-- Connect CSS -->
+    <!-- Main CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Project Nova</h1>
-    <p>System initialized.</p>
+    <!-- Main app container -->
+    <main id="app">
 
-    <!-- Connect JavaScript -->
+        <!-- SCREEN 1: Birthday verification -->
+        <section id="birthday-screen" class="screen active">
+
+            <h1>Before we begin...</h1>
+
+            <p>When's your birthday?</p>
+
+            <div class="birthday-inputs">
+
+                <input
+                    type="number"
+                    id="day-input"
+                    placeholder="Day"
+                    min="1"
+                    max="31"
+                >
+
+                <span>/</span>
+
+                <input
+                    type="number"
+                    id="month-input"
+                    placeholder="Month"
+                    min="1"
+                    max="12"
+                >
+
+            </div>
+
+            <button id="birthday-next-btn">
+                Continue
+            </button>
+
+            <p id="birthday-message" class="message"></p>
+
+        </section>
+
+
+        <!-- SCREEN 2: Name verification -->
+        <section id="name-screen" class="screen">
+
+            <h1>Interesting...</h1>
+
+            <p>And who might you be?</p>
+
+            <input
+                type="text"
+                id="name-input"
+                placeholder="Enter your name"
+                autocomplete="off"
+            >
+
+            <button id="name-next-btn">
+                Continue
+            </button>
+
+            <p id="name-message" class="message"></p>
+
+        </section>
+
+
+        <!-- SCREEN 3: Are you ready? -->
+        <section id="ready-screen" class="screen">
+
+            <h1>Identity confirmed.</h1>
+
+            <p>Are you ready to proceed?</p>
+
+            <!-- Only NO exists at first -->
+            <div id="ready-buttons">
+
+                <button id="no-btn">
+                    NO
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 4: Fake angry sequence -->
+        <section id="chaos-screen" class="screen">
+
+            <h1 id="chaos-title">
+                Are you sure you don't want to proceed?
+            </h1>
+
+            <div id="chaos-buttons">
+
+                <button id="yes-btn">
+                    YES
+                </button>
+
+                <button id="chaos-no-btn">
+                    NO
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 5: Home page -->
+        <section id="home-screen" class="screen">
+
+            <h1>Welcome.</h1>
+
+            <p>The real experience begins here.</p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
