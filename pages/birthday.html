@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Birthday | Project Nova</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/birthday.css">
+</head>
+
+<body>
+
+    <main class="birthday-page">
+
+
+        <!-- ================================
+             TOP NAVIGATION
+        ================================= -->
+
+        <nav class="birthday-nav">
+
+            <a href="../index.html" class="back-home-btn">
+                ← Back to NOVA
+            </a>
+
+            <p class="nova-small">
+                PROJECT NOVA
+            </p>
+
+        </nav>
+
+
+        <!-- ================================
+             INTRO
+        ================================= -->
+
+        <section class="birthday-intro">
+
+            <p class="birthday-label">
+                SECTION 01
+            </p>
+
+            <h1>So...</h1>
+
+            <p class="birthday-text">
+                You actually made it here.
+            </p>
+
+            <button id="birthday-start-btn">
+                What's this?
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             FIRST MESSAGE
+        ================================= -->
+
+        <section
+            id="birthday-message-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                A message for you
+            </p>
+
+            <h2>
+                Well, today's a pretty important day.
+            </h2>
+
+            <p>
+                And I thought it would be a little boring
+                to just send you a normal birthday message.
+            </p>
+
+            <p>
+                So instead...
+            </p>
+
+            <p class="message-highlight">
+                I decided to build you something.
+            </p>
+
+            <button id="birthday-continue-btn">
+                Continue
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             THE PROBLEM
+        ================================= -->
+
+        <section
+            id="birthday-problem-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Wait a second...
+            </p>
+
+            <h2>
+                But before we get to that...
+            </h2>
+
+            <p class="birthday-text">
+                There's one small problem.
+            </p>
+
+            <button id="problem-btn">
+                What problem?
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             CHALLENGE INTRO
+        ================================= -->
+
+        <section
+            id="challenge-intro-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                One condition
+            </p>
+
+            <h2>
+                A birthday gift can't just be handed over that easily.
+            </h2>
+
+            <p>
+                First, you have to complete one tiny challenge.
+            </p>
+
+            <button id="challenge-start-btn">
+                Bring it on.
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             CATCH THE CAKE
+        ================================= -->
+
+        <section
+            id="challenge-area"
+            class="birthday-message-area challenge-area"
+        >
+
+            <p class="birthday-label">
+                Challenge accepted
+            </p>
+
+            <h2>
+                Okay. Catch this.
+            </h2>
+
+            <p id="challenge-counter">
+                Catches: 0 / 5
+            </p>
+
+            <div id="game-area">
+
+                <button id="catch-btn">
+                    🎂
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             CHALLENGE COMPLETE
+        ================================= -->
+
+        <section
+            id="challenge-complete-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Challenge complete
+            </p>
+
+            <h2>
+                You passed.
+            </h2>
+
+            <p>
+                Somehow.
+            </p>
+
+            <button id="challenge-complete-btn">
+                Continue
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             BIRTHDAY REVEAL
+        ================================= -->
+
+        <section
+            id="birthday-reveal-area"
+            class="birthday-message-area birthday-reveal-area"
+        >
+
+            <p class="birthday-label">
+                Fine. You earned it.
+            </p>
+
+            <h2 class="birthday-reveal-title">
+                HAPPY<br>
+                BIRTHDAY
+            </h2>
+
+            <p class="birthday-reveal-name">
+                🎉 🎂 ✨
+            </p>
+
+            <p class="birthday-reveal-text">
+                Welcome to your birthday experience.
+            </p>
+
+            <button id="birthday-reveal-btn">
+                Let's begin.
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             EXPERIENCE INTRO
+        ================================= -->
+
+        <section
+            id="experience-intro-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Project Nova begins
+            </p>
+
+            <h2>
+                Okay, now that we're officially past
+                all the unnecessary security...
+            </h2>
+
+            <p>
+                I have a few things prepared for you.
+            </p>
+
+            <button id="show-prepared-btn">
+                Show me.
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             BIRTHDAY VAULT
+        ================================= -->
+
+        <section
+            id="birthday-vault-area"
+            class="birthday-message-area birthday-vault-area"
+        >
+
+            <p class="birthday-label">
+                PROJECT NOVA
+            </p>
+
+            <h2>
+                The Birthday Vault
+            </h2>
+
+            <p class="vault-description">
+                I made a few things for you.
+            </p>
+
+            <p class="vault-description">
+                Choose carefully.
+            </p>
+
+            <div class="vault-grid">
+
+
+                <!-- SOMETHING FUN -->
+
+                <button
+                    id="vault-card-1"
+                    class="vault-card"
+                >
+
+                    <span class="vault-icon">
+                        🎁
+                    </span>
+
+                    <span class="vault-card-title">
+                        Something Fun
+                    </span>
+
+                    <span class="vault-card-text">
+                        Open me.
+                    </span>
+
+                </button>
+
+
+                <!-- SOMETHING SPECIAL -->
+
+                <button
+                    id="vault-card-2"
+                    class="vault-card"
+                >
+
+                    <span class="vault-icon">
+                        ✨
+                    </span>
+
+                    <span class="vault-card-title">
+                        Something Special
+                    </span>
+
+                    <span class="vault-card-text">
+                        There's something inside.
+                    </span>
+
+                </button>
+
+
+                <!-- LOCKED -->
+
+                <button
+                    id="vault-card-3"
+                    class="vault-card vault-card-locked"
+                >
+
+                    <span class="vault-icon">
+                        🔒
+                    </span>
+
+                    <span class="vault-card-title">
+                        Locked
+                    </span>
+
+                    <span class="vault-card-text">
+                        Not yet.
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             SOMETHING SPECIAL - INTRO
+        ================================= -->
+
+        <section
+            id="special-intro-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Something Special
+            </p>
+
+            <h2>
+                Okay... this one is a little different.
+            </h2>
+
+            <p>
+                I collected a few pieces of evidence.
+            </p>
+
+            <p>
+                Your job is simply to survive the investigation.
+            </p>
+
+            <p class="message-highlight">
+                No pressure.
+            </p>
+
+            <button id="special-start-btn">
+                Begin investigation.
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             PERSONALITY SCAN
+        ================================= -->
+
+        <section
+            id="special-scan-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Project Nova Analysis
+            </p>
+
+            <h2>
+                Running personality scan...
+            </h2>
+
+            <div
+                id="special-scan-results"
+                class="special-scan-results"
+            >
+
+                <p>
+                    Loading evidence...
+                </p>
+
+            </div>
+
+            <button id="special-scan-next-btn">
+                Continue
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             THE LITTLE THINGS
+        ================================= -->
+
+        <section
+            id="special-little-things-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                The Little Things
+            </p>
+
+            <h2>
+                Some things just felt very... you.
+            </h2>
+
+            <div class="little-things-grid">
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        🧈
+                    </span>
+
+                    <h3>
+                        Butter Yellow
+                    </h3>
+
+                    <p>
+                        Apparently one of the official colors
+                        of the Project Nova universe.
+                    </p>
+
+                </div>
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        🎮
+                    </span>
+
+                    <h3>
+                        Gaming Detected
+                    </h3>
+
+                    <p>
+                        Genshin and MLBB have successfully
+                        entered the evidence folder.
+                    </p>
+
+                </div>
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        🧵
+                    </span>
+
+                    <h3>
+                        Future Dress Designer
+                    </h3>
+
+                    <p>
+                        Sewing your own dress is officially
+                        on the skill acquisition list.
+                    </p>
+
+                </div>
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        ☕
+                    </span>
+
+                    <h3>
+                        The Mug Situation
+                    </h3>
+
+                    <p>
+                        Ceramic mug request detected.
+                        Extremely important information.
+                    </p>
+
+                </div>
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        📸
+                    </span>
+
+                    <h3>
+                        Screenshot Department
+                    </h3>
+
+                    <p>
+                        Random screenshots have been saved.
+                        Nobody knows why.
+                        Including you, probably.
+                    </p>
+
+                </div>
+
+
+                <div class="little-thing-card">
+
+                    <span class="little-thing-icon">
+                        🎵
+                    </span>
+
+                    <h3>
+                        Current Soundtrack
+                    </h3>
+
+                    <p>
+                        STATESIDE ft. Zara Larsson
+                        has entered the current rotation.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button id="special-memory-btn">
+                Open the memory archive
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             MEMORY ARCHIVE
+        ================================= -->
+
+        <section
+            id="special-memory-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Memory Archive
+            </p>
+
+            <h2>
+                Recovered files.
+            </h2>
+
+            <p>
+                Some memories don't need a dramatic explanation.
+            </p>
+
+            <div class="memory-list">
+
+
+                <button
+                    class="memory-card"
+                    data-memory="birthday"
+                >
+
+                    <span>
+                        📁
+                    </span>
+
+                    <span>
+                        MEMORY_007
+                    </span>
+
+                    <small>
+                        7th birthday
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="memory-card"
+                    data-memory="laugh"
+                >
+
+                    <span>
+                        📁
+                    </span>
+
+                    <span>
+                        LAUGH_LOG
+                    </span>
+
+                    <small>
+                        Things that make you laugh
+                    </small>
+
+                </button>
+
+
+                <button
+                    class="memory-card"
+                    data-memory="care"
+                >
+
+                    <span>
+                        📁
+                    </span>
+
+                    <span>
+                        CARE_LEVEL
+                    </span>
+
+                    <small>
+                        Investigation results
+                    </small>
+
+                </button>
+
+            </div>
+
+
+            <p
+                id="memory-display"
+                class="memory-display"
+            ></p>
+
+
+            <button id="special-final-btn">
+                There's one more thing...
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             FINAL SPECIAL MESSAGE
+        ================================= -->
+
+        <section
+            id="special-final-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Final File
+            </p>
+
+            <h2>
+                Project Nova has reached the end.
+            </h2>
+
+            <p>
+                But before you go...
+            </p>
+
+            <div class="final-analysis">
+
+
+                <p>
+                    Cares too much ........
+                    <strong>CONFIRMED</strong>
+                </p>
+
+                <p>
+                    Talks a lot ...........
+                    <strong>CONFIRMED</strong>
+                </p>
+
+                <p>
+                    Random screenshots ....
+                    <strong>CONCERNING</strong>
+                </p>
+
+                <p>
+                    Gaming detected .......
+                    <strong>YES</strong>
+                </p>
+
+                <p>
+                    Being memorable .......
+                    <strong>ABSOLUTELY</strong>
+                </p>
+
+            </div>
+
+
+            <p class="message-highlight">
+                And honestly, I wouldn't change that.
+            </p>
+
+            <p>
+                Happy Birthday. 🎂
+            </p>
+
+            <button id="special-back-btn">
+                Back to the Vault
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             SOMETHING FUN - QUIZ INTRO
+        ================================= -->
+
+        <section
+            id="quiz-intro-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Something Fun
+            </p>
+
+            <h2>
+                Let's see how much you remember.
+            </h2>
+
+            <p>
+                Don't worry.
+            </p>
+
+            <p>
+                This definitely isn't a test.
+            </p>
+
+            <p class="message-highlight">
+                Probably.
+            </p>
+
+            <button id="quiz-start-btn">
+                Start the quiz.
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             QUIZ AREA
+        ================================= -->
+
+        <section
+            id="quiz-area"
+            class="birthday-message-area"
+        >
+
+            <p
+                id="quiz-progress"
+                class="birthday-label"
+            >
+                QUESTION 1 / 5
+            </p>
+
+            <h2 id="quiz-question">
+                Question goes here.
+            </h2>
+
+            <div
+                id="quiz-options"
+                class="quiz-options"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================
+             QUIZ RESULT
+        ================================= -->
+
+        <section
+            id="quiz-result-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                Results are in
+            </p>
+
+            <h2 id="quiz-result-title">
+                Hmm...
+            </h2>
+
+            <p
+                id="quiz-score"
+                class="quiz-score"
+            >
+                Score: 0 / 5
+            </p>
+
+            <p id="quiz-result-message">
+            </p>
+
+
+            <!-- Appears after review quiz -->
+
+            <button
+                id="start-real-test-btn"
+                style="display: none;"
+            >
+                Begin the real test.
+            </button>
+
+
+            <!-- Appears after real quiz -->
+
+            <button
+                id="quiz-back-btn"
+                style="display: none;"
+            >
+                Back to the Vault
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="../js/birthday.js"></script>
+
+</body>
+
+</html>

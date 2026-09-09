@@ -1,0 +1,1153 @@
+/* =================================
+   PROJECT NOVA - BIRTHDAY PAGE
+   Theme: Butter Yellow × Burgundy
+================================= */
+
+
+/* =================================
+   MAIN PAGE
+================================= */
+
+.birthday-page {
+    min-height: 100vh;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.birthday-nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-home-btn {
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    color: var(--nova-burgundy);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    border: 1px solid var(--nova-border);
+
+    background: rgba(255, 253, 245, 0.55);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.back-home-btn:hover {
+    transform: translateX(-4px);
+
+    color: var(--nova-burgundy-dark);
+
+    background: var(--nova-glass-strong);
+
+    box-shadow: var(--nova-shadow);
+}
+
+.nova-small {
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--nova-burgundy);
+
+    opacity: 0.55;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.birthday-intro {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    animation:
+        birthdayIntroAppear 0.8s ease;
+}
+
+.birthday-label {
+    margin-bottom: 16px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: var(--nova-burgundy);
+
+    opacity: 0.6;
+}
+
+.birthday-intro h1 {
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(4rem, 14vw, 9rem);
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+.birthday-text {
+    margin-bottom: 10px;
+
+    font-size:
+        clamp(1.1rem, 2vw, 1.4rem);
+}
+
+
+/* =================================
+   MESSAGE SECTIONS
+================================= */
+
+.birthday-message-area {
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height:
+        calc(100vh - 80px);
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.birthday-message-area.active {
+    display: flex;
+
+    animation:
+        messageAppear 0.8s ease;
+}
+
+.birthday-message-area h2 {
+    max-width: 700px;
+
+    margin-bottom: 22px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(2rem, 5vw, 4rem);
+
+    line-height: 1.15;
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+.birthday-message-area p {
+    margin-bottom: 14px;
+}
+
+.message-highlight {
+    margin-top: 10px;
+
+    font-size:
+        clamp(1.3rem, 3vw, 2rem);
+
+    font-weight: 700;
+
+    color:
+        var(--nova-burgundy);
+
+    opacity: 1;
+}
+
+
+/* =================================
+   CATCH THE CAKE CHALLENGE
+================================= */
+
+.challenge-area {
+    width: 100%;
+}
+
+#game-area {
+    position: relative;
+
+    width:
+        min(700px, 90vw);
+
+    height: 400px;
+
+    margin-top: 25px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.48);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    overflow: hidden;
+}
+
+#challenge-counter {
+    color:
+        var(--nova-burgundy);
+
+    font-weight: 700;
+}
+
+#catch-btn {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    min-width: 70px;
+    min-height: 70px;
+
+    padding: 10px;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    color:
+        var(--nova-cream);
+
+    background:
+        var(--nova-burgundy);
+
+    cursor: pointer;
+
+    transform:
+        translate(-50%, -50%);
+
+    transition:
+        left 0.25s ease,
+        top 0.25s ease,
+        transform 0.2s ease;
+}
+
+#catch-btn:hover {
+    background:
+        var(--nova-burgundy-dark);
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.1);
+}
+
+
+/* =================================
+   BIRTHDAY REVEAL
+================================= */
+
+.birthday-reveal-area {
+    position: relative;
+}
+
+.birthday-reveal-title {
+    font-size:
+        clamp(3.5rem, 12vw, 9rem) !important;
+
+    line-height:
+        0.9 !important;
+
+    letter-spacing: -2px;
+
+    color:
+        var(--nova-burgundy-dark);
+
+    animation:
+        birthdayRevealPop 1s ease;
+}
+
+.birthday-reveal-name {
+    margin-top: 10px;
+
+    font-size:
+        clamp(2rem, 5vw, 3rem);
+}
+
+.birthday-reveal-text {
+    margin-top: 12px;
+
+    font-size:
+        clamp(1rem, 2vw, 1.3rem);
+}
+
+
+/* =================================
+   BIRTHDAY VAULT
+================================= */
+
+.birthday-vault-area {
+    width: 100%;
+}
+
+.vault-description {
+    margin-bottom: 5px !important;
+}
+
+.vault-grid {
+    width:
+        min(900px, 100%);
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.vault-card {
+    min-height: 230px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    color:
+        var(--nova-burgundy-dark);
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        var(--nova-glass);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.vault-card:hover {
+    transform:
+        translateY(-8px);
+
+    background:
+        var(--nova-glass-strong);
+
+    border-color:
+        rgba(110, 31, 50, 0.25);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+.vault-card:active {
+    transform:
+        translateY(-4px)
+        scale(0.98);
+}
+
+.vault-icon {
+    margin-bottom: 20px;
+
+    font-size: 3rem;
+}
+
+.vault-card-title {
+    margin-bottom: 10px;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+.vault-card-text {
+    font-size: 0.9rem;
+
+    color:
+        var(--nova-muted);
+
+    opacity: 1;
+}
+
+.vault-card-locked {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+.vault-card-locked:hover {
+    transform: none;
+
+    box-shadow:
+        var(--nova-shadow);
+
+    background:
+        var(--nova-glass);
+}
+
+
+/* =================================
+   SOMETHING SPECIAL
+================================= */
+
+
+/* =================================
+   PERSONALITY SCAN
+================================= */
+
+.special-scan-results {
+    width:
+        min(620px, 100%);
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.70);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    text-align: left;
+}
+
+.special-scan-results p {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 12px 15px;
+
+    border-left:
+        4px solid var(--nova-burgundy);
+
+    border-radius: 8px;
+
+    background:
+        rgba(243, 227, 165, 0.30);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    opacity: 1;
+
+    animation:
+        scanLineAppear 0.5s ease;
+}
+
+
+/* =================================
+   LITTLE THINGS GRID
+================================= */
+
+.little-things-grid {
+    width:
+        min(900px, 100%);
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.little-thing-card {
+    min-height: 190px;
+
+    padding: 24px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        var(--nova-glass);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.little-thing-card:hover {
+    transform:
+        translateY(-6px);
+
+    background:
+        var(--nova-glass-strong);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+.little-thing-icon {
+    margin-bottom: 14px;
+
+    font-size: 2.3rem;
+}
+
+.little-thing-card h3 {
+    margin-bottom: 9px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 1.15rem;
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+.little-thing-card p {
+    margin: 0;
+
+    font-size: 0.88rem;
+
+    line-height: 1.5;
+
+    color:
+        var(--nova-muted);
+
+    opacity: 1;
+}
+
+
+/* =================================
+   MEMORY ARCHIVE
+================================= */
+
+.memory-list {
+    width:
+        min(650px, 100%);
+
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.memory-card {
+    width: 100%;
+
+    min-height: 70px;
+
+    margin-top: 0;
+
+    padding: 15px 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        45px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.75);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    box-shadow:
+        0 6px 18px
+        rgba(66, 21, 34, 0.06);
+
+    text-align: left;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.memory-card:hover {
+    transform:
+        translateX(6px);
+
+    background:
+        var(--nova-glass-strong);
+
+    box-shadow:
+        var(--nova-shadow);
+}
+
+.memory-card > span:first-child {
+    font-size: 1.6rem;
+
+    text-align: center;
+}
+
+.memory-card > span:nth-child(2) {
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+.memory-card small {
+    font-size: 0.78rem;
+
+    color:
+        var(--nova-muted);
+
+    white-space: nowrap;
+}
+
+
+/* =================================
+   MEMORY DISPLAY
+================================= */
+
+.memory-display {
+    width:
+        min(650px, 100%);
+
+    min-height: 70px;
+
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(110, 31, 50, 0.18);
+
+    background:
+        rgba(243, 227, 165, 0.35);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    opacity: 1;
+
+    box-shadow:
+        0 6px 20px
+        rgba(66, 21, 34, 0.06);
+}
+
+
+/* =================================
+   FINAL ANALYSIS
+================================= */
+
+.final-analysis {
+    width:
+        min(650px, 100%);
+
+    margin-top: 25px;
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.70);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    text-align: left;
+}
+
+.final-analysis p {
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    color:
+        var(--nova-text);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 0.95rem;
+
+    opacity: 1;
+}
+
+.final-analysis p:last-child {
+    margin-bottom: 0;
+}
+
+.final-analysis strong {
+    color:
+        var(--nova-burgundy);
+
+    font-weight: 700;
+}
+
+
+/* =================================
+   QUIZ
+================================= */
+
+#quiz-area {
+    width: 100%;
+}
+
+#quiz-question {
+    width: 100%;
+
+    color:
+        var(--nova-burgundy-dark);
+
+    opacity: 1;
+}
+
+.quiz-options {
+    width:
+        min(600px, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+
+/* =================================
+   QUIZ OPTION BUTTONS
+================================= */
+
+.quiz-option {
+    width: 100%;
+
+    display: block;
+
+    padding: 18px 22px;
+
+    margin-top: 0;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+    color:
+        var(--nova-burgundy-dark) !important;
+
+    -webkit-text-fill-color:
+        var(--nova-burgundy-dark);
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.88);
+
+    box-shadow:
+        0 6px 18px
+        rgba(66, 21, 34, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.quiz-option:hover {
+    transform:
+        translateY(-3px);
+
+    color:
+        var(--nova-cream) !important;
+
+    -webkit-text-fill-color:
+        var(--nova-cream);
+
+    background:
+        var(--nova-burgundy);
+
+    border-color:
+        var(--nova-burgundy);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+.quiz-option.selected {
+    color:
+        var(--nova-cream) !important;
+
+    -webkit-text-fill-color:
+        var(--nova-cream);
+
+    background:
+        var(--nova-burgundy);
+
+    border-color:
+        var(--nova-burgundy);
+
+    transform:
+        scale(1.02);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+
+/* =================================
+   QUIZ RESULTS
+================================= */
+
+.quiz-score {
+    margin-top: 10px;
+
+    font-size:
+        clamp(1.5rem, 4vw, 2.5rem);
+
+    font-weight: 700;
+
+    color:
+        var(--nova-burgundy) !important;
+
+    opacity: 1;
+}
+
+#quiz-result-message {
+    font-size: 1.1rem;
+
+    color:
+        var(--nova-text);
+
+    opacity: 0.85;
+}
+
+
+/* =================================
+   BUTTON SPACING
+================================= */
+
+#start-real-test-btn,
+#quiz-back-btn,
+#special-scan-next-btn,
+#special-memory-btn,
+#special-final-btn,
+#special-back-btn {
+    margin-top: 20px;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes birthdayIntroAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes birthdayRevealPop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.6);
+    }
+
+    70% {
+        transform:
+            scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =================================
+   SPECIAL ANIMATIONS
+================================= */
+
+@keyframes scanLineAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+    .vault-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .vault-card {
+        min-height: 180px;
+    }
+
+
+    /* Something Special */
+
+    .little-things-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .little-thing-card {
+        min-height: 175px;
+
+        padding: 20px 14px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .birthday-page {
+        padding: 18px;
+    }
+
+    .birthday-nav {
+        align-items:
+            flex-start;
+    }
+
+    .nova-small {
+        text-align: right;
+
+        font-size: 0.65rem;
+    }
+
+    #game-area {
+        height: 350px;
+    }
+
+    .quiz-option {
+        padding: 16px;
+
+        font-size: 0.95rem;
+    }
+
+
+    /* Memory Archive */
+
+    .memory-card {
+        grid-template-columns:
+            38px 1fr;
+
+        padding:
+            14px 16px;
+    }
+
+    .memory-card small {
+        grid-column:
+            2;
+
+        white-space:
+            normal;
+    }
+
+
+    /* Special sections */
+
+    .special-scan-results {
+        padding: 18px;
+    }
+
+    .final-analysis {
+        padding: 18px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .little-things-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .little-thing-card {
+        min-height: 150px;
+    }
+
+}

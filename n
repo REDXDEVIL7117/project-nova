@@ -1,0 +1,1192 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 341ce42..3c1702c 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -7,13 +7,15 @@[m
+ [m
+     <title>Project Nova</title>[m
+ [m
+[31m-    <!-- Main CSS file -->[m
+[32m+[m[32m    <!-- Main website styling -->[m
+     <link rel="stylesheet" href="style.css">[m
+[32m+[m
+[32m+[m[32m    <!-- Home-specific styling -->[m
+[32m+[m[32m    <link rel="stylesheet" href="css/home.css">[m
+ </head>[m
+ [m
+ <body>[m
+ [m
+[31m-    <!-- Main app container -->[m
+     <main id="app">[m
+ [m
+         <!-- SCREEN 1: Birthday verification -->[m
+[36m@@ -77,14 +79,13 @@[m
+         </section>[m
+ [m
+ [m
+[31m-        <!-- SCREEN 3: Are you ready? -->[m
+[32m+[m[32m        <!-- SCREEN 3: Forced NO -->[m
+         <section id="ready-screen" class="screen">[m
+ [m
+             <h1>Identity confirmed.</h1>[m
+ [m
+             <p>Are you ready to proceed?</p>[m
+ [m
+[31m-            <!-- Only NO exists at first -->[m
+             <div id="ready-buttons">[m
+ [m
+                 <button id="no-btn">[m
+[36m@@ -96,7 +97,7 @@[m
+         </section>[m
+ [m
+ [m
+[31m-        <!-- SCREEN 4: Fake angry sequence -->[m
+[32m+[m[32m        <!-- SCREEN 4: Interrogation -->[m
+         <section id="chaos-screen" class="screen">[m
+ [m
+             <h1 id="chaos-title">[m
+[36m@@ -115,24 +116,117 @@[m
+ [m
+             </div>[m
+ [m
+[32m+[m[32m            <div id="reason-area">[m
+[32m+[m
+[32m+[m[32m                <input[m
+[32m+[m[32m                    type="text"[m
+[32m+[m[32m                    id="reason-input"[m
+[32m+[m[32m                    placeholder="Explain yourself..."[m
+[32m+[m[32m                    autocomplete="off"[m
+[32m+[m[32m                >[m
+[32m+[m
+[32m+[m[32m                <button id="reason-continue-btn">[m
+[32m+[m[32m                    Continue[m
+[32m+[m[32m                </button>[m
+[32m+[m
+[32m+[m[32m            </div>[m
+[32m+[m
+         </section>[m
+ [m
+ [m
+[31m-        <!-- SCREEN 5: Home page -->[m
+[31m-        <section id="home-screen" class="screen">[m
+[32m+[m[32m        <!-- SCREEN 5: PROJECT NOVA HOME -->[m
+[32m+[m[32m        <section id="home-screen" class="screen home-screen">[m
+[32m+[m
+[32m+[m[32m            <div class="home-intro">[m
+[32m+[m
+[32m+[m[32m                <p class="home-label">[m
+[32m+[m[32m                    PROJECT NOVA[m
+[32m+[m[32m                </p>[m
+[32m+[m
+[32m+[m[32m                <h1>[m
+[32m+[m[32m                    Welcome.[m
+[32m+[m[32m                </h1>[m
+[32m+[m
+[32m+[m[32m                <p class="home-description">[m
+[32m+[m[32m                    You've made it through the entrance.[m
+[32m+[m[32m                    Now the real experience begins.[m
+[32m+[m[32m                </p>[m
+[32m+[m
+[32m+[m[32m            </div>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            <!-- Navigation cards -->[m
+[32m+[m[32m            <div class="home-grid">[m
+[32m+[m
+[32m+[m[32m                <a href="pages/birthday.html" class="nova-card">[m
+[32m+[m
+[32m+[m[32m                    <span class="card-number">01</span>[m
+[32m+[m
+[32m+[m[32m                    <h2>Birthday</h2>[m
+[32m+[m
+[32m+[m[32m                    <p>[m
+[32m+[m[32m                        Something waiting for the birthday girl.[m
+[32m+[m[32m                    </p>[m
+ [m
+[31m-            <h1>Welcome.</h1>[m
+[32m+[m[32m                </a>[m
+ [m
+[31m-            <p>The real experience begins here.</p>[m
+[32m+[m
+[32m+[m[32m                <a href="pages/surprises.html" class="nova-card">[m
+[32m+[m
+[32m+[m[32m                    <span class="card-number">02</span>[m
+[32m+[m
+[32m+[m[32m                    <h2>Surprises</h2>[m
+[32m+[m
+[32m+[m[32m                    <p>[m
+[32m+[m[32m                        A few things you probably won't expect.[m
+[32m+[m[32m                    </p>[m
+[32m+[m
+[32m+[m[32m                </a>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m                <a href="pages/fun.html" class="nova-card">[m
+[32m+[m
+[32m+[m[32m                    <span class="card-number">03</span>[m
+[32m+[m
+[32m+[m[32m                    <h2>Fun Stuff</h2>[m
+[32m+[m
+[32m+[m[32m                    <p>[m
+[32m+[m[32m                        Because a gift shouldn't just sit there.[m
+[32m+[m[32m                    </p>[m
+[32m+[m
+[32m+[m[32m                </a>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m                <!-- Memories stays for LAST -->[m
+[32m+[m[32m                <div class="nova-card locked-card">[m
+[32m+[m
+[32m+[m[32m                    <span class="card-number">04</span>[m
+[32m+[m
+[32m+[m[32m                    <h2>Memories</h2>[m
+[32m+[m
+[32m+[m[32m                    <p>[m
+[32m+[m[32m                        Not yet.[m
+[32m+[m[32m                    </p>[m
+[32m+[m
+[32m+[m[32m                    <span class="locked-text">[m
+[32m+[m[32m                        Coming later[m
+[32m+[m[32m                    </span>[m
+[32m+[m
+[32m+[m[32m                </div>[m
+[32m+[m
+[32m+[m[32m            </div>[m
+ [m
+         </section>[m
+ [m
+     </main>[m
+ [m
+ [m
+[31m-    <!-- JavaScript -->[m
+[32m+[m[32m    <!-- Main gateway logic -->[m
+     <script src="script.js"></script>[m
+ [m
+[32m+[m[32m    <!-- Home-specific logic -->[m
+[32m+[m[32m    <script src="js/home.js"></script>[m
+[32m+[m
+ </body>[m
+ [m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/script.js b/script.js[m
+[1mindex ed4f0ca..5e5296a 100644[m
+[1m--- a/script.js[m
+[1m+++ b/script.js[m
+[36m@@ -1,4 +1,11 @@[m
+[31m-// Get all screens[m
+[32m+[m[32m// ================================[m
+[32m+[m[32m// PROJECT NOVA - MAIN SCRIPT[m
+[32m+[m[32m// ================================[m
+[32m+[m
+[32m+[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// SCREEN ELEMENTS[m
+[32m+[m[32m// =================================[m
+ [m
+ const birthdayScreen = document.getElementById("birthday-screen");[m
+ const nameScreen = document.getElementById("name-screen");[m
+[36m@@ -7,52 +14,81 @@[m [mconst chaosScreen = document.getElementById("chaos-screen");[m
+ const homeScreen = document.getElementById("home-screen");[m
+ [m
+ [m
+[31m-// Get birthday elements[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// BIRTHDAY ELEMENTS[m
+[32m+[m[32m// =================================[m
+ [m
+ const dayInput = document.getElementById("day-input");[m
+ const monthInput = document.getElementById("month-input");[m
+ const birthdayNextBtn = document.getElementById("birthday-next-btn");[m
+ const birthdayMessage = document.getElementById("birthday-message");[m
+ [m
+[32m+[m[32mconst correctDay = 7;[m
+[32m+[m[32mconst correctMonth = 11;[m
+[32m+[m
+ [m
+[31m-// Get name elements[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// NAME ELEMENTS[m
+[32m+[m[32m// =================================[m
+ [m
+ const nameInput = document.getElementById("name-input");[m
+ const nameNextBtn = document.getElementById("name-next-btn");[m
+ const nameMessage = document.getElementById("name-message");[m
+ [m
+[32m+[m[32mconst allowedNames = [[m
+[32m+[m[32m    "janvi",[m
+[32m+[m[32m    "cotton candy",[m
+[32m+[m[32m    "furry"[m
+[32m+[m[32m];[m
+ [m
+[31m-// Correct birthday[m
+ [m
+[31m-const correctDay = 7;[m
+[31m-const correctMonth = 11;[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// CHAOS ELEMENTS[m
+[32m+[m[32m// =================================[m
+ [m
+[32m+[m[32mconst noBtn = document.getElementById("no-btn");[m
+[32m+[m[32mconst yesBtn = document.getElementById("yes-btn");[m
+[32m+[m[32mconst chaosNoBtn = document.getElementById("chaos-no-btn");[m
+[32m+[m[32mconst chaosTitle = document.getElementById("chaos-title");[m
+ [m
+[31m-// Function to switch screens[m
+[32m+[m[32mconst chaosButtons = document.getElementById("chaos-buttons");[m
+ [m
+[31m-function showScreen(screenToShow) {[m
+[32m+[m[32mconst reasonArea = document.getElementById("reason-area");[m
+[32m+[m[32mconst reasonInput = document.getElementById("reason-input");[m
+[32m+[m[32mconst reasonContinueBtn = document.getElementById("reason-continue-btn");[m
+[32m+[m
+[32m+[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// CHAOS STATE[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32mlet chaosStep = 0;[m
+ [m
+[31m-    // Hide every screen[m
+[32m+[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// SCREEN SWITCHING[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32mfunction showScreen(screenToShow) {[m
+ [m
+     document.querySelectorAll(".screen").forEach(function (screen) {[m
+         screen.classList.remove("active");[m
+     });[m
+ [m
+[31m-    // Show the requested screen[m
+[31m-[m
+     screenToShow.classList.add("active");[m
+[32m+[m
+ }[m
+ [m
+ [m
+[31m-// Birthday verification[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// BIRTHDAY VERIFICATION[m
+[32m+[m[32m// =================================[m
+ [m
+ birthdayNextBtn.addEventListener("click", function () {[m
+ [m
+     const enteredDay = Number(dayInput.value);[m
+     const enteredMonth = Number(monthInput.value);[m
+ [m
+[31m-    // Check if the birthday is correct[m
+[31m-[m
+     if ([m
+         enteredDay === correctDay &&[m
+         enteredMonth === correctMonth[m
+[36m@@ -60,66 +96,193 @@[m [mbirthdayNextBtn.addEventListener("click", function () {[m
+ [m
+         birthdayMessage.textContent = "";[m
+ [m
+[31m-        // Move to the name screen[m
+[31m-[m
+         showScreen(nameScreen);[m
+ [m
+     } else {[m
+ [m
+[31m-        birthdayMessage.textContent = "Hmm... that doesn't seem right.";[m
+[32m+[m[32m        birthdayMessage.textContent =[m
+[32m+[m[32m            "Hmm... that doesn't seem right.";[m
+[32m+[m
+     }[m
+ [m
+ });[m
+ [m
+ [m
+[31m-// Temporary name verification[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// NAME VERIFICATION[m
+[32m+[m[32m// =================================[m
+ [m
+ nameNextBtn.addEventListener("click", function () {[m
+ [m
+[31m-    const enteredName = nameInput.value.trim();[m
+[32m+[m[32m    const enteredName = nameInput.value[m
+[32m+[m[32m        .trim()[m
+[32m+[m[32m        .toLowerCase();[m
+ [m
+[31m-    // For now, just make sure something was entered[m
+[31m-[m
+[31m-    if (enteredName !== "") {[m
+[32m+[m[32m    if (allowedNames.includes(enteredName)) {[m
+ [m
+         nameMessage.textContent = "";[m
+ [m
+[31m-        // Move to the ready screen[m
+[31m-[m
+         showScreen(readyScreen);[m
+ [m
+     } else {[m
+ [m
+[31m-        nameMessage.textContent = "You need to enter a name first.";[m
+[32m+[m[32m        nameMessage.textContent =[m
+[32m+[m[32m            "Hmm... I don't think you're the person I'm looking for.";[m
+[32m+[m
+     }[m
+ [m
+ });[m
+ [m
+ [m
+[31m-// Temporary NO button behavior[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// FIRST FORCED NO BUTTON[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32mnoBtn.addEventListener("click", function () {[m
+[32m+[m
+[32m+[m[32m    chaosStep = 0;[m
+[32m+[m
+[32m+[m[32m    // Reset the screen[m
+[32m+[m
+[32m+[m[32m    chaosTitle.textContent =[m
+[32m+[m[32m        "Are you sure you don't want to proceed?";[m
+[32m+[m
+[32m+[m[32m    chaosButtons.style.display = "flex";[m
+[32m+[m
+[32m+[m[32m    yesBtn.style.display = "inline-block";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.style.display = "inline-block";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.textContent = "NO";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.classList.remove("take-me-inside");[m
+[32m+[m
+[32m+[m[32m    reasonArea.style.display = "none";[m
+ [m
+[31m-document.getElementById("no-btn").addEventListener("click", function () {[m
+[32m+[m[32m    reasonInput.value = "";[m
+[32m+[m
+[32m+[m[32m    // Make sure normal theme is active[m
+[32m+[m
+[32m+[m[32m    document.body.classList.remove("anger-mode");[m
+ [m
+     showScreen(chaosScreen);[m
+ [m
+ });[m
+ [m
+ [m
+[31m-// Temporary YES button behavior[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// YES BUTTON[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32myesBtn.addEventListener("click", function () {[m
+[32m+[m
+[32m+[m[32m    // YES means she is sure she does not[m
+[32m+[m[32m    // want to proceed.[m
+[32m+[m
+[32m+[m[32m    chaosTitle.textContent =[m
+[32m+[m[32m        "Interesting...";[m
+ [m
+[31m-document.getElementById("yes-btn").addEventListener("click", function () {[m
+[32m+[m[32m    yesBtn.style.display = "none";[m
+ [m
+[31m-    document.getElementById("chaos-title").textContent =[m
+[31m-        "Interesting choice...";[m
+[32m+[m[32m    chaosNoBtn.textContent =[m
+[32m+[m[32m        "TAKE ME INSIDE";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.classList.add("take-me-inside");[m
+[32m+[m
+[32m+[m[32m    chaosStep = 3;[m
+ [m
+ });[m
+ [m
+ [m
+[31m-// Temporary chaos NO button behavior[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// CHAOS NO BUTTON[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32mchaosNoBtn.addEventListener("click", function () {[m
+[32m+[m
+[32m+[m[32m    // First NO[m
+[32m+[m
+[32m+[m[32m    if (chaosStep === 0) {[m
+[32m+[m
+[32m+[m[32m        chaosTitle.textContent =[m
+[32m+[m[32m            "Hmm... are you really sure?";[m
+[32m+[m
+[32m+[m[32m        chaosStep = 1;[m
+[32m+[m
+[32m+[m[32m        return;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    // Second NO[m
+[32m+[m
+[32m+[m[32m    if (chaosStep === 1) {[m
+[32m+[m
+[32m+[m[32m        chaosTitle.textContent =[m
+[32m+[m[32m            "Then why did you press NO before?";[m
+[32m+[m
+[32m+[m[32m        // Hide YES and NO buttons[m
+[32m+[m
+[32m+[m[32m        chaosButtons.style.display = "none";[m
+[32m+[m
+[32m+[m[32m        // Activate red / black theme HERE[m
+[32m+[m
+[32m+[m[32m        document.body.classList.add("anger-mode");[m
+[32m+[m
+[32m+[m[32m        // Show explanation area[m
+[32m+[m
+[32m+[m[32m        reasonArea.style.display = "flex";[m
+[32m+[m
+[32m+[m[32m        chaosStep = 2;[m
+[32m+[m
+[32m+[m[32m        return;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    // TAKE ME INSIDE[m
+[32m+[m
+[32m+[m[32m    if (chaosStep === 3) {[m
+[32m+[m
+[32m+[m[32m        // Restore the normal theme[m
+[32m+[m
+[32m+[m[32m        document.body.classList.remove("anger-mode");[m
+[32m+[m
+[32m+[m[32m        showScreen(homeScreen);[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m
+[32m+[m[32m// =================================[m
+[32m+[m[32m// EXPLANATION SUBMITTED[m
+[32m+[m[32m// =================================[m
+[32m+[m
+[32m+[m[32mreasonContinueBtn.addEventListener("click", function () {[m
+[32m+[m
+[32m+[m[32m    chaosTitle.textContent =[m
+[32m+[m[32m        "Interesting.";[m
+[32m+[m
+[32m+[m[32m    // Hide the explanation input[m
+[32m+[m
+[32m+[m[32m    reasonArea.style.display = "none";[m
+[32m+[m
+[32m+[m[32m    // Bring back the button area[m
+[32m+[m
+[32m+[m[32m    chaosButtons.style.display = "flex";[m
+[32m+[m
+[32m+[m[32m    // Only show TAKE ME INSIDE[m
+[32m+[m
+[32m+[m[32m    yesBtn.style.display = "none";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.style.display = "inline-block";[m
+[32m+[m
+[32m+[m[32m    chaosNoBtn.textContent =[m
+[32m+[m[32m        "TAKE ME INSIDE";[m
+ [m
+[31m-document.getElementById("chaos-no-btn").addEventListener("click", function () {[m
+[32m+[m[32m    chaosNoBtn.classList.add("take-me-inside");[m
+ [m
+[31m-    document.getElementById("chaos-title").textContent =[m
+[31m-        "Then perhaps you should reconsider.";[m
+[32m+[m[32m    chaosStep = 3;[m
+ [m
+ });[m
+\ No newline at end of file[m
+[1mdiff --git a/style.css b/style.css[m
+[1mindex 9a582be..edde675 100644[m
+[1m--- a/style.css[m
+[1m+++ b/style.css[m
+[36m@@ -1,74 +1,664 @@[m
+[31m-/* Basic page setup */[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   PROJECT NOVA - GLOBAL STYLE[m
+[32m+[m[32m   Theme: Butter Yellow × Burgundy[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   GOOGLE FONTS[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   NOVA COLOR SYSTEM[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m:root {[m
+[32m+[m
+[32m+[m[32m    /* Main palette */[m
+[32m+[m
+[32m+[m[32m    --nova-butter: #F3E3A5;[m
+[32m+[m[32m    --nova-butter-light: #FFF8D6;[m
+[32m+[m
+[32m+[m[32m    --nova-burgundy: #6E1F32;[m
+[32m+[m[32m    --nova-burgundy-dark: #421522;[m
+[32m+[m
+[32m+[m[32m    --nova-cream: #FFFDF5;[m
+[32m+[m
+[32m+[m[32m    --nova-text: #321923;[m
+[32m+[m[32m    --nova-muted: #765A61;[m
+[32m+[m
+[32m+[m[32m    /* Glass / borders */[m
+[32m+[m
+[32m+[m[32m    --nova-glass: rgba(255, 253, 245, 0.68);[m
+[32m+[m[32m    --nova-glass-strong: rgba(255, 253, 245, 0.88);[m
+[32m+[m
+[32m+[m[32m    --nova-border: rgba(110, 31, 50, 0.14);[m
+[32m+[m
+[32m+[m[32m    /* Shadows */[m
+[32m+[m
+[32m+[m[32m    --nova-shadow:[m
+[32m+[m[32m        0 10px 30px rgba(66, 21, 34, 0.10);[m
+[32m+[m
+[32m+[m[32m    --nova-shadow-strong:[m
+[32m+[m[32m        0 15px 40px rgba(66, 21, 34, 0.18);[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   RESET[m
+[32m+[m[32m================================= */[m
+ [m
+ * {[m
+     box-sizing: border-box;[m
+[32m+[m[32m    margin: 0;[m
+[32m+[m[32m    padding: 0;[m
+ }[m
+ [m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   MAIN PAGE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+ body {[m
+[31m-    margin: 0;[m
+[32m+[m
+     min-height: 100vh;[m
+[31m-    font-family: Arial, sans-serif;[m
+[31m-    background-color: #f5f5f5;[m
+[32m+[m
+[32m+[m[32m    overflow-x: hidden;[m
+[32m+[m
+[32m+[m[32m    font-family: "DM Sans", sans-serif;[m
+[32m+[m
+[32m+[m[32m    color: var(--nova-text);[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m
+[32m+[m[32m        radial-gradient([m
+[32m+[m[32m            circle at top left,[m
+[32m+[m[32m            rgba(243, 227, 165, 0.75),[m
+[32m+[m[32m            transparent 38%[m
+[32m+[m[32m        ),[m
+[32m+[m
+[32m+[m[32m        radial-gradient([m
+[32m+[m[32m            circle at bottom right,[m
+[32m+[m[32m            rgba(110, 31, 50, 0.10),[m
+[32m+[m[32m            transparent 40%[m
+[32m+[m[32m        ),[m
+[32m+[m
+[32m+[m[32m        linear-gradient([m
+[32m+[m[32m            135deg,[m
+[32m+[m[32m            var(--nova-butter-light),[m
+[32m+[m[32m            var(--nova-cream)[m
+[32m+[m[32m        );[m
+[32m+[m
+[32m+[m[32m    transition:[m
+[32m+[m[32m        background 0.8s ease,[m
+[32m+[m[32m        color 0.8s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   ANGRY / OMINOUS MODE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32mbody.anger-mode {[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m
+[32m+[m[32m        radial-gradient([m
+[32m+[m[32m            circle at center,[m
+[32m+[m[32m            rgba(110, 31, 50, 0.65),[m
+[32m+[m[32m            transparent 45%[m
+[32m+[m[32m        ),[m
+[32m+[m
+[32m+[m[32m        #090909;[m
+[32m+[m
+[32m+[m[32m    color: #ffffff;[m
+ }[m
+ [m
+[31m-/* Main app area */[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   MAIN APPLICATION[m
+[32m+[m[32m================================= */[m
+ [m
+ #app {[m
+[32m+[m
+     min-height: 100vh;[m
+[32m+[m
+     position: relative;[m
+ }[m
+ [m
+[31m-/* Every screen is hidden by default */[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   SCREEN SYSTEM[m
+[32m+[m[32m================================= */[m
+ [m
+ .screen {[m
+[32m+[m
+     display: none;[m
+[32m+[m
+     min-height: 100vh;[m
+[31m-    padding: 40px 20px;[m
+[32m+[m
+[32m+[m[32m    width: 100%;[m
+[32m+[m
+[32m+[m[32m    padding: 30px 20px;[m
+[32m+[m
+     text-align: center;[m
+[32m+[m
+     justify-content: center;[m
+     align-items: center;[m
+[32m+[m
+     flex-direction: column;[m
+ }[m
+ [m
+[31m-/* Only the active screen is visible */[m
+ [m
+ .screen.active {[m
+[32m+[m
+     display: flex;[m
+[32m+[m
+[32m+[m[32m    animation:[m
+[32m+[m[32m        screenAppear 0.6s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   SCREEN ENTRANCE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m@keyframes screenAppear {[m
+[32m+[m
+[32m+[m[32m    from {[m
+[32m+[m
+[32m+[m[32m        opacity: 0;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(15px);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    to {[m
+[32m+[m
+[32m+[m[32m        opacity: 1;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(0);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   HEADINGS[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32mh1 {[m
+[32m+[m
+[32m+[m[32m    max-width: 700px;[m
+[32m+[m
+[32m+[m[32m    margin-bottom: 16px;[m
+[32m+[m
+[32m+[m[32m    font-family:[m
+[32m+[m[32m        "Playfair Display",[m
+[32m+[m[32m        serif;[m
+[32m+[m
+[32m+[m[32m    font-size:[m
+[32m+[m[32m        clamp(2.2rem, 6vw, 4.5rem);[m
+[32m+[m
+[32m+[m[32m    line-height: 1.1;[m
+[32m+[m
+[32m+[m[32m    letter-spacing: -1px;[m
+[32m+[m
+[32m+[m[32m    color: var(--nova-burgundy-dark);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   NORMAL TEXT[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32mp {[m
+[32m+[m
+[32m+[m[32m    max-width: 500px;[m
+[32m+[m
+[32m+[m[32m    font-size:[m
+[32m+[m[32m        clamp(1rem, 2vw, 1.2rem);[m
+[32m+[m
+[32m+[m[32m    line-height: 1.6;[m
+[32m+[m
+[32m+[m[32m    color: var(--nova-text);[m
+[32m+[m
+[32m+[m[32m    opacity: 0.8;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   INPUTS[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32minput {[m
+[32m+[m
+[32m+[m[32m    width: min(280px, 85vw);[m
+[32m+[m
+[32m+[m[32m    margin-top: 24px;[m
+[32m+[m
+[32m+[m[32m    padding: 15px 18px;[m
+[32m+[m
+[32m+[m[32m    border:[m
+[32m+[m[32m        1px solid var(--nova-border);[m
+[32m+[m
+[32m+[m[32m    border-radius: 14px;[m
+[32m+[m
+[32m+[m[32m    outline: none;[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m[32m        rgba(255, 253, 245, 0.75);[m
+[32m+[m
+[32m+[m[32m    color:[m
+[32m+[m[32m        var(--nova-text);[m
+[32m+[m
+[32m+[m[32m    font-family:[m
+[32m+[m[32m        "DM Sans",[m
+[32m+[m[32m        sans-serif;[m
+[32m+[m
+[32m+[m[32m    font-size: 1rem;[m
+[32m+[m
+[32m+[m[32m    transition:[m
+[32m+[m
+[32m+[m[32m        border-color 0.25s ease,[m
+[32m+[m
+[32m+[m[32m        box-shadow 0.25s ease,[m
+[32m+[m
+[32m+[m[32m        transform 0.25s ease,[m
+[32m+[m
+[32m+[m[32m        background 0.6s ease,[m
+[32m+[m
+[32m+[m[32m        color 0.6s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32minput:focus {[m
+[32m+[m
+[32m+[m[32m    border-color:[m
+[32m+[m[32m        var(--nova-burgundy);[m
+[32m+[m
+[32m+[m[32m    box-shadow:[m
+[32m+[m
+[32m+[m[32m        0 0 0 4px[m
+[32m+[m[32m        rgba(110, 31, 50, 0.10);[m
+[32m+[m
+[32m+[m[32m    transform:[m
+[32m+[m[32m        translateY(-2px);[m
+ }[m
+ [m
+[31m-/* Birthday day/month inputs */[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   INPUTS IN ANGER MODE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32mbody.anger-mode input {[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m[32m        rgba(0, 0, 0, 0.65);[m
+[32m+[m
+[32m+[m[32m    color: white;[m
+[32m+[m
+[32m+[m[32m    border-color:[m
+[32m+[m[32m        rgba(255, 80, 80, 0.5);[m
+[32m+[m
+[32m+[m[32m    box-shadow:[m
+[32m+[m[32m        0 0 25px[m
+[32m+[m[32m        rgba(255, 0, 0, 0.12);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   BIRTHDAY DAY / MONTH INPUTS[m
+[32m+[m[32m================================= */[m
+ [m
+ .birthday-inputs {[m
+[32m+[m
+     display: flex;[m
+[32m+[m
+     align-items: center;[m
+[31m-    gap: 12px;[m
+[31m-    margin: 20px 0;[m
+[32m+[m[32m    justify-content: center;[m
+[32m+[m
+[32m+[m[32m    gap: 14px;[m
+[32m+[m
+[32m+[m[32m    margin-top: 24px;[m
+ }[m
+ [m
+[32m+[m
+ .birthday-inputs input {[m
+[32m+[m
+     width: 100px;[m
+[32m+[m
+[32m+[m[32m    margin-top: 0;[m
+[32m+[m
+[32m+[m[32m    text-align: center;[m
+ }[m
+ [m
+[31m-/* General inputs */[m
+ [m
+[31m-input {[m
+[31m-    padding: 12px;[m
+[31m-    font-size: 16px;[m
+[31m-    border: 1px solid #ccc;[m
+[31m-    border-radius: 8px;[m
+[32m+[m[32m.birthday-inputs span {[m
+[32m+[m
+[32m+[m[32m    font-family:[m
+[32m+[m[32m        "Playfair Display",[m
+[32m+[m[32m        serif;[m
+[32m+[m
+[32m+[m[32m    font-size: 2rem;[m
+[32m+[m
+[32m+[m[32m    color:[m
+[32m+[m[32m        var(--nova-burgundy);[m
+[32m+[m
+[32m+[m[32m    opacity: 0.7;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   REMOVE NUMBER INPUT ARROWS[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32minput[type="number"]::-webkit-inner-spin-button,[m
+[32m+[m[32minput[type="number"]::-webkit-outer-spin-button {[m
+[32m+[m
+[32m+[m[32m    appearance: none;[m
+[32m+[m
+[32m+[m[32m    margin: 0;[m
+ }[m
+ [m
+[31m-/* General buttons */[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   BUTTONS[m
+[32m+[m[32m================================= */[m
+ [m
+ button {[m
+[31m-    margin-top: 15px;[m
+[31m-    padding: 12px 24px;[m
+[31m-    font-size: 16px;[m
+[32m+[m
+[32m+[m[32m    margin-top: 22px;[m
+[32m+[m
+[32m+[m[32m    padding: 14px 30px;[m
+[32m+[m
+[32m+[m[32m    border: none;[m
+[32m+[m
+[32m+[m[32m    border-radius: 999px;[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m[32m        var(--nova-burgundy);[m
+[32m+[m
+[32m+[m[32m    color:[m
+[32m+[m[32m        var(--nova-cream);[m
+[32m+[m
+[32m+[m[32m    font-family:[m
+[32m+[m[32m        "DM Sans",[m
+[32m+[m[32m        sans-serif;[m
+[32m+[m
+[32m+[m[32m    font-size: 1rem;[m
+[32m+[m
+[32m+[m[32m    font-weight: 600;[m
+[32m+[m
+     cursor: pointer;[m
+[32m+[m
+[32m+[m[32m    box-shadow:[m
+[32m+[m[32m        0 8px 25px[m
+[32m+[m[32m        rgba(66, 21, 34, 0.18);[m
+[32m+[m
+[32m+[m[32m    transition:[m
+[32m+[m
+[32m+[m[32m        transform 0.25s ease,[m
+[32m+[m
+[32m+[m[32m        box-shadow 0.25s ease,[m
+[32m+[m
+[32m+[m[32m        background 0.5s ease,[m
+[32m+[m
+[32m+[m[32m        color 0.5s ease,[m
+[32m+[m
+[32m+[m[32m        letter-spacing 0.25s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mbutton:hover {[m
+[32m+[m
+[32m+[m[32m    transform:[m
+[32m+[m[32m        translateY(-3px);[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m[32m        var(--nova-burgundy-dark);[m
+[32m+[m
+[32m+[m[32m    box-shadow:[m
+[32m+[m[32m        var(--nova-shadow-strong);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mbutton:active {[m
+[32m+[m
+[32m+[m[32m    transform:[m
+[32m+[m[32m        translateY(0) scale(0.97);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   BUTTONS IN ANGER MODE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32mbody.anger-mode button {[m
+[32m+[m
+[32m+[m[32m    background:[m
+[32m+[m[32m        #8f0000;[m
+[32m+[m
+[32m+[m[32m    box-shadow:[m
+[32m+[m[32m        0 0 30px[m
+[32m+[m[32m        rgba(255, 0, 0, 0.3);[m
+ }[m
+ [m
+[31m-/* Messages */[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   MESSAGES[m
+[32m+[m[32m================================= */[m
+ [m
+ .message {[m
+[31m-    min-height: 24px;[m
+[32m+[m
+[32m+[m[32m    min-height: 26px;[m
+[32m+[m
+[32m+[m[32m    margin-top: 14px;[m
+[32m+[m
+[32m+[m[32m    color:[m
+[32m+[m[32m        var(--nova-burgundy);[m
+[32m+[m
+[32m+[m[32m    font-size: 0.95rem;[m
+[32m+[m
+[32m+[m[32m    font-weight: 500;[m
+[32m+[m
+[32m+[m[32m    opacity: 1;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   BUTTON CONTAINERS[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m#ready-buttons,[m
+[32m+[m[32m#chaos-buttons {[m
+[32m+[m
+[32m+[m[32m    display: flex;[m
+[32m+[m
+[32m+[m[32m    justify-content: center;[m
+[32m+[m[32m    align-items: center;[m
+[32m+[m
+[32m+[m[32m    gap: 16px;[m
+[32m+[m
+[32m+[m[32m    margin-top: 15px;[m
+[32m+[m
+[32m+[m[32m    animation:[m
+[32m+[m[32m        buttonReveal 0.45s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m#ready-buttons button,[m
+[32m+[m[32m#chaos-buttons button {[m
+[32m+[m
+[32m+[m[32m    margin-top: 0;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   BUTTON REVEAL ANIMATION[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m@keyframes buttonReveal {[m
+[32m+[m
+[32m+[m[32m    from {[m
+[32m+[m
+[32m+[m[32m        opacity: 0;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(12px)[m
+[32m+[m[32m            scale(0.96);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    to {[m
+[32m+[m
+[32m+[m[32m        opacity: 1;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(0)[m
+[32m+[m[32m            scale(1);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   REASON AREA[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m#reason-area {[m
+[32m+[m
+[32m+[m[32m    display: none;[m
+[32m+[m
+[32m+[m[32m    flex-direction: column;[m
+[32m+[m
+[32m+[m[32m    align-items: center;[m
+[32m+[m
+[32m+[m[32m    animation:[m
+[32m+[m[32m        reasonReveal 0.55s ease;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m#reason-area input {[m
+[32m+[m
+[32m+[m[32m    width:[m
+[32m+[m[32m        min(380px, 85vw);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   REASON AREA ANIMATION[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m@keyframes reasonReveal {[m
+[32m+[m
+[32m+[m[32m    from {[m
+[32m+[m
+[32m+[m[32m        opacity: 0;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(20px);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    to {[m
+[32m+[m
+[32m+[m[32m        opacity: 1;[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            translateY(0);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   TAKE ME INSIDE BUTTON[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m.take-me-inside {[m
+[32m+[m
+[32m+[m[32m    animation:[m
+[32m+[m[32m        buttonTransform 0.6s ease forwards;[m
+[32m+[m
+[32m+[m[32m    padding-left: 45px;[m
+[32m+[m
+[32m+[m[32m    padding-right: 45px;[m
+[32m+[m
+[32m+[m[32m    letter-spacing: 1px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m@keyframes buttonTransform {[m
+[32m+[m
+[32m+[m[32m    0% {[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            scale(0.9);[m
+[32m+[m
+[32m+[m[32m        opacity: 0;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    70% {[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            scale(1.08);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    100% {[m
+[32m+[m
+[32m+[m[32m        transform:[m
+[32m+[m[32m            scale(1);[m
+[32m+[m
+[32m+[m[32m        opacity: 1;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   HOME SCREEN[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m#home-screen h1 {[m
+[32m+[m
+[32m+[m[32m    font-size:[m
+[32m+[m[32m        clamp(3rem, 8vw, 6rem);[m
+[32m+[m
+[32m+[m[32m    color:[m
+[32m+[m[32m        var(--nova-burgundy-dark);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* =================================[m
+[32m+[m[32m   MOBILE[m
+[32m+[m[32m================================= */[m
+[32m+[m
+[32m+[m[32m@media (max-width: 500px) {[m
+[32m+[m
+[32m+[m[32m    .screen {[m
+[32m+[m
+[32m+[m[32m        padding:[m
+[32m+[m[32m            25px 16px;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .birthday-inputs {[m
+[32m+[m
+[32m+[m[32m        gap: 10px;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .birthday-inputs input {[m
+[32m+[m
+[32m+[m[32m        width: 85px;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    button {[m
+[32m+[m
+[32m+[m[32m        width:[m
+[32m+[m[32m            min(280px, 85vw);[m
+[32m+[m[32m    }[m
+[32m+[m
+ }[m
+\ No newline at end of file[m

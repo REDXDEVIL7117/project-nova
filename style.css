@@ -1,74 +1,664 @@
-/* Basic page setup */
+/* =================================
+   PROJECT NOVA - GLOBAL STYLE
+   Theme: Butter Yellow × Burgundy
+================================= */
+
+
+/* =================================
+   GOOGLE FONTS
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =================================
+   NOVA COLOR SYSTEM
+================================= */
+
+:root {
+
+    /* Main palette */
+
+    --nova-butter: #F3E3A5;
+    --nova-butter-light: #FFF8D6;
+
+    --nova-burgundy: #6E1F32;
+    --nova-burgundy-dark: #421522;
+
+    --nova-cream: #FFFDF5;
+
+    --nova-text: #321923;
+    --nova-muted: #765A61;
+
+    /* Glass / borders */
+
+    --nova-glass: rgba(255, 253, 245, 0.68);
+    --nova-glass-strong: rgba(255, 253, 245, 0.88);
+
+    --nova-border: rgba(110, 31, 50, 0.14);
+
+    /* Shadows */
+
+    --nova-shadow:
+        0 10px 30px rgba(66, 21, 34, 0.10);
+
+    --nova-shadow-strong:
+        0 15px 40px rgba(66, 21, 34, 0.18);
+
+}
+
+
+/* =================================
+   RESET
+================================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+
+/* =================================
+   MAIN PAGE
+================================= */
 
 body {
-    margin: 0;
+
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+
+    overflow-x: hidden;
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--nova-text);
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(243, 227, 165, 0.75),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            rgba(110, 31, 50, 0.10),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            var(--nova-butter-light),
+            var(--nova-cream)
+        );
+
+    transition:
+        background 0.8s ease,
+        color 0.8s ease;
 }
 
-/* Main app area */
+
+/* =================================
+   ANGRY / OMINOUS MODE
+================================= */
+
+body.anger-mode {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(110, 31, 50, 0.65),
+            transparent 45%
+        ),
+
+        #090909;
+
+    color: #ffffff;
+}
+
+
+/* =================================
+   MAIN APPLICATION
+================================= */
 
 #app {
+
     min-height: 100vh;
+
     position: relative;
 }
 
-/* Every screen is hidden by default */
+
+/* =================================
+   SCREEN SYSTEM
+================================= */
 
 .screen {
+
     display: none;
+
     min-height: 100vh;
-    padding: 40px 20px;
+
+    width: 100%;
+
+    padding: 30px 20px;
+
     text-align: center;
+
     justify-content: center;
     align-items: center;
+
     flex-direction: column;
 }
 
-/* Only the active screen is visible */
 
 .screen.active {
+
     display: flex;
+
+    animation:
+        screenAppear 0.6s ease;
 }
 
-/* Birthday day/month inputs */
 
-.birthday-inputs {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 20px 0;
+/* =================================
+   SCREEN ENTRANCE
+================================= */
+
+@keyframes screenAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
 }
 
-.birthday-inputs input {
-    width: 100px;
+
+/* =================================
+   HEADINGS
+================================= */
+
+h1 {
+
+    max-width: 700px;
+
+    margin-bottom: 16px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(2.2rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    color: var(--nova-burgundy-dark);
 }
 
-/* General inputs */
+
+/* =================================
+   NORMAL TEXT
+================================= */
+
+p {
+
+    max-width: 500px;
+
+    font-size:
+        clamp(1rem, 2vw, 1.2rem);
+
+    line-height: 1.6;
+
+    color: var(--nova-text);
+
+    opacity: 0.8;
+}
+
+
+/* =================================
+   INPUTS
+================================= */
 
 input {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+
+    width: min(280px, 85vw);
+
+    margin-top: 24px;
+
+    padding: 15px 18px;
+
+    border:
+        1px solid var(--nova-border);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background:
+        rgba(255, 253, 245, 0.75);
+
+    color:
+        var(--nova-text);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 1rem;
+
+    transition:
+
+        border-color 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        transform 0.25s ease,
+
+        background 0.6s ease,
+
+        color 0.6s ease;
 }
 
-/* General buttons */
+
+input:focus {
+
+    border-color:
+        var(--nova-burgundy);
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(110, 31, 50, 0.10);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =================================
+   INPUTS IN ANGER MODE
+================================= */
+
+body.anger-mode input {
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    border-color:
+        rgba(255, 80, 80, 0.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 0, 0, 0.12);
+}
+
+
+/* =================================
+   BIRTHDAY DAY / MONTH INPUTS
+================================= */
+
+.birthday-inputs {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 24px;
+}
+
+
+.birthday-inputs input {
+
+    width: 100px;
+
+    margin-top: 0;
+
+    text-align: center;
+}
+
+
+.birthday-inputs span {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 2rem;
+
+    color:
+        var(--nova-burgundy);
+
+    opacity: 0.7;
+}
+
+
+/* =================================
+   REMOVE NUMBER INPUT ARROWS
+================================= */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+
+    appearance: none;
+
+    margin: 0;
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
 
 button {
-    margin-top: 15px;
-    padding: 12px 24px;
-    font-size: 16px;
+
+    margin-top: 22px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background:
+        var(--nova-burgundy);
+
+    color:
+        var(--nova-cream);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
     cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(66, 21, 34, 0.18);
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        background 0.5s ease,
+
+        color 0.5s ease,
+
+        letter-spacing 0.25s ease;
 }
 
-/* Messages */
+
+button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--nova-burgundy-dark);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+
+button:active {
+
+    transform:
+        translateY(0) scale(0.97);
+}
+
+
+/* =================================
+   BUTTONS IN ANGER MODE
+================================= */
+
+body.anger-mode button {
+
+    background:
+        #8f0000;
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 0, 0, 0.3);
+}
+
+
+/* =================================
+   MESSAGES
+================================= */
 
 .message {
-    min-height: 24px;
+
+    min-height: 26px;
+
+    margin-top: 14px;
+
+    color:
+        var(--nova-burgundy);
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+
+    opacity: 1;
+}
+
+
+/* =================================
+   BUTTON CONTAINERS
+================================= */
+
+#ready-buttons,
+#chaos-buttons {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 16px;
+
+    margin-top: 15px;
+
+    animation:
+        buttonReveal 0.45s ease;
+}
+
+
+#ready-buttons button,
+#chaos-buttons button {
+
+    margin-top: 0;
+}
+
+
+/* =================================
+   BUTTON REVEAL ANIMATION
+================================= */
+
+@keyframes buttonReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.96);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =================================
+   REASON AREA
+================================= */
+
+#reason-area {
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    animation:
+        reasonReveal 0.55s ease;
+}
+
+
+#reason-area input {
+
+    width:
+        min(380px, 85vw);
+}
+
+
+/* =================================
+   REASON AREA ANIMATION
+================================= */
+
+@keyframes reasonReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =================================
+   TAKE ME INSIDE BUTTON
+================================= */
+
+.take-me-inside {
+
+    animation:
+        buttonTransform 0.6s ease forwards;
+
+    padding-left: 45px;
+
+    padding-right: 45px;
+
+    letter-spacing: 1px;
+}
+
+
+@keyframes buttonTransform {
+
+    0% {
+
+        transform:
+            scale(0.9);
+
+        opacity: 0;
+    }
+
+    70% {
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =================================
+   HOME SCREEN
+================================= */
+
+#home-screen h1 {
+
+    font-size:
+        clamp(3rem, 8vw, 6rem);
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+
+    .screen {
+
+        padding:
+            25px 16px;
+    }
+
+    .birthday-inputs {
+
+        gap: 10px;
+    }
+
+    .birthday-inputs input {
+
+        width: 85px;
+    }
+
+    button {
+
+        width:
+            min(280px, 85vw);
+    }
+
 }

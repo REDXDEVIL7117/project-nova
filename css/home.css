@@ -1,0 +1,223 @@
+/* ================================
+   PROJECT NOVA - HOME
+   ================================ */
+
+
+.home-screen {
+    padding: 60px 20px;
+}
+
+
+.home-intro {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+
+.home-label {
+    margin-bottom: 14px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    opacity: 0.55;
+}
+
+
+.home-description {
+    margin: 0 auto;
+}
+
+
+/* ================================
+   NAVIGATION GRID
+   ================================ */
+
+.home-grid {
+    width: min(1000px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.nova-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    text-align: left;
+    text-decoration: none;
+
+    color: inherit;
+
+    border: 1px solid rgba(70, 40, 60, 0.12);
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.45)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(43, 27, 38, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.nova-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    top: -70px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(199, 107, 156, 0.18),
+            transparent 70%
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.nova-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(199, 107, 156, 0.35);
+
+    box-shadow:
+        0 22px 50px rgba(43, 27, 38, 0.14);
+}
+
+
+.nova-card:hover::before {
+    transform:
+        scale(1.5);
+}
+
+
+/* Card number */
+
+.card-number {
+    position: absolute;
+
+    top: 24px;
+    left: 28px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    opacity: 0.4;
+}
+
+
+/* Card content */
+
+.nova-card h2 {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 2rem;
+}
+
+
+.nova-card p {
+    position: relative;
+
+    font-size: 0.95rem;
+
+    opacity: 0.65;
+}
+
+
+/* ================================
+   LOCKED MEMORIES CARD
+   ================================ */
+
+.locked-card {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+.locked-text {
+    position: absolute;
+
+    top: 24px;
+    right: 28px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    background:
+        rgba(43, 27, 38, 0.08);
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 650px) {
+
+    .home-screen {
+        padding:
+            50px 16px;
+    }
+
+
+    .home-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .nova-card {
+        min-height: 180px;
+    }
+
+}
