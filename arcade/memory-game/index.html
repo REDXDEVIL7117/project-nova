@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Memory Game 🧠</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="game-header">
+
+        <a
+            href="../../pages/arcade.html"
+            class="back-button"
+        >
+            ← Arcade
+        </a>
+
+        <div class="header-content">
+
+            <span class="game-label">
+                NOVA ARCADE • GAME 02
+            </span>
+
+            <h1>
+                Memory Game 🧠
+            </h1>
+
+            <p>
+                Remember the sequence.
+                <br>
+                How far can your brain survive?
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="game-container">
+
+        <section class="stats">
+
+            <div class="stat-box">
+                <span>LEVEL</span>
+                <strong id="level">1</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>BEST</span>
+                <strong id="best-score">0</strong>
+            </div>
+
+        </section>
+
+
+        <section class="game-display">
+
+            <span class="display-label">
+                NOVA MEMORY SYSTEM
+            </span>
+
+            <h2 id="game-title">
+                Ready?
+            </h2>
+
+            <p id="game-message">
+                Press START when you're ready.
+            </p>
+
+        </section>
+
+
+        <section class="sequence-display">
+
+            <div
+                id="sequence"
+                class="sequence"
+            ></div>
+
+        </section>
+
+
+        <section
+            id="symbol-grid"
+            class="symbol-grid"
+        >
+
+            <button
+                class="symbol-button"
+                data-symbol="💅"
+                type="button"
+            >
+                💅
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="⭐"
+                type="button"
+            >
+                ⭐
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="❤️"
+                type="button"
+            >
+                ❤️
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="🍬"
+                type="button"
+            >
+                🍬
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="👑"
+                type="button"
+            >
+                👑
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="✨"
+                type="button"
+            >
+                ✨
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="🌙"
+                type="button"
+            >
+                🌙
+            </button>
+
+            <button
+                class="symbol-button"
+                data-symbol="🔥"
+                type="button"
+            >
+                🔥
+            </button>
+
+        </section>
+
+
+        <button
+            id="start-button"
+            class="start-button"
+            type="button"
+        >
+            START GAME
+        </button>
+
+
+        <button
+            id="reset-button"
+            class="reset-button"
+            type="button"
+        >
+            Reset
+        </button>
+
+
+        <footer>
+            Nova Arcade • Memory loading... hopefully. 🧠
+        </footer>
+
+    </main>
+
+
+    <div
+        id="result-overlay"
+        class="result-overlay"
+    >
+
+        <div class="result-card">
+
+            <span class="result-icon">
+                💀
+            </span>
+
+            <h2 id="result-title">
+                Memory.exe stopped working
+            </h2>
+
+            <p id="result-message">
+                Your brain has officially requested a reboot.
+            </p>
+
+            <div class="result-stats">
+
+                <div>
+                    <span>SCORE</span>
+                    <strong id="final-score">0</strong>
+                </div>
+
+                <div>
+                    <span>LEVEL</span>
+                    <strong id="final-level">1</strong>
+                </div>
+
+            </div>
+
+            <button
+                id="play-again-button"
+                class="play-again-button"
+                type="button"
+            >
+                PLAY AGAIN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

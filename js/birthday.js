@@ -99,6 +99,174 @@ const memoryCards =
 
 
 // =================================
+// SECRET FILE ELEMENTS
+// =================================
+
+const secretFileArea =
+    document.getElementById("secret-file-area");
+
+const secretFileStartBtn =
+    document.getElementById("secret-file-start-btn");
+
+const secretFileBackBtn =
+    document.getElementById("secret-file-back-btn");
+
+const secretUnlockedArea =
+    document.getElementById("secret-unlocked-area");
+
+const secretUnlockedBackBtn =
+    document.getElementById("secret-unlocked-back-btn");
+
+const divaModeArea =
+    document.getElementById("diva-mode-area");
+
+const divaModeBtn =
+    document.getElementById("diva-mode-btn");
+
+const divaModeBackBtn =
+    document.getElementById("diva-mode-back-btn");
+
+const divaModeGenerateBtn =
+    document.getElementById("diva-mode-generate-btn");
+
+const divaModeMessage =
+    document.getElementById("diva-mode-message");
+
+
+// =================================
+// DIVA CHALLENGE ELEMENTS
+// =================================
+
+const divaCheckArea =
+    document.getElementById("diva-check-area");
+
+const divaCheckOptions =
+    document.getElementById("diva-check-options");
+
+const divaCheckFeedback =
+    document.getElementById("diva-check-feedback");
+
+
+const divaChaseArea =
+    document.getElementById("diva-chase-area");
+
+const divaChaseGame =
+    document.getElementById("diva-chase-game");
+
+const divaChaseTarget =
+    document.getElementById("diva-chase-target");
+
+const divaChaseCounter =
+    document.getElementById("diva-chase-counter");
+
+const divaChaseFeedback =
+    document.getElementById("diva-chase-feedback");
+
+
+const divaMemoryArea =
+    document.getElementById("diva-memory-area");
+
+const divaMemoryInstruction =
+    document.getElementById("diva-memory-instruction");
+
+const divaMemoryDisplay =
+    document.getElementById("diva-memory-display");
+
+const divaMemoryOptions =
+    document.getElementById("diva-memory-options");
+
+const divaMemoryFeedback =
+    document.getElementById("diva-memory-feedback");
+
+
+const divaPuzzleArea =
+    document.getElementById("diva-puzzle-area");
+
+const divaPuzzleQuestion =
+    document.getElementById("diva-puzzle-question");
+
+const divaPuzzleOptions =
+    document.getElementById("diva-puzzle-options");
+
+const divaPuzzleFeedback =
+    document.getElementById("diva-puzzle-feedback");
+
+
+const divaFinalArea =
+    document.getElementById("diva-final-area");
+
+const divaFinalInstruction =
+    document.getElementById("diva-final-instruction");
+
+const divaFinalContent =
+    document.getElementById("diva-final-content");
+
+const divaFinalFeedback =
+    document.getElementById("diva-final-feedback");
+
+
+// =================================
+// ACTUAL SECRET ELEMENTS
+// =================================
+
+const actualSecretTrigger =
+    document.getElementById("actual-secret-trigger");
+
+const actualSecretLockArea =
+    document.getElementById("actual-secret-lock-area");
+
+const actualSecretArea =
+    document.getElementById("actual-secret-area");
+
+const secretPasscodeDisplay =
+    document.getElementById("secret-passcode-display");
+
+const secretKeypad =
+    document.getElementById("secret-keypad");
+
+const secretPasscodeFeedback =
+    document.getElementById("secret-passcode-feedback");
+
+const actualSecretBackBtn =
+    document.getElementById("actual-secret-back-btn");
+
+const actualSecretBackVaultBtn =
+    document.getElementById(
+        "actual-secret-back-vault-btn"
+    );
+
+
+// =================================
+// ACTUAL SECRET SETTINGS
+// =================================
+
+const actualSecretPassword =
+    "7117";
+
+let enteredSecretPassword =
+    "";
+
+
+// =================================
+// DIVA LOCK STATUS
+// =================================
+
+const divaLockStatuses = [
+
+    document.getElementById("lock-1-status"),
+
+    document.getElementById("lock-2-status"),
+
+    document.getElementById("lock-3-status"),
+
+    document.getElementById("lock-4-status"),
+
+    document.getElementById("lock-5-status")
+
+];
+
+
+// =================================
 // SCREEN AREAS
 // =================================
 
@@ -179,6 +347,15 @@ let catches = 0;
 
 const requiredCatches = 5;
 
+let challengeActive = false;
+
+
+// =================================
+// SPECIAL SCAN SETTINGS
+// =================================
+
+let scanTimers = [];
+
 
 // =================================
 // QUIZ SETTINGS
@@ -193,6 +370,47 @@ let currentQuiz = "review";
 let quizScoreCount = 0;
 
 let questionChanging = false;
+
+
+// =================================
+// DIVA QUEST SETTINGS
+// =================================
+
+let divaLock = 0;
+
+let divaChaseCatches = 0;
+
+const requiredDivaChaseCatches = 3;
+
+let divaChaseActive = false;
+
+let divaMemoryRound = 0;
+
+let divaMemorySequence = [];
+
+let divaMemoryUserSequence = [];
+
+let divaMemoryWaiting = false;
+
+let divaPuzzleIndex = 0;
+
+let divaFinalSequence = [];
+
+let divaFinalSelected = [];
+
+
+// Symbols used by the memory challenge
+
+const divaSymbols = [
+
+    "💅",
+    "⭐",
+    "❤️",
+    "🍬",
+    "👑",
+    "✨"
+
+];
 
 
 // =================================
@@ -397,7 +615,13 @@ problemBtn.addEventListener("click", function () {
 
 challengeStartBtn.addEventListener("click", function () {
 
+    if (challengeActive) {
+        return;
+    }
+
     catches = 0;
+
+    challengeActive = true;
 
     challengeCounter.textContent =
         "Catches: 0 / " +
@@ -407,8 +631,7 @@ challengeStartBtn.addEventListener("click", function () {
 
     challengeArea.classList.add("active");
 
-    // Wait until the game area is visible
-    // before calculating its size
+
     setTimeout(function () {
 
         moveCake();
@@ -467,8 +690,11 @@ function moveCake() {
 
 catchBtn.addEventListener("click", function () {
 
-    catches++;
+    if (!challengeActive) {
+        return;
+    }
 
+    catches++;
 
     challengeCounter.textContent =
         "Catches: " +
@@ -478,6 +704,8 @@ catchBtn.addEventListener("click", function () {
 
 
     if (catches >= requiredCatches) {
+
+        challengeActive = false;
 
         challengeArea.classList.remove("active");
 
@@ -561,16 +789,1527 @@ vaultCard2.addEventListener("click", function () {
 
 // =================================
 // VAULT CARD 3
+// SECRET FILE
 // =================================
 
 vaultCard3.addEventListener("click", function () {
 
+    if (
+        localStorage.getItem("novaDivaUnlocked")
+        === "true"
+    ) {
+
+        birthdayVaultArea.classList.remove("active");
+
+        secretUnlockedArea.classList.add("active");
+
+        return;
+
+    }
+
+
+    birthdayVaultArea.classList.remove("active");
+
+    secretFileArea.classList.add("active");
+
+});
+
+
+// =================================
+// UPDATE DIVA LOCK DISPLAY
+// =================================
+
+function updateDivaLockDisplay() {
+
+    divaLockStatuses.forEach(
+        function (status, index) {
+
+            if (index < divaLock) {
+
+                status.textContent = "💅";
+
+                status.classList.add("unlocked");
+
+            } else {
+
+                status.textContent = "🔒";
+
+                status.classList.remove("unlocked");
+
+            }
+
+        }
+    );
+
+}
+
+
+// =================================
+// START DIVA QUEST
+// =================================
+
+secretFileStartBtn.addEventListener(
+    "click",
+    function () {
+
+        divaLock = 0;
+
+        updateDivaLockDisplay();
+
+        secretFileArea.classList.remove("active");
+
+        divaCheckArea.classList.add("active");
+
+        divaCheckFeedback.textContent = "";
+
+    }
+);
+
+
+// =================================
+// SECRET FILE → VAULT
+// =================================
+
+secretFileBackBtn.addEventListener(
+    "click",
+    function () {
+
+        secretFileArea.classList.remove("active");
+
+        birthdayVaultArea.classList.add("active");
+
+    }
+);
+
+
+// =================================
+// DIVA CHECK
+// LEVEL 01
+// =================================
+
+divaCheckOptions
+    .querySelectorAll("button")
+    .forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const choice =
+                        button.dataset.divaChoice;
+
+
+                    if (choice === "yes") {
+
+                        button.classList.add("correct");
+
+                        divaCheckFeedback.textContent =
+                            "Correct. Obviously. 💅";
+
+                        divaLock = 1;
+
+                        updateDivaLockDisplay();
+
+
+                        setTimeout(
+                            function () {
+
+                                divaCheckArea.classList.remove(
+                                    "active"
+                                );
+
+                                startDivaChase();
+
+                            },
+                            700
+                        );
+
+                    } else {
+
+                        button.classList.add("wrong");
+
+                        divaCheckFeedback.textContent =
+                            "Incorrect. Please reconsider your Diva credentials. 💀";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+// =================================
+// START DIVA CHASE
+// LEVEL 02
+// =================================
+
+function startDivaChase() {
+
+    divaChaseCatches = 0;
+
+    divaChaseActive = true;
+
+    divaChaseCounter.textContent =
+        "Catches: 0 / " +
+        requiredDivaChaseCatches;
+
+    divaChaseFeedback.textContent = "";
+
+    divaChaseArea.classList.add("active");
+
+    setTimeout(
+        function () {
+
+            moveDivaEmoji();
+
+        },
+        100
+    );
+
+}
+
+
+// =================================
+// MOVE DIVA EMOJI
+// =================================
+
+function moveDivaEmoji() {
+
+    const maxX =
+        Math.max(
+            0,
+            divaChaseGame.clientWidth -
+            divaChaseTarget.offsetWidth
+        );
+
+    const maxY =
+        Math.max(
+            0,
+            divaChaseGame.clientHeight -
+            divaChaseTarget.offsetHeight
+        );
+
+
+    const randomX =
+        Math.floor(
+            Math.random() *
+            (maxX + 1)
+        );
+
+    const randomY =
+        Math.floor(
+            Math.random() *
+            (maxY + 1)
+        );
+
+
+    divaChaseTarget.style.left =
+        randomX + "px";
+
+    divaChaseTarget.style.top =
+        randomY + "px";
+
+}
+
+
+// =================================
+// DIVA EMOJI CHASE CLICK
+// =================================
+
+divaChaseTarget.addEventListener(
+    "click",
+    function () {
+
+        if (!divaChaseActive) {
+            return;
+        }
+
+        divaChaseCatches++;
+
+        divaChaseCounter.textContent =
+            "Catches: " +
+            divaChaseCatches +
+            " / " +
+            requiredDivaChaseCatches;
+
+
+        if (
+            divaChaseCatches >=
+            requiredDivaChaseCatches
+        ) {
+
+            divaChaseActive = false;
+
+            divaLock = 2;
+
+            updateDivaLockDisplay();
+
+            divaChaseFeedback.textContent =
+                "Three catches. Diva reflexes confirmed. 💅";
+
+
+            setTimeout(
+                function () {
+
+                    divaChaseArea.classList.remove(
+                        "active"
+                    );
+
+                    startDivaMemory();
+
+                },
+                800
+            );
+
+        } else {
+
+            moveDivaEmoji();
+
+        }
+
+    }
+);
+
+
+// =================================
+// START DIVA MEMORY
+// LEVEL 03
+// =================================
+
+function startDivaMemory() {
+
+    divaMemoryRound = 0;
+
+    divaMemoryArea.classList.add("active");
+
+    startNextMemoryRound();
+
+}
+
+
+// =================================
+// CREATE RANDOM MEMORY SEQUENCE
+// =================================
+
+function createMemorySequence(length) {
+
+    const sequence = [];
+
+    for (
+        let i = 0;
+        i < length;
+        i++
+    ) {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                divaSymbols.length
+            );
+
+        sequence.push(
+            divaSymbols[randomIndex]
+        );
+
+    }
+
+    return sequence;
+
+}
+
+
+// =================================
+// START NEXT MEMORY ROUND
+// =================================
+
+function startNextMemoryRound() {
+
+    divaMemoryWaiting = true;
+
+    divaMemoryUserSequence = [];
+
+    divaMemoryOptions.innerHTML = "";
+
+    const sequenceLength =
+        divaMemoryRound + 2;
+
+    divaMemorySequence =
+        createMemorySequence(
+            sequenceLength
+        );
+
+
+    divaMemoryInstruction.textContent =
+        "Round " +
+        (divaMemoryRound + 1) +
+        " / 3 — memorize this sequence.";
+
+
+    divaMemoryDisplay.textContent =
+        divaMemorySequence.join(" ");
+
+
+    setTimeout(
+        function () {
+
+            divaMemoryDisplay.textContent =
+                "Your turn. 💅";
+
+            divaMemoryInstruction.textContent =
+                "Click the symbols in the exact order.";
+
+
+            createMemoryButtons();
+
+            divaMemoryWaiting = false;
+
+        },
+        1800
+    );
+
+}
+
+
+// =================================
+// CREATE MEMORY BUTTONS
+// =================================
+
+function createMemoryButtons() {
+
+    divaMemoryOptions.innerHTML = "";
+
+
+    divaSymbols.forEach(
+        function (symbol) {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.textContent = symbol;
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    if (divaMemoryWaiting) {
+                        return;
+                    }
+
+
+                    const expectedSymbol =
+                        divaMemorySequence[
+                            divaMemoryUserSequence.length
+                        ];
+
+
+                    if (
+                        symbol ===
+                        expectedSymbol
+                    ) {
+
+                        button.classList.add(
+                            "correct"
+                        );
+
+                        divaMemoryUserSequence.push(
+                            symbol
+                        );
+
+
+                        if (
+                            divaMemoryUserSequence.length ===
+                            divaMemorySequence.length
+                        ) {
+
+                            divaMemoryWaiting = true;
+
+                            divaMemoryFeedback.textContent =
+                                "Perfect sequence. 💅";
+
+
+                            divaMemoryRound++;
+
+
+                            if (
+                                divaMemoryRound >= 3
+                            ) {
+
+                                divaLock = 3;
+
+                                updateDivaLockDisplay();
+
+
+                                setTimeout(
+                                    function () {
+
+                                        divaMemoryArea.classList.remove(
+                                            "active"
+                                        );
+
+                                        startDivaPuzzle();
+
+                                    },
+                                    800
+                                );
+
+                            } else {
+
+                                setTimeout(
+                                    function () {
+
+                                        divaMemoryFeedback.textContent =
+                                            "";
+
+                                        startNextMemoryRound();
+
+                                    },
+                                    800
+                                );
+
+                            }
+
+                        }
+
+                    } else {
+
+                        divaMemoryWaiting = true;
+
+                        divaMemoryFeedback.textContent =
+                            "Wrong order. Try the round again. 🧠";
+
+
+                        setTimeout(
+                            function () {
+
+                                divaMemoryFeedback.textContent =
+                                    "";
+
+                                startNextMemoryRound();
+
+                            },
+                            900
+                        );
+
+                    }
+
+                }
+            );
+
+
+            divaMemoryOptions.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+// =================================
+// START DIVA PUZZLE
+// LEVEL 04
+// =================================
+
+function startDivaPuzzle() {
+
+    divaPuzzleIndex = 0;
+
+    divaPuzzleArea.classList.add("active");
+
+    showDivaPuzzle();
+
+}
+
+
+// =================================
+// DIVA PUZZLES
+// =================================
+
+const divaPuzzles = [
+
+    {
+        question:
+            "💅 ⭐ 💅 ⭐ ?",
+
+        options: [
+            "💅",
+            "⭐",
+            "❤️",
+            "👑"
+        ],
+
+        correct:
+            "💅"
+    },
+
+
+    {
+        question:
+            "💅 ❤️ ⭐ 💅 ❤️ ?",
+
+        options: [
+            "💅",
+            "❤️",
+            "⭐",
+            "✨"
+        ],
+
+        correct:
+            "⭐"
+    },
+
+
+    {
+        question:
+            "Which symbol breaks the pattern? 💅 ⭐ ❤️ 💅 ⭐ 👑",
+
+        options: [
+            "💅",
+            "⭐",
+            "❤️",
+            "👑"
+        ],
+
+        correct:
+            "👑"
+    }
+
+];
+
+
+// =================================
+// SHOW DIVA PUZZLE
+// =================================
+
+function showDivaPuzzle() {
+
+    const puzzle =
+        divaPuzzles[divaPuzzleIndex];
+
+
+    divaPuzzleQuestion.textContent =
+        puzzle.question;
+
+
+    divaPuzzleOptions.innerHTML = "";
+
+    divaPuzzleFeedback.textContent = "";
+
+
+    puzzle.options.forEach(
+        function (option) {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.textContent =
+                option;
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    if (
+                        option ===
+                        puzzle.correct
+                    ) {
+
+                        button.classList.add(
+                            "correct"
+                        );
+
+                        divaPuzzleFeedback.textContent =
+                            "Correct. Brain cells successfully slayed. 🧠💅";
+
+
+                        divaPuzzleIndex++;
+
+
+                        if (
+                            divaPuzzleIndex >=
+                            divaPuzzles.length
+                        ) {
+
+                            divaLock = 4;
+
+                            updateDivaLockDisplay();
+
+
+                            setTimeout(
+                                function () {
+
+                                    divaPuzzleArea.classList.remove(
+                                        "active"
+                                    );
+
+                                    startDivaFinal();
+
+                                },
+                                800
+                            );
+
+                        } else {
+
+                            setTimeout(
+                                function () {
+
+                                    showDivaPuzzle();
+
+                                },
+                                800
+                            );
+
+                        }
+
+                    } else {
+
+                        button.classList.add(
+                            "wrong"
+                        );
+
+                        divaPuzzleFeedback.textContent =
+                            "Nope. The Diva database rejects that answer. 💀";
+
+                    }
+
+                }
+            );
+
+
+            divaPuzzleOptions.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+// =================================
+// START FINAL DIVA LOCK
+// LEVEL 05
+// =================================
+
+function startDivaFinal() {
+
+    divaFinalSequence =
+        createMemorySequence(3);
+
+    divaFinalSelected = [];
+
+    divaFinalInstruction.textContent =
+        "Memorize the secret sequence.";
+
+    divaFinalFeedback.textContent = "";
+
+    divaFinalArea.classList.add("active");
+
+
+    divaFinalContent.innerHTML =
+
+        '<div class="diva-final-sequence">' +
+        divaFinalSequence.join(" ") +
+        "</div>";
+
+
+    setTimeout(
+        function () {
+
+            showFinalSequenceChoices();
+
+        },
+        2000
+    );
+
+}
+
+
+// =================================
+// FINAL SEQUENCE CHOICES
+// =================================
+
+function showFinalSequenceChoices() {
+
+    divaFinalInstruction.textContent =
+        "Select the symbols in the exact order.";
+
+
+    divaFinalContent.innerHTML = "";
+
+
+    const sequenceDisplay =
+        document.createElement("div");
+
+    sequenceDisplay.className =
+        "diva-final-sequence";
+
+    sequenceDisplay.textContent =
+        divaFinalSelected.length > 0
+            ? divaFinalSelected.join(" ")
+            : "Choose the sequence";
+
+
+    divaFinalContent.appendChild(
+        sequenceDisplay
+    );
+
+
+    const choices =
+        document.createElement("div");
+
+    choices.className =
+        "diva-choice-grid";
+
+
+    divaSymbols.forEach(
+        function (symbol) {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.textContent =
+                symbol;
+
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const expected =
+                        divaFinalSequence[
+                            divaFinalSelected.length
+                        ];
+
+
+                    if (
+                        symbol ===
+                        expected
+                    ) {
+
+                        divaFinalSelected.push(
+                            symbol
+                        );
+
+                        showFinalSequenceChoices();
+
+
+                        if (
+                            divaFinalSelected.length ===
+                            divaFinalSequence.length
+                        ) {
+
+                            setTimeout(
+                                function () {
+
+                                    showFinalSlayButton();
+
+                                },
+                                350
+                            );
+
+                        }
+
+                    } else {
+
+                        divaFinalSelected = [];
+
+                        divaFinalFeedback.textContent =
+                            "Wrong sequence. Final lock reset. 👑";
+
+
+                        showFinalSequenceChoices();
+
+                    }
+
+                }
+            );
+
+
+            choices.appendChild(
+                button
+            );
+
+        }
+    );
+
+
+    divaFinalContent.appendChild(
+        choices
+    );
+
+}
+
+
+// =================================
+// FINAL SLAY BUTTON
+// =================================
+
+function showFinalSlayButton() {
+
+    divaFinalInstruction.textContent =
+        "Sequence accepted. One thing remains.";
+
+
+    divaFinalFeedback.textContent =
+        "";
+
+
+    const slayButton =
+        document.createElement("button");
+
+    slayButton.type = "button";
+
+    slayButton.className =
+        "diva-final-slay";
+
+    slayButton.textContent =
+        "SLAY IT 💅";
+
+
+    slayButton.addEventListener(
+        "click",
+        function () {
+
+            divaLock = 5;
+
+            updateDivaLockDisplay();
+
+            localStorage.setItem(
+                "novaDivaUnlocked",
+                "true"
+            );
+
+
+            divaFinalFeedback.textContent =
+                "FINAL LOCK DESTROYED. 👑💅";
+
+
+            setTimeout(
+                function () {
+
+                    divaFinalArea.classList.remove(
+                        "active"
+                    );
+
+                    secretUnlockedArea.classList.add(
+                        "active"
+                    );
+
+                    updateVaultCard();
+
+                },
+                900
+            );
+
+        }
+    );
+
+
+    divaFinalContent.appendChild(
+        slayButton
+    );
+
+}
+
+
+// =================================
+// UPDATE VAULT CARD
+// =================================
+
+function updateVaultCard() {
+
+    vaultCard3.classList.remove(
+        "vault-card-locked"
+    );
+
+    vaultCard3.classList.add(
+        "vault-card-unlocked"
+    );
+
+
+    vaultCard3.querySelector(
+        ".vault-icon"
+    ).textContent =
+        "💅";
+
+
+    vaultCard3.querySelector(
+        ".vault-card-title"
+    ).textContent =
+        "Secret File";
+
+
     vaultCard3.querySelector(
         ".vault-card-text"
     ).textContent =
-        "Still locked.";
+        "Unlocked. 💅";
 
-});
+}
+
+
+// =================================
+// SECRET REWARD → DIVA MODE
+// =================================
+
+divaModeBtn.addEventListener(
+    "click",
+    function () {
+
+        secretUnlockedArea.classList.remove(
+            "active"
+        );
+
+        divaModeArea.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+// =================================
+// DIVA MODE STATUS MESSAGES
+// =================================
+
+const divaModeMessages = [
+
+    "Diva energy: 100%. 💅",
+
+    "Slay levels currently exceeding safe limits. 👑",
+
+    "Nailcare emoji detected. Obviously. 💅",
+
+    "Nova has officially approved this Diva behavior.",
+
+    "Current status: Too fabulous for this database. 💅",
+
+    "Diva.exe is operating normally.",
+
+    "Warning: Excessive slay detected. 💀💅",
+
+    "Project Nova reports: Diva confirmed.",
+
+    "Diva protocol remains undefeated. 👑",
+
+    "System check complete: still serving. 💅"
+
+];
+
+
+// =================================
+// GENERATE DIVA STATUS
+// =================================
+
+divaModeGenerateBtn.addEventListener(
+    "click",
+    function () {
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                divaModeMessages.length
+            );
+
+
+        divaModeMessage.textContent =
+            divaModeMessages[randomIndex];
+
+    }
+);
+
+
+// =================================
+// DIVA MODE → SECRET FILE
+// =================================
+
+divaModeBackBtn.addEventListener(
+    "click",
+    function () {
+
+        divaModeArea.classList.remove(
+            "active"
+        );
+
+        secretUnlockedArea.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+// =================================
+// SECRET REWARD → VAULT
+// =================================
+
+secretUnlockedBackBtn.addEventListener(
+    "click",
+    function () {
+
+        secretUnlockedArea.classList.remove(
+            "active"
+        );
+
+        birthdayVaultArea.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+// =================================
+// ACTUAL SECRET → PASSWORD SCREEN
+// =================================
+
+if (actualSecretTrigger) {
+
+    actualSecretTrigger.addEventListener(
+        "click",
+        function () {
+
+            enteredSecretPassword = "";
+
+            updateSecretPasscodeDisplay();
+
+            secretPasscodeFeedback.textContent =
+                "";
+
+            divaModeArea.classList.remove(
+                "active"
+            );
+
+            actualSecretLockArea.classList.add(
+                "active"
+            );
+
+        }
+    );
+
+}
+
+
+// =================================
+// UPDATE SECRET PASSWORD DISPLAY
+// =================================
+
+function updateSecretPasscodeDisplay() {
+
+    if (!secretPasscodeDisplay) {
+        return;
+    }
+
+
+    let display = "";
+
+
+    for (
+        let i = 0;
+        i < 4;
+        i++
+    ) {
+
+        if (
+            i <
+            enteredSecretPassword.length
+        ) {
+
+            display += "● ";
+
+        } else {
+
+            display += "• ";
+
+        }
+
+    }
+
+
+    secretPasscodeDisplay.textContent =
+        display.trim();
+
+}
+
+
+// =================================
+// SECRET PASSWORD KEYPAD
+// =================================
+
+if (secretKeypad) {
+
+    secretKeypad.addEventListener(
+        "click",
+        function (event) {
+
+            const button =
+                event.target.closest("button");
+
+
+            if (!button) {
+                return;
+            }
+
+
+            const digit =
+                button.dataset.digit;
+
+            const action =
+                button.dataset.action;
+
+
+            // Number button
+
+            if (
+                digit !==
+                undefined
+            ) {
+
+                if (
+                    enteredSecretPassword.length >=
+                    4
+                ) {
+
+                    return;
+
+                }
+
+
+                enteredSecretPassword +=
+                    digit;
+
+
+                updateSecretPasscodeDisplay();
+
+                secretPasscodeFeedback.textContent =
+                    "";
+
+                return;
+
+            }
+
+
+            // Clear button
+
+            if (
+                action ===
+                "clear"
+            ) {
+
+                enteredSecretPassword =
+                    "";
+
+                updateSecretPasscodeDisplay();
+
+                secretPasscodeFeedback.textContent =
+                    "";
+
+                return;
+
+            }
+
+
+            // Enter button
+
+            if (
+                action ===
+                "enter"
+            ) {
+
+                checkActualSecretPassword();
+
+            }
+
+        }
+    );
+
+}
+
+
+// =================================
+// CHECK ACTUAL SECRET PASSWORD
+// =================================
+
+function checkActualSecretPassword() {
+
+    if (
+        enteredSecretPassword ===
+        actualSecretPassword
+    ) {
+
+        secretPasscodeFeedback.textContent =
+            "ACCESS GRANTED. ❤️";
+
+
+        setTimeout(
+            function () {
+
+                actualSecretLockArea.classList.remove(
+                    "active"
+                );
+
+                actualSecretArea.classList.add(
+                    "active"
+                );
+
+            },
+            700
+        );
+
+
+        return;
+
+    }
+
+
+    secretPasscodeFeedback.textContent =
+        "Wrong code. The file remains classified. 👀";
+
+
+    enteredSecretPassword =
+        "";
+
+
+    setTimeout(
+        function () {
+
+            updateSecretPasscodeDisplay();
+
+        },
+        400
+    );
+
+}
+
+
+// =================================
+// ACTUAL SECRET PASSWORD → DIVA MODE
+// =================================
+
+if (actualSecretBackBtn) {
+
+    actualSecretBackBtn.addEventListener(
+        "click",
+        function () {
+
+            actualSecretLockArea.classList.remove(
+                "active"
+            );
+
+            divaModeArea.classList.add(
+                "active"
+            );
+
+        }
+    );
+
+}
+
+
+// =================================
+// ACTUAL SECRET MESSAGE
+// =================================
+
+if (actualSecretArea) {
+
+    const actualSecretLetter =
+        document.getElementById(
+            "actual-secret-letter"
+        );
+
+
+    if (actualSecretLetter) {
+
+        actualSecretLetter.innerHTML = `
+
+            <p>
+                There are some things I wanted to tell you
+                that I couldn't really fit into all the games,
+                jokes, challenges, and chaos of Project Nova.
+            </p>
+
+            <p>
+                So if you made it this far...
+            </p>
+
+            <p>
+                This part is actually for you.
+            </p>
+
+            <p>
+                You became one of the most important people
+                in my life.
+            </p>
+
+            <p>
+                You supported me. You listened to me.
+                You were there when I needed someone to talk to.
+                Somewhere along the way, you became much more
+                than just someone I talked to.
+            </p>
+
+            <p>
+                You became one of my closest friends.
+            </p>
+
+            <p>
+                There were days when talking to you made
+                difficult things feel easier. You gave me
+                reasons to smile, reasons to look forward to
+                messages, and memories that genuinely matter
+                to me.
+            </p>
+
+            <p>
+                I don't think I can properly explain how
+                important that became to me.
+            </p>
+
+            <p>
+                You were someone I trusted. Someone I cared
+                about. Someone I couldn't simply replace.
+            </p>
+
+            <p>
+                And yeah... I probably didn't always say all
+                of that properly.
+            </p>
+
+            <p>
+                You once told me that when we get to 11th,
+                we might not talk as much because studies and
+                life could get busier.
+            </p>
+
+            <p>
+                Maybe that's true.
+                Maybe things will change.
+                Maybe we'll both become busy and end up going
+                in completely different directions.
+            </p>
+
+            <p>
+                That's one of the reasons I wanted Project Nova
+                to be big enough to hold onto a little piece
+                of this chapter.
+            </p>
+
+            <p>
+                The games.
+                The jokes.
+                The ridiculous 💅 energy.
+                All of it.
+            </p>
+
+            <p>
+                Even if life changes, I hope you remember that
+                you were genuinely important to me.
+            </p>
+
+            <p>
+                You supported me.
+            </p>
+
+            <p>
+                You were my best friend.
+            </p>
+
+            <p>
+                You were irreplaceable to me.
+            </p>
+
+            <p>
+                So if someday we're both ridiculously busy
+                and barely have time to talk, come back here
+                and remember this chapter for what it was.
+            </p>
+
+            <p>
+                Someone cared enough to build an entire stupid
+                website just to make you smile. 💅
+            </p>
+
+            <p>
+                Happy Birthday. ❤️
+            </p>
+
+            <p>
+                Project Nova wasn't really about the website.
+            </p>
+
+            <p>
+                It was about you.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+// =================================
+// ACTUAL SECRET → VAULT
+// =================================
+
+if (actualSecretBackVaultBtn) {
+
+    actualSecretBackVaultBtn.addEventListener(
+        "click",
+        function () {
+
+            actualSecretArea.classList.remove(
+                "active"
+            );
+
+            birthdayVaultArea.classList.add(
+                "active"
+            );
+
+        }
+    );
+
+}
+
+
+// =================================
+// RESTORE UNLOCKED SECRET FILE
+// =================================
+
+function restoreDivaUnlock() {
+
+    if (
+        localStorage.getItem("novaDivaUnlocked")
+        === "true"
+    ) {
+
+        divaLock = 5;
+
+        updateDivaLockDisplay();
+
+        updateVaultCard();
+
+    }
+
+}
+
+
+// =================================
+// STARTUP
+// =================================
+
+restoreDivaUnlock();
 
 
 // =================================
@@ -594,7 +2333,17 @@ specialStartBtn.addEventListener("click", function () {
 
 function runSpecialScan() {
 
+    scanTimers.forEach(function (timer) {
+
+        clearTimeout(timer);
+
+    });
+
+    scanTimers = [];
+
+
     specialScanResults.innerHTML = "";
+
 
     const scanResults = [
 
@@ -618,19 +2367,28 @@ function runSpecialScan() {
     scanResults.forEach(
         function (result, index) {
 
-            setTimeout(function () {
+            const timer =
+                setTimeout(
+                    function () {
 
-                const resultLine =
-                    document.createElement("p");
+                        const resultLine =
+                            document.createElement("p");
 
-                resultLine.textContent =
-                    result;
 
-                specialScanResults.appendChild(
-                    resultLine
+                        resultLine.textContent =
+                            result;
+
+
+                        specialScanResults.appendChild(
+                            resultLine
+                        );
+
+                    },
+                    index * 350
                 );
 
-            }, index * 350);
+
+            scanTimers.push(timer);
 
         }
     );
@@ -645,6 +2403,15 @@ function runSpecialScan() {
 specialScanNextBtn.addEventListener(
     "click",
     function () {
+
+        scanTimers.forEach(function (timer) {
+
+            clearTimeout(timer);
+
+        });
+
+        scanTimers = [];
+
 
         specialScanArea.classList.remove(
             "active"
@@ -815,7 +2582,6 @@ function showQuestion() {
         questions.length;
 
 
-    // Clear old options
     quizOptions.innerHTML = "";
 
 
@@ -824,7 +2590,6 @@ function showQuestion() {
     questionChanging = false;
 
 
-    // Create new option buttons
     question.options.forEach(
         function (option, index) {
 
@@ -849,7 +2614,6 @@ function showQuestion() {
                 "click",
                 function () {
 
-                    // Prevent multiple clicks
                     if (questionChanging) {
 
                         return;
@@ -863,8 +2627,6 @@ function showQuestion() {
                         index;
 
 
-                    // Remove selection from
-                    // every other option
                     document
                         .querySelectorAll(
                             ".quiz-option"
@@ -880,13 +2642,11 @@ function showQuestion() {
                         );
 
 
-                    // Highlight selected answer
                     optionBtn.classList.add(
                         "selected"
                     );
 
 
-                    // Disable all buttons
                     document
                         .querySelectorAll(
                             ".quiz-option"
@@ -900,7 +2660,6 @@ function showQuestion() {
                         );
 
 
-                    // Move to next question
                     setTimeout(function () {
 
                         goToNextQuestion();
@@ -940,8 +2699,6 @@ function goToNextQuestion() {
             : realTestQuestions;
 
 
-    // Only calculate score
-    // during the REAL TEST
     if (currentQuiz === "real") {
 
         const correctAnswers =
@@ -949,8 +2706,6 @@ function goToNextQuestion() {
                 .correct;
 
 
-        // Supports one OR multiple
-        // correct answers
         if (
             correctAnswers.includes(
                 selectedAnswer
@@ -994,10 +2749,6 @@ function finishQuiz() {
     quizResultArea.classList.add("active");
 
 
-    // ================================
-    // REVIEW RESULT
-    // ================================
-
     if (currentQuiz === "review") {
 
         quizResultTitle.textContent =
@@ -1023,10 +2774,6 @@ function finishQuiz() {
 
     }
 
-
-    // ================================
-    // REAL TEST RESULT
-    // ================================
 
     else {
 

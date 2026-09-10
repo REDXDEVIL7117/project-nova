@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chaos Button 🎲</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="game-header">
+
+        <a
+            href="../../pages/arcade.html"
+            class="back-button"
+        >
+            ← Arcade
+        </a>
+
+        <div class="header-content">
+
+            <span class="game-label">
+                NOVA ARCADE • GAME 04
+            </span>
+
+            <h1>
+                Chaos Button 🎲
+            </h1>
+
+            <p>
+                One button.
+                Infinite questionable decisions.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main game -->
+    <main class="game-container">
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-box">
+
+                <span>
+                    PRESSES
+                </span>
+
+                <strong id="press-count">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    CHAOS LEVEL
+                </span>
+
+                <strong id="chaos-level">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    BEST
+                </span>
+
+                <strong id="best-score">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Chaos message -->
+        <section
+            id="chaos-display"
+            class="chaos-display"
+        >
+
+            <span class="display-label">
+                NOVA SYSTEM STATUS
+            </span>
+
+            <h2 id="chaos-title">
+                Everything is normal.
+            </h2>
+
+            <p id="chaos-message">
+                This button definitely should not be pressed.
+            </p>
+
+        </section>
+
+
+        <!-- Button area -->
+        <section
+            id="button-area"
+            class="button-area"
+        >
+
+            <button
+                id="chaos-button"
+                type="button"
+            >
+
+                <span class="button-warning">
+                    DO NOT
+                </span>
+
+                <span class="button-main">
+                    PRESS
+                </span>
+
+                <span class="button-sub">
+                    seriously.
+                </span>
+
+            </button>
+
+        </section>
+
+
+        <!-- Reset button -->
+        <button
+            id="reset-button"
+            class="reset-button"
+            type="button"
+        >
+            Reset Chaos
+        </button>
+
+
+        <!-- Footer -->
+        <footer>
+            Nova Arcade • Chaos has consequences. Probably. 💀
+        </footer>
+
+    </main>
+
+
+    <!-- =================================
+         EXPLOSION OVERLAY
+    ================================== -->
+
+    <div
+        id="explosion-overlay"
+        class="explosion-overlay"
+        aria-hidden="true"
+    >
+
+        <div class="explosion-text">
+            CHAOS OVERLOAD 💥
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

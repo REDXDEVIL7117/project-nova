@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-shell">
+
+        <a href="../../pages/arcade.html" class="back-button">← Back to Arcade</a>
+
+        <header class="game-header">
+            <p class="eyebrow">PROJECT NOVA • ARCADE</p>
+            <h1>⚡ Reaction Challenge</h1>
+            <p>Wait for the signal. Then click as fast as you can.</p>
+        </header>
+
+        <section class="game-card">
+
+            <div class="stats">
+                <div class="stat">
+                    <span>Attempts</span>
+                    <strong id="attempts">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>Best</span>
+                    <strong id="bestTime">-- ms</strong>
+                </div>
+            </div>
+
+            <button id="reactionArea" class="reaction-area">
+                <span id="reactionText">PRESS START</span>
+            </button>
+
+            <p id="message" class="message">
+                Test your reflexes.
+            </p>
+
+            <button id="startButton" class="start-button">
+                START CHALLENGE ⚡
+            </button>
+
+            <button id="resetButton" class="reset-button">
+                Reset
+            </button>
+
+        </section>
+
+        <footer>
+            <p>Reaction Challenge • How fast are you? ⚡</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

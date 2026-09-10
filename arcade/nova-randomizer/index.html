@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Randomizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-shell">
+
+        <a href="../../pages/arcade.html" class="back-button">← Back to Arcade</a>
+
+        <header class="game-header">
+            <p class="eyebrow">PROJECT NOVA • ARCADE</p>
+            <h1>🎲 Nova Randomizer</h1>
+            <p>Press the button. Let Nova decide your fate.</p>
+        </header>
+
+        <section class="randomizer-card">
+
+            <div class="result-box">
+                <span class="result-label">YOUR RESULT</span>
+
+                <div class="result" id="result">?</div>
+
+                <p id="resultMessage">Nova is waiting...</p>
+            </div>
+
+            <button id="randomizeButton" class="randomize-button">
+                RANDOMIZE 🎲
+            </button>
+
+            <button id="resetButton" class="reset-button">
+                Reset Counter
+            </button>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>Rolls</span>
+                    <strong id="rollCount">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Nova Randomizer • Infinite rolls. Infinite chaos. 🎲</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

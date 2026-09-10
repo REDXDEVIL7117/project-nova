@@ -2,28 +2,63 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Project Nova</title>
 
-    <!-- Main website styling -->
-    <link rel="stylesheet" href="style.css">
 
-    <!-- Home-specific styling -->
-    <link rel="stylesheet" href="css/home.css">
+    <!-- =================================
+         MAIN WEBSITE STYLING
+    ================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- =================================
+         HOME-SPECIFIC STYLING
+    ================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/home.css"
+    >
+
 </head>
+
 
 <body>
 
     <main id="app">
 
-        <!-- SCREEN 1: Birthday verification -->
-        <section id="birthday-screen" class="screen active">
 
-            <h1>Before we begin...</h1>
+        <!-- =================================
+             SCREEN 1
+             BIRTHDAY VERIFICATION
+        ================================== -->
 
-            <p>When's your birthday?</p>
+        <section
+            id="birthday-screen"
+            class="screen active"
+        >
+
+            <h1>
+                Before we begin...
+            </h1>
+
+
+            <p>
+                When's your birthday?
+            </p>
+
 
             <div class="birthday-inputs">
 
@@ -35,7 +70,11 @@
                     max="31"
                 >
 
-                <span>/</span>
+
+                <span>
+                    /
+                </span>
+
 
                 <input
                     type="number"
@@ -47,21 +86,41 @@
 
             </div>
 
-            <button id="birthday-next-btn">
+
+            <button
+                id="birthday-next-btn"
+            >
                 Continue
             </button>
 
-            <p id="birthday-message" class="message"></p>
+
+            <p
+                id="birthday-message"
+                class="message"
+            ></p>
 
         </section>
 
 
-        <!-- SCREEN 2: Name verification -->
-        <section id="name-screen" class="screen">
+        <!-- =================================
+             SCREEN 2
+             NAME VERIFICATION
+        ================================== -->
 
-            <h1>Interesting...</h1>
+        <section
+            id="name-screen"
+            class="screen"
+        >
 
-            <p>And who might you be?</p>
+            <h1>
+                Interesting...
+            </h1>
+
+
+            <p>
+                And who might you be?
+            </p>
+
 
             <input
                 type="text"
@@ -70,25 +129,47 @@
                 autocomplete="off"
             >
 
-            <button id="name-next-btn">
+
+            <button
+                id="name-next-btn"
+            >
                 Continue
             </button>
 
-            <p id="name-message" class="message"></p>
+
+            <p
+                id="name-message"
+                class="message"
+            ></p>
 
         </section>
 
 
-        <!-- SCREEN 3: Forced NO -->
-        <section id="ready-screen" class="screen">
+        <!-- =================================
+             SCREEN 3
+             FORCED NO
+        ================================== -->
 
-            <h1>Identity confirmed.</h1>
+        <section
+            id="ready-screen"
+            class="screen"
+        >
 
-            <p>Are you ready to proceed?</p>
+            <h1>
+                Identity confirmed.
+            </h1>
+
+
+            <p>
+                Are you ready to proceed?
+            </p>
+
 
             <div id="ready-buttons">
 
-                <button id="no-btn">
+                <button
+                    id="no-btn"
+                >
                     NO
                 </button>
 
@@ -97,24 +178,38 @@
         </section>
 
 
-        <!-- SCREEN 4: Interrogation -->
-        <section id="chaos-screen" class="screen">
+        <!-- =================================
+             SCREEN 4
+             INTERROGATION
+        ================================== -->
+
+        <section
+            id="chaos-screen"
+            class="screen"
+        >
 
             <h1 id="chaos-title">
                 Are you sure you don't want to proceed?
             </h1>
 
+
             <div id="chaos-buttons">
 
-                <button id="yes-btn">
+                <button
+                    id="yes-btn"
+                >
                     YES
                 </button>
 
-                <button id="chaos-no-btn">
+
+                <button
+                    id="chaos-no-btn"
+                >
                     NO
                 </button>
 
             </div>
+
 
             <div id="reason-area">
 
@@ -125,7 +220,10 @@
                     autocomplete="off"
                 >
 
-                <button id="reason-continue-btn">
+
+                <button
+                    id="reason-continue-btn"
+                >
                     Continue
                 </button>
 
@@ -134,8 +232,20 @@
         </section>
 
 
-        <!-- SCREEN 5: PROJECT NOVA HOME -->
-        <section id="home-screen" class="screen home-screen">
+        <!-- =================================
+             SCREEN 5
+             PROJECT NOVA HOME
+        ================================== -->
+
+        <section
+            id="home-screen"
+            class="screen home-screen"
+        >
+
+
+            <!-- =================================
+                 HOME INTRO
+            ================================== -->
 
             <div class="home-intro">
 
@@ -143,9 +253,11 @@
                     PROJECT NOVA
                 </p>
 
+
                 <h1>
                     Welcome.
                 </h1>
+
 
                 <p class="home-description">
                     You've made it through the entrance.
@@ -155,14 +267,32 @@
             </div>
 
 
-            <!-- Navigation cards -->
+            <!-- =================================
+                 NAVIGATION CARDS
+            ================================== -->
+
             <div class="home-grid">
 
-                <a href="pages/birthday.html" class="nova-card">
 
-                    <span class="card-number">01</span>
+                <!-- =================================
+                     CARD 01
+                     BIRTHDAY
+                ================================== -->
 
-                    <h2>Birthday</h2>
+                <a
+                    href="pages/birthday.html"
+                    class="nova-card birthday-card"
+                >
+
+                    <span class="card-number">
+                        01
+                    </span>
+
+
+                    <h2>
+                        Birthday
+                    </h2>
+
 
                     <p>
                         Something waiting for the birthday girl.
@@ -171,11 +301,25 @@
                 </a>
 
 
-                <a href="pages/surprises.html" class="nova-card">
+                <!-- =================================
+                     CARD 02
+                     SURPRISES
+                ================================== -->
 
-                    <span class="card-number">02</span>
+                <a
+                    href="pages/surprises.html"
+                    class="nova-card"
+                >
 
-                    <h2>Surprises</h2>
+                    <span class="card-number">
+                        02
+                    </span>
+
+
+                    <h2>
+                        Surprises
+                    </h2>
+
 
                     <p>
                         A few things you probably won't expect.
@@ -184,35 +328,116 @@
                 </a>
 
 
-                <a href="pages/fun.html" class="nova-card">
+                <!-- =================================
+                     CARD 03
+                     NOVA ARCADE
+                ================================== -->
 
-                    <span class="card-number">03</span>
+                <a
+                    href="pages/arcade.html"
+                    class="nova-card arcade-card"
+                >
 
-                    <h2>Fun Stuff</h2>
+
+                    <!-- Mini arcade cabinet -->
+                    <div
+                        class="arcade-cabinet"
+                        aria-hidden="true"
+                    >
+
+                        <div class="arcade-screen">
+
+                            <span>
+                                NOVA
+                            </span>
+
+
+                            <strong>
+                                ARCADE
+                            </strong>
+
+                        </div>
+
+
+                        <div class="arcade-controls">
+
+                            <span class="arcade-stick"></span>
+
+
+                            <span
+                                class="arcade-button red"
+                            ></span>
+
+
+                            <span
+                                class="arcade-button blue"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span
+                        class="card-number arcade-number"
+                    >
+                        03
+                    </span>
+
+
+                    <span class="arcade-status">
+                        INSERT COIN
+                    </span>
+
+
+                    <h2>
+                        Nova Arcade 🎮
+                    </h2>
+
 
                     <p>
-                        Because a gift shouldn't just sit there.
+                        Games, challenges, chaos,
+                        and questionable decisions.
                     </p>
+
+
+                    <span class="arcade-play">
+                        PLAY ARCADE →
+                    </span>
 
                 </a>
 
 
-                <!-- Memories stays for LAST -->
-                <div class="nova-card locked-card">
+                <!-- =================================
+                     CARD 04
+                     MEMORIES
+                ================================== -->
 
-                    <span class="card-number">04</span>
+                <div
+                    class="nova-card locked-card"
+                >
 
-                    <h2>Memories</h2>
+                    <span class="card-number">
+                        04
+                    </span>
+
+
+                    <h2>
+                        Memories
+                    </h2>
+
 
                     <p>
                         Not yet.
                     </p>
+
 
                     <span class="locked-text">
                         Coming later
                     </span>
 
                 </div>
+
 
             </div>
 
@@ -221,11 +446,11 @@
     </main>
 
 
-    <!-- Main gateway logic -->
-    <script src="script.js"></script>
+    <!-- =================================
+         MAIN GATEWAY LOGIC
+    ================================== -->
 
-    <!-- Home-specific logic -->
-    <script src="js/home.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

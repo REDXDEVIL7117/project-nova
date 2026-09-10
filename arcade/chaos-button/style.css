@@ -1,0 +1,696 @@
+/* Chaos Button - Project Nova */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #f5f7ff;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 70, 70, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(150, 70, 255, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07080f,
+            #111321 50%,
+            #080910
+        );
+
+    overflow-x: hidden;
+
+    transition: background 0.3s ease;
+}
+
+
+/* Header */
+
+.game-header {
+    position: relative;
+    padding: 34px 30px 20px;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.game-label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #ff6d6d;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.75;
+}
+
+.header-content h1 {
+    margin-bottom: 12px;
+
+    font-size:
+        clamp(
+            2.3rem,
+            6vw,
+            4rem
+        );
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 0 20px
+        rgba(255, 80, 80, 0.18);
+}
+
+.header-content p {
+    color:
+        rgba(240, 244, 255, 0.68);
+
+    line-height: 1.6;
+}
+
+
+/* Back button */
+
+.back-button {
+    position: absolute;
+
+    top: 28px;
+    left: 28px;
+
+    padding: 9px 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 12, 23, 0.8);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(255, 110, 110, 0.45);
+
+    background:
+        rgba(20, 23, 39, 0.95);
+}
+
+
+/* Main container */
+
+.game-container {
+    width:
+        min(
+            1000px,
+            calc(100% - 40px)
+        );
+
+    margin: 15px auto 50px;
+}
+
+
+/* Statistics */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+    background:
+        rgba(14, 17, 31, 0.82);
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.2);
+}
+
+.stat-box span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color:
+        rgba(235, 240, 255, 0.5);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.stat-box strong {
+    color: #ffffff;
+
+    font-size: 1.35rem;
+}
+
+
+/* Message area */
+
+.chaos-display {
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px;
+
+    border:
+        1px solid
+        rgba(255, 100, 100, 0.16);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 27, 45, 0.92),
+            rgba(11, 13, 24, 0.95)
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 0, 0, 0.28);
+}
+
+.display-label {
+    margin-bottom: 10px;
+
+    color: #ff7777;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.72;
+}
+
+.chaos-display h2 {
+    margin-bottom: 8px;
+
+    font-size:
+        clamp(
+            1.3rem,
+            4vw,
+            2rem
+        );
+
+    color: #ffffff;
+}
+
+.chaos-display p {
+    max-width: 650px;
+
+    color:
+        rgba(237, 241, 255, 0.68);
+
+    line-height: 1.6;
+}
+
+
+/* Button area */
+
+.button-area {
+    position: relative;
+
+    min-height: 340px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 25px 0;
+
+    border:
+        1px dashed
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        rgba(4, 5, 11, 0.28);
+
+    overflow: hidden;
+}
+
+
+/* Main chaos button */
+
+#chaos-button {
+    position: relative;
+
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        8px solid
+        #3b0c0c;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #ff6666,
+            #d71919 48%,
+            #850707 100%
+        );
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 18px 0 #3b0707,
+        0 25px 40px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(255, 45, 45, 0.2);
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        filter 0.2s ease;
+}
+
+#chaos-button:hover {
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 18px 0 #3b0707,
+        0 28px 45px rgba(0, 0, 0, 0.48),
+        0 0 48px rgba(255, 45, 45, 0.28);
+}
+
+#chaos-button:active,
+#chaos-button.pressed {
+    transform: translateY(14px);
+
+    box-shadow:
+        0 4px 0 #3b0707,
+        0 12px 24px rgba(0, 0, 0, 0.35),
+        0 0 55px rgba(255, 45, 45, 0.38);
+}
+
+.button-warning {
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    opacity: 0.8;
+}
+
+.button-main {
+    margin: 3px 0;
+
+    font-size: 2rem;
+    font-weight: 900;
+
+    letter-spacing: 0.08em;
+}
+
+.button-sub {
+    font-size: 0.72rem;
+
+    opacity: 0.72;
+}
+
+
+/* Reset */
+
+.reset-button {
+    display: block;
+
+    margin: 0 auto;
+
+    padding: 9px 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    border-radius: 8px;
+
+    background:
+        rgba(12, 15, 27, 0.75);
+
+    color:
+        rgba(240, 244, 255, 0.72);
+
+    cursor: pointer;
+
+    font-size: 0.78rem;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.reset-button:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(255, 110, 110, 0.35);
+
+    color: #ffffff;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 35px;
+
+    text-align: center;
+
+    color:
+        rgba(230, 235, 250, 0.42);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* Screen shake */
+
+body.screen-shake {
+    animation:
+        screenShake 0.32s ease;
+}
+
+@keyframes screenShake {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-6px, 3px);
+    }
+
+    40% {
+        transform: translate(5px, -4px);
+    }
+
+    60% {
+        transform: translate(-4px, -2px);
+    }
+
+    80% {
+        transform: translate(4px, 3px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+
+}
+
+
+/* Display animation */
+
+.chaos-display.flash {
+    animation:
+        displayFlash 0.35s ease;
+}
+
+@keyframes displayFlash {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Keyboard accessibility */
+
+button:focus-visible,
+a:focus-visible {
+    outline:
+        3px solid
+        rgba(255, 110, 110, 0.75);
+
+    outline-offset: 4px;
+}
+
+
+/* Tablet and mobile */
+
+@media (max-width: 700px) {
+
+    .game-header {
+        padding: 75px 20px 20px;
+    }
+
+    .back-button {
+        top: 22px;
+        left: 20px;
+    }
+
+    .game-container {
+        width:
+            calc(100% - 24px);
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat-box {
+        padding: 12px 8px;
+    }
+
+    .button-area {
+        min-height: 300px;
+    }
+
+    #chaos-button {
+        width: 190px;
+        height: 190px;
+    }
+
+    .button-main {
+        font-size: 1.7rem;
+    }
+
+}
+
+
+/* Small screens */
+
+@media (max-width: 420px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .button-area {
+        min-height: 270px;
+    }
+
+    #chaos-button {
+        width: 175px;
+        height: 175px;
+    }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+/* Full-screen chaos explosion */
+
+.explosion-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff3a3 8%,
+            #ff7b00 25%,
+            #ff1e00 45%,
+            #090909 75%
+        );
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation: explosionFlash 1.2s ease forwards;
+}
+
+.explosion-text {
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            2.5rem,
+            8vw,
+            7rem
+        );
+
+    font-weight: 900;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 10px #ffffff,
+        0 0 30px #ffb000,
+        0 0 60px #ff3300;
+
+    animation:
+        explosionText 1.2s ease forwards;
+}
+
+@keyframes explosionFlash {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    15% {
+        opacity: 1;
+        transform: scale(0.6);
+    }
+
+    35% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+
+@keyframes explosionText {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(-8deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.15) rotate(3deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+}

@@ -1,5 +1,6 @@
 /* =================================
    PROJECT NOVA - GLOBAL STYLE
+   V1.1 PHASE 1
    Theme: Butter Yellow × Burgundy
 ================================= */
 
@@ -43,7 +44,14 @@
         0 10px 30px rgba(66, 21, 34, 0.10);
 
     --nova-shadow-strong:
-        0 15px 40px rgba(66, 21, 34, 0.18);
+        0 18px 45px rgba(66, 21, 34, 0.18);
+
+    /* V1.1 visual system */
+
+    --nova-radius: 20px;
+
+    --nova-transition:
+        0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
 
 }
 
@@ -60,6 +68,15 @@
 
 
 /* =================================
+   SMOOTH PAGE BEHAVIOR
+================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =================================
    MAIN PAGE
 ================================= */
 
@@ -69,22 +86,31 @@ body {
 
     overflow-x: hidden;
 
-    font-family: "DM Sans", sans-serif;
+    font-family:
+        "DM Sans",
+        sans-serif;
 
-    color: var(--nova-text);
+    color:
+        var(--nova-text);
 
     background:
 
         radial-gradient(
-            circle at top left,
-            rgba(243, 227, 165, 0.75),
-            transparent 38%
+            circle at 8% 8%,
+            rgba(243, 227, 165, 0.82),
+            transparent 32%
         ),
 
         radial-gradient(
-            circle at bottom right,
+            circle at 92% 88%,
             rgba(110, 31, 50, 0.10),
-            transparent 40%
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255, 255, 255, 0.55),
+            transparent 50%
         ),
 
         linear-gradient(
@@ -96,6 +122,36 @@ body {
     transition:
         background 0.8s ease,
         color 0.8s ease;
+
+    /* Prevent accidental text selection on interactive UI */
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =================================
+   SUBTLE NOVA ATMOSPHERE
+================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 255, 255, 0.38),
+            transparent 42%
+        );
+
+    opacity: 0.8;
 }
 
 
@@ -115,7 +171,8 @@ body.anger-mode {
 
         #090909;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 }
 
 
@@ -128,6 +185,8 @@ body.anger-mode {
     min-height: 100vh;
 
     position: relative;
+
+    isolation: isolate;
 }
 
 
@@ -143,23 +202,33 @@ body.anger-mode {
 
     width: 100%;
 
-    padding: 30px 20px;
+    padding:
+        40px 30px;
 
     text-align: center;
 
     justify-content: center;
+
     align-items: center;
 
     flex-direction: column;
+
+    /* Gives desktop screens a little breathing room */
+    position: relative;
 }
 
+
+/* =================================
+   ACTIVE SCREEN
+================================= */
 
 .screen.active {
 
     display: flex;
 
     animation:
-        screenAppear 0.6s ease;
+        screenAppear 0.55s
+        cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 
@@ -174,7 +243,8 @@ body.anger-mode {
         opacity: 0;
 
         transform:
-            translateY(15px);
+            translateY(14px)
+            scale(0.99);
     }
 
     to {
@@ -182,7 +252,8 @@ body.anger-mode {
         opacity: 1;
 
         transform:
-            translateY(0);
+            translateY(0)
+            scale(1);
     }
 
 }
@@ -194,7 +265,7 @@ body.anger-mode {
 
 h1 {
 
-    max-width: 700px;
+    max-width: 760px;
 
     margin-bottom: 16px;
 
@@ -203,13 +274,21 @@ h1 {
         serif;
 
     font-size:
-        clamp(2.2rem, 6vw, 4.5rem);
+        clamp(2.4rem, 6vw, 4.5rem);
 
-    line-height: 1.1;
+    line-height: 1.08;
 
-    letter-spacing: -1px;
+    letter-spacing: -1.2px;
 
-    color: var(--nova-burgundy-dark);
+    color:
+        var(--nova-burgundy-dark);
+
+    text-wrap: balance;
+
+    /* Slight visual depth */
+    text-shadow:
+        0 2px 12px
+        rgba(66, 21, 34, 0.06);
 }
 
 
@@ -219,16 +298,19 @@ h1 {
 
 p {
 
-    max-width: 500px;
+    max-width: 520px;
 
     font-size:
-        clamp(1rem, 2vw, 1.2rem);
+        clamp(1rem, 1.5vw, 1.15rem);
 
-    line-height: 1.6;
+    line-height: 1.65;
 
-    color: var(--nova-text);
+    color:
+        var(--nova-text);
 
-    opacity: 0.8;
+    opacity: 0.82;
+
+    text-wrap: balance;
 }
 
 
@@ -238,21 +320,24 @@ p {
 
 input {
 
-    width: min(280px, 85vw);
+    width:
+        min(280px, 85vw);
 
     margin-top: 24px;
 
-    padding: 15px 18px;
+    padding:
+        15px 18px;
 
     border:
         1px solid var(--nova-border);
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     outline: none;
 
     background:
-        rgba(255, 253, 245, 0.75);
+        rgba(255, 253, 245, 0.78);
 
     color:
         var(--nova-text);
@@ -261,19 +346,32 @@ input {
         "DM Sans",
         sans-serif;
 
-    font-size: 1rem;
+    font-size:
+        1rem;
+
+    box-shadow:
+        0 5px 18px
+        rgba(66, 21, 34, 0.05);
 
     transition:
 
-        border-color 0.25s ease,
+        border-color var(--nova-transition),
 
-        box-shadow 0.25s ease,
+        box-shadow var(--nova-transition),
 
-        transform 0.25s ease,
+        transform var(--nova-transition),
 
         background 0.6s ease,
 
         color 0.6s ease;
+}
+
+
+input:hover {
+
+    border-color:
+        rgba(110, 31, 50, 0.28);
+
 }
 
 
@@ -285,7 +383,10 @@ input:focus {
     box-shadow:
 
         0 0 0 4px
-        rgba(110, 31, 50, 0.10);
+        rgba(110, 31, 50, 0.10),
+
+        0 8px 22px
+        rgba(66, 21, 34, 0.08);
 
     transform:
         translateY(-2px);
@@ -301,7 +402,8 @@ body.anger-mode input {
     background:
         rgba(0, 0, 0, 0.65);
 
-    color: white;
+    color:
+        white;
 
     border-color:
         rgba(255, 80, 80, 0.5);
@@ -321,6 +423,7 @@ body.anger-mode input {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 14px;
@@ -331,7 +434,8 @@ body.anger-mode input {
 
 .birthday-inputs input {
 
-    width: 100px;
+    width:
+        100px;
 
     margin-top: 0;
 
@@ -345,7 +449,8 @@ body.anger-mode input {
         "Playfair Display",
         serif;
 
-    font-size: 2rem;
+    font-size:
+        2rem;
 
     color:
         var(--nova-burgundy);
@@ -375,11 +480,14 @@ button {
 
     margin-top: 22px;
 
-    padding: 14px 30px;
+    padding:
+        14px 30px;
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
         var(--nova-burgundy);
@@ -391,11 +499,14 @@ button {
         "DM Sans",
         sans-serif;
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     box-shadow:
         0 8px 25px
@@ -403,17 +514,21 @@ button {
 
     transition:
 
-        transform 0.25s ease,
+        transform var(--nova-transition),
 
-        box-shadow 0.25s ease,
+        box-shadow var(--nova-transition),
 
-        background 0.5s ease,
+        background var(--nova-transition),
 
-        color 0.5s ease,
+        color var(--nova-transition),
 
-        letter-spacing 0.25s ease;
+        letter-spacing var(--nova-transition);
 }
 
+
+/* =================================
+   BUTTON HOVER
+================================= */
 
 button:hover {
 
@@ -425,13 +540,41 @@ button:hover {
 
     box-shadow:
         var(--nova-shadow-strong);
+
+    letter-spacing:
+        0.2px;
 }
 
+
+/* =================================
+   BUTTON ACTIVE
+================================= */
 
 button:active {
 
     transform:
-        translateY(0) scale(0.97);
+        translateY(0)
+        scale(0.97);
+
+    box-shadow:
+        0 5px 14px
+        rgba(66, 21, 34, 0.14);
+}
+
+
+/* =================================
+   KEYBOARD FOCUS
+================================= */
+
+button:focus-visible,
+input:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.28);
+
+    outline-offset:
+        3px;
 }
 
 
@@ -456,18 +599,23 @@ body.anger-mode button {
 
 .message {
 
-    min-height: 26px;
+    min-height:
+        26px;
 
-    margin-top: 14px;
+    margin-top:
+        14px;
 
     color:
         var(--nova-burgundy);
 
-    font-size: 0.95rem;
+    font-size:
+        0.95rem;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    opacity: 1;
+    opacity:
+        1;
 }
 
 
@@ -478,14 +626,20 @@ body.anger-mode button {
 #ready-buttons,
 #chaos-buttons {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
-    align-items: center;
+    justify-content:
+        center;
 
-    gap: 16px;
+    align-items:
+        center;
 
-    margin-top: 15px;
+    gap:
+        16px;
+
+    margin-top:
+        15px;
 
     animation:
         buttonReveal 0.45s ease;
@@ -495,7 +649,8 @@ body.anger-mode button {
 #ready-buttons button,
 #chaos-buttons button {
 
-    margin-top: 0;
+    margin-top:
+        0;
 }
 
 
@@ -507,7 +662,8 @@ body.anger-mode button {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(12px)
@@ -516,7 +672,8 @@ body.anger-mode button {
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0)
@@ -532,11 +689,14 @@ body.anger-mode button {
 
 #reason-area {
 
-    display: none;
+    display:
+        none;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    align-items: center;
+    align-items:
+        center;
 
     animation:
         reasonReveal 0.55s ease;
@@ -558,7 +718,8 @@ body.anger-mode button {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(20px);
@@ -566,7 +727,8 @@ body.anger-mode button {
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -584,11 +746,14 @@ body.anger-mode button {
     animation:
         buttonTransform 0.6s ease forwards;
 
-    padding-left: 45px;
+    padding-left:
+        45px;
 
-    padding-right: 45px;
+    padding-right:
+        45px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 }
 
 
@@ -599,7 +764,8 @@ body.anger-mode button {
         transform:
             scale(0.9);
 
-        opacity: 0;
+        opacity:
+            0;
     }
 
     70% {
@@ -613,7 +779,8 @@ body.anger-mode button {
         transform:
             scale(1);
 
-        opacity: 1;
+        opacity:
+            1;
     }
 
 }
@@ -634,6 +801,49 @@ body.anger-mode button {
 
 
 /* =================================
+   DESKTOP POLISH
+================================= */
+
+@media (min-width: 900px) {
+
+    .screen {
+
+        padding:
+            50px 40px;
+    }
+
+}
+
+
+/* =================================
+   REDUCED MOTION
+   Accessibility / comfort
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+
+/* =================================
    MOBILE
 ================================= */
 
@@ -647,18 +857,178 @@ body.anger-mode button {
 
     .birthday-inputs {
 
-        gap: 10px;
+        gap:
+            10px;
     }
 
     .birthday-inputs input {
 
-        width: 85px;
+        width:
+            85px;
     }
 
     button {
 
         width:
             min(280px, 85vw);
+    }
+
+}
+/* =================================
+   BIRTHDAY CARD
+   Main Project Nova experience
+================================= */
+
+.birthday-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(243, 227, 165, 0.65),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 253, 245, 0.96),
+            rgba(243, 227, 165, 0.32)
+        );
+
+    border-color:
+        rgba(110, 31, 50, 0.28);
+
+    box-shadow:
+        0 12px 35px rgba(66, 21, 34, 0.12),
+        0 0 0 rgba(243, 227, 165, 0);
+
+    transition:
+        transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Soft decorative glow */
+
+.birthday-card::before {
+    content: "🎂";
+
+    position: absolute;
+
+    top: -12px;
+    right: 18px;
+
+    font-size: 4rem;
+
+    opacity: 0.16;
+
+    transform: rotate(10deg);
+
+    pointer-events: none;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* Small golden accent */
+
+.birthday-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--nova-burgundy),
+            var(--nova-butter),
+            var(--nova-burgundy)
+        );
+
+    opacity: 0.75;
+}
+
+
+/* Birthday card hover */
+
+.birthday-card:hover {
+    transform:
+        translateY(-8px)
+        scale(1.015);
+
+    border-color:
+        rgba(110, 31, 50, 0.45);
+
+    box-shadow:
+        0 20px 45px rgba(66, 21, 34, 0.18),
+        0 0 35px rgba(243, 227, 165, 0.45);
+}
+
+
+/* Move the cake slightly on hover */
+
+.birthday-card:hover::before {
+    transform:
+        rotate(-5deg)
+        scale(1.12);
+
+    opacity: 0.28;
+}
+
+
+/* Birthday number */
+
+.birthday-card .card-number {
+    color:
+        var(--nova-burgundy);
+
+    font-weight:
+        700;
+}
+
+
+/* Birthday title */
+
+.birthday-card h2 {
+    position: relative;
+    z-index: 1;
+
+    color:
+        var(--nova-burgundy-dark);
+}
+
+
+/* Birthday description */
+
+.birthday-card p {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Little invitation label */
+
+.birthday-card::marker {
+    display: none;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .birthday-card,
+    .birthday-card::before {
+        transition: none;
     }
 
 }

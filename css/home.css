@@ -1,12 +1,21 @@
 /* ================================
    PROJECT NOVA - HOME
+   V1.1 PHASE 2
    ================================ */
 
+
+/* ================================
+   HOME SCREEN
+================================ */
 
 .home-screen {
     padding: 60px 20px;
 }
 
+
+/* ================================
+   HOME INTRO
+================================ */
 
 .home-intro {
     max-width: 700px;
@@ -19,9 +28,15 @@
 
     font-size: 0.8rem;
     font-weight: 700;
+
     letter-spacing: 4px;
 
-    opacity: 0.55;
+    color:
+        var(--nova-burgundy);
+
+    opacity: 0.58;
+
+    text-transform: uppercase;
 }
 
 
@@ -32,175 +47,1350 @@
 
 /* ================================
    NAVIGATION GRID
-   ================================ */
+================================ */
 
 .home-grid {
-    width: min(1000px, 100%);
+    width:
+        min(1000px, 100%);
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
-    gap: 18px;
+    gap:
+        20px;
 }
 
 
+/* ================================
+   NOVA CARD
+================================ */
+
 .nova-card {
-    position: relative;
+    position:
+        relative;
 
-    min-height: 220px;
+    min-height:
+        220px;
 
-    padding: 28px;
+    padding:
+        30px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+    display:
+        flex;
 
-    text-align: left;
-    text-decoration: none;
+    flex-direction:
+        column;
 
-    color: inherit;
+    align-items:
+        flex-start;
 
-    border: 1px solid rgba(70, 40, 60, 0.12);
-    border-radius: 24px;
+    justify-content:
+        flex-end;
+
+    text-align:
+        left;
+
+    text-decoration:
+        none;
+
+    color:
+        inherit;
+
+    border:
+        1px solid
+        var(--nova-border);
+
+    border-radius:
+        var(--nova-radius);
 
     background:
         linear-gradient(
             145deg,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0.45)
+            rgba(255, 255, 255, 0.88),
+            rgba(255, 253, 245, 0.58)
         );
 
     box-shadow:
-        0 15px 40px rgba(43, 27, 38, 0.08);
+        var(--nova-shadow);
 
-    overflow: hidden;
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        transform
+        var(--nova-transition),
+
+        box-shadow
+        var(--nova-transition),
+
+        border-color
+        var(--nova-transition),
+
+        background
+        var(--nova-transition);
 }
 
 
+/* ================================
+   CARD ATMOSPHERE
+================================ */
+
 .nova-card::before {
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 160px;
-    height: 160px;
+    width:
+        190px;
 
-    top: -70px;
-    right: -70px;
+    height:
+        190px;
 
-    border-radius: 50%;
+    top:
+        -85px;
+
+    right:
+        -75px;
+
+    border-radius:
+        50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(199, 107, 156, 0.18),
+            rgba(243, 227, 165, 0.65),
             transparent 70%
         );
 
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
     transition:
-        transform 0.4s ease;
+        transform
+        0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 
+.nova-card::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        120px;
+
+    height:
+        120px;
+
+    bottom:
+        -75px;
+
+    left:
+        -60px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(110, 31, 50, 0.10),
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+
+    transition:
+        transform
+        0.45s ease;
+}
+
+
+/* ================================
+   CARD HOVER
+================================ */
+
 .nova-card:hover {
     transform:
-        translateY(-7px);
+        translateY(-8px);
 
     border-color:
-        rgba(199, 107, 156, 0.35);
+        rgba(110, 31, 50, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(255, 248, 214, 0.68)
+        );
 
     box-shadow:
-        0 22px 50px rgba(43, 27, 38, 0.14);
+        var(--nova-shadow-strong);
 }
 
 
 .nova-card:hover::before {
     transform:
-        scale(1.5);
+        scale(1.45);
 }
 
 
-/* Card number */
+.nova-card:hover::after {
+    transform:
+        scale(1.35);
+}
+
+
+/* ================================
+   CARD NUMBER
+================================ */
 
 .card-number {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 24px;
-    left: 28px;
+    top:
+        24px;
 
-    font-size: 0.8rem;
-    font-weight: 700;
+    left:
+        28px;
 
-    letter-spacing: 2px;
+    font-size:
+        0.78rem;
 
-    opacity: 0.4;
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    color:
+        var(--nova-burgundy);
+
+    opacity:
+        0.42;
 }
 
 
-/* Card content */
+/* ================================
+   CARD CONTENT
+================================ */
 
 .nova-card h2 {
-    position: relative;
+    position:
+        relative;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
     font-family:
         "Playfair Display",
         serif;
 
-    font-size: 2rem;
+    font-size:
+        2rem;
+
+    line-height:
+        1.15;
+
+    color:
+        var(--nova-burgundy-dark);
 }
 
 
 .nova-card p {
-    position: relative;
+    position:
+        relative;
 
-    font-size: 0.95rem;
+    font-size:
+        0.95rem;
 
-    opacity: 0.65;
+    line-height:
+        1.55;
+
+    color:
+        var(--nova-text);
+
+    opacity:
+        0.65;
+}
+
+
+/* ==================================================
+   🎂 BIRTHDAY CARD
+   DREAMY BIRTHDAY WORLD
+================================================== */
+
+.birthday-card {
+    position:
+        relative;
+
+    background:
+        radial-gradient(
+            circle at 88% 12%,
+            rgba(255, 177, 207, 0.72),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 8% 92%,
+            rgba(194, 181, 255, 0.52),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #fffdfd,
+            #fff0f6 48%,
+            #f1edff
+        );
+
+    border:
+        1px solid
+        rgba(183, 91, 132, 0.30);
+
+    box-shadow:
+        0 14px 40px
+        rgba(145, 72, 105, 0.13),
+
+        inset
+        0 1px 0
+        rgba(255, 255, 255, 0.9);
+
+    transition:
+        transform
+        0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+
+        box-shadow
+        0.3s ease,
+
+        border-color
+        0.3s ease,
+
+        background
+        0.3s ease;
+}
+
+
+/* Birthday glow */
+
+.birthday-card::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        330px;
+
+    height:
+        330px;
+
+    top:
+        -210px;
+
+    right:
+        -120px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 160, 199, 0.42),
+            rgba(208, 185, 255, 0.16) 42%,
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
+    transition:
+        transform
+        0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+/* Birthday lower glow */
+
+.birthday-card::after {
+    content:
+        "✦  ✧  ✦";
+
+    position:
+        absolute;
+
+    width:
+        auto;
+
+    height:
+        auto;
+
+    bottom:
+        18px;
+
+    left:
+        26px;
+
+    border-radius:
+        0;
+
+    background:
+        none;
+
+    color:
+        rgba(177, 91, 132, 0.48);
+
+    font-size:
+        0.85rem;
+
+    letter-spacing:
+        7px;
+
+    pointer-events:
+        none;
+
+    transition:
+        transform
+        0.35s ease,
+
+        opacity
+        0.35s ease;
+}
+
+
+/* Birthday hover */
+
+.birthday-card:hover {
+    transform:
+        translateY(-9px)
+        scale(1.015);
+
+    border-color:
+        rgba(183, 91, 132, 0.52);
+
+    background:
+        radial-gradient(
+            circle at 88% 12%,
+            rgba(255, 164, 200, 0.88),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 8% 92%,
+            rgba(194, 181, 255, 0.65),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #ffedf5 48%,
+            #eeeaff
+        );
+
+    box-shadow:
+        0 22px 50px
+        rgba(145, 72, 105, 0.20),
+
+        0 0 35px
+        rgba(255, 177, 207, 0.40);
+}
+
+
+/* Expand birthday glow */
+
+.birthday-card:hover::before {
+    transform:
+        scale(1.28);
+}
+
+
+/* Lift sparkles */
+
+.birthday-card:hover::after {
+    transform:
+        translateY(-4px)
+        scale(1.08);
+
+    opacity:
+        0.9;
+}
+
+
+/* Birthday number */
+
+.birthday-card .card-number {
+    color:
+        #a65378;
+
+    opacity:
+        0.72;
+}
+
+
+/* Birthday title */
+
+.birthday-card h2 {
+    color:
+        #7d3154;
+
+    text-shadow:
+        0 2px 12px
+        rgba(183, 91, 132, 0.10);
+}
+
+
+/* Birthday description */
+
+.birthday-card p {
+    color:
+        #765b68;
+
+    opacity:
+        0.82;
+}
+
+
+/* Birthday corner cake */
+
+.birthday-card .card-number::after {
+    content:
+        "🎂";
+
+    position:
+        absolute;
+
+    left:
+        135px;
+
+    top:
+        -13px;
+
+    font-size:
+        2.8rem;
+
+    opacity:
+        0.22;
+
+    transform:
+        rotate(8deg);
+
+    pointer-events:
+        none;
+
+    transition:
+        transform
+        0.3s ease,
+
+        opacity
+        0.3s ease;
+}
+
+
+.birthday-card:hover .card-number::after {
+    transform:
+        rotate(-5deg)
+        scale(1.12);
+
+    opacity:
+        0.36;
+}
+
+
+/* Birthday focus */
+
+.birthday-card:focus-visible {
+    outline:
+        3px solid
+        rgba(183, 91, 132, 0.45);
+
+    outline-offset:
+        4px;
+}
+
+
+/* ==================================================
+   🔒 LOCKED MEMORIES CARD
+================================================== */
+
+.locked-card {
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.58;
+
+    filter:
+        saturate(0.7);
+
+    transition:
+        opacity
+        var(--nova-transition),
+
+        filter
+        var(--nova-transition);
+}
+
+
+.locked-card:hover {
+    transform:
+        none;
+
+    box-shadow:
+        var(--nova-shadow);
+
+    border-color:
+        var(--nova-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 253, 245, 0.5)
+        );
 }
 
 
 /* ================================
-   LOCKED MEMORIES CARD
-   ================================ */
+   LOCKED LABEL
+================================ */
 
-.locked-card {
-    cursor: not-allowed;
+.locked-text {
+    position:
+        absolute;
 
-    opacity: 0.6;
+    top:
+        24px;
+
+    right:
+        28px;
+
+    padding:
+        7px 12px;
+
+    border:
+        1px solid
+        rgba(110, 31, 50, 0.08);
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        600;
+
+    color:
+        var(--nova-burgundy);
+
+    background:
+        rgba(110, 31, 50, 0.06);
 }
 
 
-.locked-text {
-    position: absolute;
+/* ==================================================
+   🎮 NOVA ARCADE CARD
+================================================== */
 
-    top: 24px;
-    right: 28px;
+.arcade-card {
+    background:
+        linear-gradient(
+            145deg,
+            #10101a,
+            #17152b 55%,
+            #0b0b12
+        );
 
-    padding: 7px 12px;
+    border:
+        1px solid
+        rgba(99, 221, 255, 0.28);
 
-    border-radius: 999px;
+    color:
+        white;
 
-    font-size: 0.75rem;
-    font-weight: 600;
+    box-shadow:
+        0 12px 35px
+        rgba(10, 8, 30, 0.28);
+
+    cursor:
+        pointer;
+}
+
+
+/* Remove normal Nova atmosphere */
+
+.arcade-card::before {
+    width:
+        260px;
+
+    height:
+        260px;
+
+    top:
+        -150px;
+
+    right:
+        -100px;
 
     background:
-        rgba(43, 27, 38, 0.08);
+        radial-gradient(
+            circle,
+            rgba(91, 238, 255, 0.20),
+            transparent 68%
+        );
+}
+
+
+.arcade-card::after {
+    width:
+        260px;
+
+    height:
+        260px;
+
+    bottom:
+        -170px;
+
+    left:
+        -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 50, 150, 0.18),
+            transparent 68%
+        );
+}
+
+
+/* ================================
+   ARCADE CARD HOVER
+================================ */
+
+.arcade-card:hover {
+    transform:
+        translateY(-9px)
+        scale(1.01);
+
+    border-color:
+        rgba(99, 221, 255, 0.65);
+
+    background:
+        linear-gradient(
+            145deg,
+            #11111d,
+            #1b1834 55%,
+            #0c0c14
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(10, 8, 30, 0.38),
+
+        0 0 30px
+        rgba(64, 215, 255, 0.10);
+}
+
+
+/* ================================
+   ARCADE NUMBER
+================================ */
+
+.arcade-number {
+    color:
+        #72e8ff;
+
+    opacity:
+        0.7;
+}
+
+
+/* ================================
+   ARCADE STATUS
+================================ */
+
+.arcade-status {
+    position:
+        absolute;
+
+    top:
+        22px;
+
+    right:
+        24px;
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid
+        rgba(99, 221, 255, 0.30);
+
+    border-radius:
+        6px;
+
+    color:
+        #72e8ff;
+
+    background:
+        rgba(0, 0, 0, 0.30);
+
+    font-family:
+        monospace;
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.5px;
+
+    box-shadow:
+        0 0 12px
+        rgba(99, 221, 255, 0.08);
+
+    animation:
+        arcadeBlink
+        2.4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes arcadeBlink {
+
+    0%,
+    100% {
+        opacity:
+            0.55;
+    }
+
+    50% {
+        opacity:
+            1;
+    }
+
+}
+
+
+/* ================================
+   ARCADE TITLE
+================================ */
+
+.arcade-card h2 {
+    color:
+        #ffffff;
+
+    text-shadow:
+        0 0 12px
+        rgba(88, 225, 255, 0.24);
+
+    letter-spacing:
+        0.5px;
+}
+
+
+/* ================================
+   ARCADE DESCRIPTION
+================================ */
+
+.arcade-card p {
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    opacity:
+        1;
+}
+
+
+/* ================================
+   ARCADE PLAY LABEL
+================================ */
+
+.arcade-play {
+    position:
+        relative;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    margin-top:
+        18px;
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    border-radius:
+        6px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color:
+        #ffffff;
+
+    font-family:
+        monospace;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.arcade-card:hover .arcade-play {
+    background:
+        rgba(99, 221, 255, 0.10);
+
+    border-color:
+        rgba(99, 221, 255, 0.40);
+
+    box-shadow:
+        0 0 15px
+        rgba(99, 221, 255, 0.10);
+}
+
+
+/* ==================================================
+   🕹️ MINI ARCADE CABINET
+================================================== */
+
+.arcade-cabinet {
+    position:
+        absolute;
+
+    top:
+        34px;
+
+    right:
+        28px;
+
+    width:
+        88px;
+
+    height:
+        112px;
+
+    opacity:
+        0.9;
+
+    transform:
+        rotate(2deg);
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+.arcade-card:hover .arcade-cabinet {
+    transform:
+        rotate(0deg)
+        translateY(-4px)
+        scale(1.05);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(99, 221, 255, 0.20)
+        );
+}
+
+
+/* ================================
+   ARCADE CABINET BODY
+================================ */
+
+.arcade-cabinet::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #25253b,
+            #11111e
+        );
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        10px 10px 5px 5px;
+
+    box-shadow:
+        inset
+        0 0 0 2px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* ================================
+   ARCADE SCREEN
+================================ */
+
+.arcade-screen {
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    left:
+        10px;
+
+    width:
+        68px;
+
+    height:
+        48px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        2px solid
+        #24243a;
+
+    border-radius:
+        5px;
+
+    background:
+        #05050a;
+
+    color:
+        #72e8ff;
+
+    font-family:
+        monospace;
+
+    box-shadow:
+        inset
+        0 0 12px
+        rgba(60, 214, 255, 0.12),
+
+        0 0 8px
+        rgba(60, 214, 255, 0.10);
+}
+
+
+.arcade-screen span {
+    font-size:
+        0.48rem;
+
+    letter-spacing:
+        2px;
+
+    opacity:
+        0.7;
+}
+
+
+.arcade-screen strong {
+    margin-top:
+        3px;
+
+    font-size:
+        0.68rem;
+
+    letter-spacing:
+        1px;
+
+    text-shadow:
+        0 0 7px
+        rgba(114, 232, 255, 0.75);
+}
+
+
+/* ================================
+   ARCADE CONTROL PANEL
+================================ */
+
+.arcade-controls {
+    position:
+        absolute;
+
+    top:
+        68px;
+
+    left:
+        10px;
+
+    width:
+        68px;
+
+    height:
+        25px;
+
+    border-radius:
+        4px;
+
+    background:
+        #202034;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* ================================
+   JOYSTICK
+================================ */
+
+.arcade-stick {
+    position:
+        absolute;
+
+    left:
+        15px;
+
+    bottom:
+        7px;
+
+    width:
+        4px;
+
+    height:
+        12px;
+
+    background:
+        #d8d8df;
+
+    border-radius:
+        999px;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+.arcade-stick::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    top:
+        -5px;
+
+    left:
+        -3px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ff4f87;
+
+    box-shadow:
+        0 0 7px
+        rgba(255, 79, 135, 0.5);
+}
+
+
+/* ================================
+   ARCADE BUTTONS
+================================ */
+
+.arcade-button {
+    position:
+        absolute;
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 7px
+        currentColor;
+}
+
+
+.arcade-button.red {
+    right:
+        14px;
+
+    top:
+        6px;
+
+    background:
+        #ff4f87;
+
+    color:
+        #ff4f87;
+}
+
+
+.arcade-button.blue {
+    right:
+        25px;
+
+    top:
+        11px;
+
+    background:
+        #5ee7ff;
+
+    color:
+        #5ee7ff;
+}
+
+
+/* ================================
+   ARCADE CABINET BASE
+================================ */
+
+.arcade-cabinet {
+    padding-bottom:
+        10px;
+}
+
+
+.arcade-cabinet::after {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    bottom:
+        -4px;
+
+    left:
+        8px;
+
+    width:
+        72px;
+
+    height:
+        9px;
+
+    border-radius:
+        3px;
+
+    background:
+        #0a0a12;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+
+/* ================================
+   KEYBOARD ACCESS
+================================ */
+
+.nova-card:focus-visible {
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.25);
+
+    outline-offset:
+        4px;
+}
+
+
+/* Arcade focus */
+
+.arcade-card:focus-visible {
+    outline:
+        3px solid
+        rgba(99, 221, 255, 0.60);
+
+    outline-offset:
+        4px;
+}
+
+
+/* ================================
+   DESKTOP POLISH
+================================ */
+
+@media (min-width: 900px) {
+
+    .home-grid {
+        gap:
+            22px;
+    }
+
+
+    .nova-card {
+        min-height:
+            230px;
+    }
+
 }
 
 
 /* ================================
    MOBILE
-   ================================ */
+================================ */
 
 @media (max-width: 650px) {
 
@@ -217,7 +1407,54 @@
 
 
     .nova-card {
-        min-height: 180px;
+        min-height:
+            180px;
+    }
+
+
+    .arcade-cabinet {
+        transform:
+            scale(0.85)
+            rotate(2deg);
+
+        transform-origin:
+            top right;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .arcade-cabinet {
+        opacity:
+            0.65;
+    }
+
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nova-card,
+    .birthday-card,
+    .birthday-card::before,
+    .birthday-card::after,
+    .birthday-card .card-number::after,
+    .arcade-cabinet,
+    .arcade-play {
+        transition:
+            none;
+    }
+
+
+    .arcade-status {
+        animation:
+            none;
     }
 
 }

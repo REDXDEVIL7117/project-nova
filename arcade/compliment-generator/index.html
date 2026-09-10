@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Compliment Generator 💙</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="page-header">
+
+        <a
+            href="../../pages/arcade.html"
+            class="back-button"
+        >
+            ← Arcade
+        </a>
+
+        <div class="header-content">
+
+            <span class="game-label">
+                NOVA ARCADE • GAME 05
+            </span>
+
+            <h1>
+                Compliment Generator 💙
+            </h1>
+
+            <p>
+                Pick your mood.
+                <br>
+                Let Nova find something you might need to hear today. ☁️
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="compliment-container">
+
+        <section class="mood-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    STEP 01
+                </span>
+
+                <h2>
+                    How are you feeling today?
+                </h2>
+
+                <p>
+                    Be honest. Nova isn't judging. 💙
+                </p>
+
+            </div>
+
+
+            <div
+                id="mood-grid"
+                class="mood-grid"
+            >
+
+                <button
+                    class="mood-card"
+                    data-mood="happy"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        ☀️
+                    </span>
+
+                    <span class="mood-name">
+                        Happy
+                    </span>
+
+                    <span class="mood-description">
+                        Feeling good
+                    </span>
+                </button>
+
+
+                <button
+                    class="mood-card"
+                    data-mood="sad"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        🌧️
+                    </span>
+
+                    <span class="mood-name">
+                        Sad
+                    </span>
+
+                    <span class="mood-description">
+                        Need some comfort
+                    </span>
+                </button>
+
+
+                <button
+                    class="mood-card"
+                    data-mood="tired"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        😴
+                    </span>
+
+                    <span class="mood-name">
+                        Tired
+                    </span>
+
+                    <span class="mood-description">
+                        Running on low battery
+                    </span>
+                </button>
+
+
+                <button
+                    class="mood-card"
+                    data-mood="annoyed"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        😤
+                    </span>
+
+                    <span class="mood-name">
+                        Annoyed
+                    </span>
+
+                    <span class="mood-description">
+                        Everything is annoying
+                    </span>
+                </button>
+
+
+                <button
+                    class="mood-card"
+                    data-mood="overwhelmed"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        😵
+                    </span>
+
+                    <span class="mood-name">
+                        Overwhelmed
+                    </span>
+
+                    <span class="mood-description">
+                        Too much happening
+                    </span>
+                </button>
+
+
+                <button
+                    class="mood-card slaying-mood"
+                    data-mood="slaying"
+                    type="button"
+                >
+                    <span class="mood-icon">
+                        💅
+                    </span>
+
+                    <span class="mood-name">
+                        Slaying
+                    </span>
+
+                    <span class="mood-description">
+                        Obviously serving
+                    </span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="generator-section"
+            class="generator-section"
+        >
+
+            <div class="generator-top">
+
+                <span class="section-label">
+                    STEP 02
+                </span>
+
+                <p id="selected-mood-text">
+                    Choose a mood above
+                </p>
+
+            </div>
+
+
+            <button
+                id="generate-button"
+                class="generate-button"
+                type="button"
+                disabled
+            >
+                <span>✨</span>
+
+                GENERATE A COMPLIMENT
+
+                <span>💙</span>
+            </button>
+
+        </section>
+
+
+        <section
+            id="compliment-area"
+            class="compliment-area"
+        >
+
+            <div class="compliment-card">
+
+                <span class="compliment-small">
+                    NOVA HAS SOMETHING TO SAY
+                </span>
+
+                <div
+                    id="compliment-icon"
+                    class="compliment-icon"
+                >
+                    ☁️
+                </div>
+
+                <p
+                    id="compliment-text"
+                    class="compliment-text"
+                >
+                    Your compliment will appear here.
+                </p>
+
+                <div class="compliment-decoration">
+                    <span>💙</span>
+                    <span>✦</span>
+                    <span>💙</span>
+                </div>
+
+            </div>
+
+
+            <button
+                id="another-button"
+                class="another-button"
+                type="button"
+                hidden
+            >
+                Another one ✨
+            </button>
+
+        </section>
+
+
+        <section class="discovery-section">
+
+            <div class="discovery-header">
+
+                <div>
+
+                    <span class="section-label">
+                        YOUR COLLECTION
+                    </span>
+
+                    <h2>
+                        Compliments discovered
+                    </h2>
+
+                </div>
+
+                <strong id="discovery-count">
+                    0 / 95
+                </strong>
+
+            </div>
+
+
+            <div
+                class="progress-track"
+                aria-hidden="true"
+            >
+                <div
+                    id="discovery-progress"
+                    class="progress-fill"
+                ></div>
+            </div>
+
+
+            <p>
+                Keep exploring. There are plenty more waiting for you. 💙
+            </p>
+
+        </section>
+
+
+        <footer class="page-footer">
+
+            <p>
+                A tiny corner of Nova for whenever you need it. ☁️
+            </p>
+
+            <span>
+                Project Nova Arcade • Made with 💙
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
