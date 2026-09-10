@@ -1,5 +1,6 @@
 /* =================================
    PROJECT NOVA - BIRTHDAY PAGE
+   V1.1 PHASE 2
    Theme: Butter Yellow × Burgundy
 ================================= */
 
@@ -9,11 +10,19 @@
 ================================= */
 
 .birthday-page {
+
     min-height: 100vh;
+
     padding: 25px;
 
-    display: flex;
-    flex-direction: column;
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    position:
+        relative;
 }
 
 
@@ -22,55 +31,105 @@
 ================================= */
 
 .birthday-nav {
+
     width: 100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
 }
+
 
 .back-home-btn {
-    padding: 10px 16px;
 
-    border-radius: 999px;
+    padding:
+        10px 16px;
 
-    text-decoration: none;
+    border-radius:
+        999px;
 
-    color: var(--nova-burgundy);
+    text-decoration:
+        none;
 
-    font-size: 0.9rem;
-    font-weight: 600;
+    color:
+        var(--nova-burgundy);
 
-    border: 1px solid var(--nova-border);
+    font-size:
+        0.9rem;
 
-    background: rgba(255, 253, 245, 0.55);
+    font-weight:
+        600;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.58);
+
+    box-shadow:
+        0 5px 16px
+        rgba(66, 21, 34, 0.05);
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        color var(--nova-transition),
+        box-shadow var(--nova-transition),
+        border-color var(--nova-transition);
 }
+
 
 .back-home-btn:hover {
-    transform: translateX(-4px);
 
-    color: var(--nova-burgundy-dark);
+    transform:
+        translateX(-4px);
 
-    background: var(--nova-glass-strong);
+    color:
+        var(--nova-burgundy-dark);
 
-    box-shadow: var(--nova-shadow);
+    background:
+        var(--nova-glass-strong);
+
+    border-color:
+        rgba(110, 31, 50, 0.22);
+
+    box-shadow:
+        var(--nova-shadow);
 }
 
+
+.back-home-btn:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
+}
+
+
 .nova-small {
-    font-size: 0.75rem;
-    font-weight: 700;
 
-    letter-spacing: 3px;
+    font-size:
+        0.75rem;
 
-    color: var(--nova-burgundy);
+    font-weight:
+        700;
 
-    opacity: 0.55;
+    letter-spacing:
+        3px;
+
+    color:
+        var(--nova-burgundy);
+
+    opacity:
+        0.55;
 }
 
 
@@ -79,46 +138,75 @@
 ================================= */
 
 .birthday-intro {
+
     flex: 1;
 
-    display: flex;
-    flex-direction: column;
+    display:
+        flex;
 
-    align-items: center;
-    justify-content: center;
+    flex-direction:
+        column;
 
-    text-align: center;
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
 
     animation:
         birthdayIntroAppear 0.8s ease;
 }
 
+
 .birthday-label {
-    margin-bottom: 16px;
 
-    font-size: 0.75rem;
-    font-weight: 700;
+    margin-bottom:
+        16px;
 
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    font-size:
+        0.75rem;
 
-    color: var(--nova-burgundy);
+    font-weight:
+        700;
 
-    opacity: 0.6;
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--nova-burgundy);
+
+    opacity:
+        0.6;
 }
 
+
 .birthday-intro h1 {
-    margin-bottom: 18px;
+
+    margin-bottom:
+        18px;
 
     font-size:
         clamp(4rem, 14vw, 9rem);
 
     color:
         var(--nova-burgundy-dark);
+
+    text-shadow:
+        0 4px 20px
+        rgba(66, 21, 34, 0.08);
 }
 
+
 .birthday-text {
-    margin-bottom: 10px;
+
+    margin-bottom:
+        10px;
 
     font-size:
         clamp(1.1rem, 2vw, 1.4rem);
@@ -130,35 +218,54 @@
 ================================= */
 
 .birthday-message-area {
-    display: none;
 
-    flex-direction: column;
+    display:
+        none;
 
-    align-items: center;
-    justify-content: center;
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     min-height:
         calc(100vh - 80px);
 
-    width: 100%;
-    max-width: 700px;
+    width:
+        100%;
 
-    margin: auto;
+    max-width:
+        700px;
 
-    text-align: center;
+    margin:
+        auto;
+
+    text-align:
+        center;
 }
+
 
 .birthday-message-area.active {
-    display: flex;
+
+    display:
+        flex;
 
     animation:
-        messageAppear 0.8s ease;
+        messageAppear 0.7s
+        cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.birthday-message-area h2 {
-    max-width: 700px;
 
-    margin-bottom: 22px;
+.birthday-message-area h2 {
+
+    max-width:
+        700px;
+
+    margin-bottom:
+        22px;
 
     font-family:
         "Playfair Display",
@@ -167,28 +274,40 @@
     font-size:
         clamp(2rem, 5vw, 4rem);
 
-    line-height: 1.15;
+    line-height:
+        1.15;
 
     color:
         var(--nova-burgundy-dark);
+
+    text-wrap:
+        balance;
 }
+
 
 .birthday-message-area p {
-    margin-bottom: 14px;
+
+    margin-bottom:
+        14px;
 }
 
+
 .message-highlight {
-    margin-top: 10px;
+
+    margin-top:
+        10px;
 
     font-size:
         clamp(1.3rem, 3vw, 2rem);
 
-    font-weight: 700;
+    font-weight:
+        700;
 
     color:
         var(--nova-burgundy);
 
-    opacity: 1;
+    opacity:
+        1;
 }
 
 
@@ -197,55 +316,114 @@
 ================================= */
 
 .challenge-area {
-    width: 100%;
+
+    width:
+        100%;
 }
 
+
 #game-area {
-    position: relative;
+
+    position:
+        relative;
 
     width:
         min(700px, 90vw);
 
-    height: 400px;
+    height:
+        400px;
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
     border:
         1px solid var(--nova-border);
 
     background:
-        rgba(255, 253, 245, 0.48);
+
+        radial-gradient(
+            circle at center,
+            rgba(243, 227, 165, 0.28),
+            transparent 55%
+        ),
+
+        rgba(255, 253, 245, 0.52);
 
     box-shadow:
         var(--nova-shadow);
 
-    overflow: hidden;
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
 }
 
+
+#game-area::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        12px;
+
+    border:
+        1px dashed
+        rgba(110, 31, 50, 0.10);
+
+    border-radius:
+        18px;
+
+    pointer-events:
+        none;
+}
+
+
 #challenge-counter {
+
     color:
         var(--nova-burgundy);
 
-    font-weight: 700;
+    font-weight:
+        700;
 }
 
+
 #catch-btn {
-    position: absolute;
 
-    left: 50%;
-    top: 50%;
+    position:
+        absolute;
 
-    min-width: 70px;
-    min-height: 70px;
+    left:
+        50%;
 
-    padding: 10px;
+    top:
+        50%;
 
-    border-radius: 50%;
+    min-width:
+        70px;
 
-    font-size: 2rem;
-    line-height: 1;
+    min-height:
+        70px;
+
+    padding:
+        10px;
+
+    border-radius:
+        50%;
+
+    font-size:
+        2rem;
+
+    line-height:
+        1;
 
     color:
         var(--nova-cream);
@@ -253,24 +431,44 @@
     background:
         var(--nova-burgundy);
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     transform:
         translate(-50%, -50%);
 
+    box-shadow:
+        0 10px 28px
+        rgba(66, 21, 34, 0.22);
+
     transition:
         left 0.25s ease,
         top 0.25s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
+
 #catch-btn:hover {
+
     background:
         var(--nova-burgundy-dark);
 
     transform:
         translate(-50%, -50%)
         scale(1.1);
+
+    box-shadow:
+        0 14px 32px
+        rgba(66, 21, 34, 0.28);
+}
+
+
+#catch-btn:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.94);
 }
 
 
@@ -279,34 +477,49 @@
 ================================= */
 
 .birthday-reveal-area {
-    position: relative;
+
+    position:
+        relative;
 }
 
+
 .birthday-reveal-title {
+
     font-size:
         clamp(3.5rem, 12vw, 9rem) !important;
 
     line-height:
         0.9 !important;
 
-    letter-spacing: -2px;
+    letter-spacing:
+        -2px;
 
     color:
         var(--nova-burgundy-dark);
 
     animation:
         birthdayRevealPop 1s ease;
+
+    text-shadow:
+        0 5px 25px
+        rgba(66, 21, 34, 0.10);
 }
 
+
 .birthday-reveal-name {
-    margin-top: 10px;
+
+    margin-top:
+        10px;
 
     font-size:
         clamp(2rem, 5vw, 3rem);
 }
 
+
 .birthday-reveal-text {
-    margin-top: 12px;
+
+    margin-top:
+        12px;
 
     font-size:
         clamp(1rem, 2vw, 1.3rem);
@@ -318,43 +531,69 @@
 ================================= */
 
 .birthday-vault-area {
-    width: 100%;
+
+    width:
+        100%;
 }
+
 
 .vault-description {
-    margin-bottom: 5px !important;
+
+    margin-bottom:
+        5px !important;
 }
 
+
 .vault-grid {
+
     width:
         min(900px, 100%);
 
-    margin-top: 35px;
+    margin-top:
+        35px;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap:
+        20px;
 }
 
+
 .vault-card {
-    min-height: 230px;
 
-    padding: 25px;
+    min-height:
+        230px;
 
-    display: flex;
-    flex-direction: column;
+    padding:
+        28px 25px;
 
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    border-radius: 25px;
+    flex-direction:
+        column;
 
-    cursor: pointer;
+    align-items:
+        center;
 
-    font-family: inherit;
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    border-radius:
+        25px;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
 
     color:
         var(--nova-burgundy-dark);
@@ -363,24 +602,77 @@
         1px solid var(--nova-border);
 
     background:
-        var(--nova-glass);
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.82),
+            rgba(255, 253, 245, 0.60)
+        );
 
     box-shadow:
         var(--nova-shadow);
 
+    overflow:
+        hidden;
+
     transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        box-shadow var(--nova-transition),
+        border-color var(--nova-transition);
 }
 
+
+.vault-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    top:
+        -75px;
+
+    right:
+        -60px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(243, 227, 165, 0.58),
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
 .vault-card:hover {
+
     transform:
         translateY(-8px);
 
     background:
-        var(--nova-glass-strong);
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(255, 248, 214, 0.70)
+        );
 
     border-color:
         rgba(110, 31, 50, 0.25);
@@ -389,52 +681,903 @@
         var(--nova-shadow-strong);
 }
 
+
+.vault-card:hover::before {
+
+    transform:
+        scale(1.45);
+}
+
+
 .vault-card:active {
+
     transform:
         translateY(-4px)
         scale(0.98);
 }
 
-.vault-icon {
-    margin-bottom: 20px;
 
-    font-size: 3rem;
+.vault-card:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.24);
+
+    outline-offset:
+        4px;
 }
 
+
+.vault-icon {
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        3rem;
+
+    position:
+        relative;
+}
+
+
 .vault-card-title {
-    margin-bottom: 10px;
 
-    font-size: 1.2rem;
+    margin-bottom:
+        10px;
 
-    font-weight: 700;
+    font-size:
+        1.2rem;
+
+    font-weight:
+        700;
 
     color:
         var(--nova-burgundy-dark);
+
+    position:
+        relative;
 }
 
+
 .vault-card-text {
-    font-size: 0.9rem;
+
+    font-size:
+        0.9rem;
 
     color:
         var(--nova-muted);
 
-    opacity: 1;
+    opacity:
+        1;
+
+    position:
+        relative;
 }
+
 
 .vault-card-locked {
-    cursor: not-allowed;
 
-    opacity: 0.5;
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.5;
+
+    filter:
+        saturate(0.65);
 }
 
+
 .vault-card-locked:hover {
-    transform: none;
+
+    transform:
+        none;
 
     box-shadow:
         var(--nova-shadow);
 
     background:
         var(--nova-glass);
+
+    border-color:
+        var(--nova-border);
+}
+
+
+.vault-card-locked::before {
+
+    opacity:
+        0.4;
+}
+
+
+/* =================================
+   SECRET FILE / DIVA QUEST
+================================= */
+
+.secret-file-area,
+.diva-challenge-area,
+.diva-mode-area {
+
+    width:
+        100%;
+}
+
+
+.diva-progress {
+
+    width:
+        min(500px, 100%);
+
+    margin:
+        25px auto;
+
+    padding:
+        18px 25px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        20px;
+
+    border-radius:
+        20px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.72);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    font-size:
+        1.7rem;
+
+    letter-spacing:
+        5px;
+}
+
+
+.diva-progress span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(243, 227, 165, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.diva-progress span.unlocked {
+
+    background:
+        rgba(243, 227, 165, 0.65);
+
+    transform:
+        scale(1.08);
+
+    animation:
+        divaLockUnlock 0.45s ease;
+}
+
+
+/* =================================
+   DIVA CHOICE BUTTONS
+================================= */
+
+.diva-choice-grid {
+
+    width:
+        min(650px, 100%);
+
+    margin-top:
+        25px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        14px;
+}
+
+
+.diva-choice-grid button {
+
+    min-height:
+        65px;
+
+    padding:
+        16px 20px;
+
+    border-radius:
+        18px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.82);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-family:
+        inherit;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 6px 18px
+        rgba(66, 21, 34, 0.06);
+
+    transition:
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        color var(--nova-transition),
+        border-color var(--nova-transition),
+        box-shadow var(--nova-transition);
+}
+
+
+.diva-choice-grid button:hover {
+
+    transform:
+        translateY(-4px);
+
+    color:
+        var(--nova-cream);
+
+    background:
+        var(--nova-burgundy);
+
+    border-color:
+        var(--nova-burgundy);
+
+    box-shadow:
+        var(--nova-shadow-strong);
+}
+
+
+.diva-choice-grid button:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
+}
+
+
+.diva-choice-grid button.correct {
+
+    color:
+        var(--nova-cream);
+
+    background:
+        var(--nova-burgundy);
+
+    border-color:
+        var(--nova-burgundy);
+
+    transform:
+        scale(1.03);
+}
+
+
+.diva-choice-grid button.wrong {
+
+    opacity:
+        0.55;
+
+    transform:
+        scale(0.98);
+}
+
+
+/* =================================
+   DIVA FEEDBACK
+================================= */
+
+.diva-feedback {
+
+    min-height:
+        28px;
+
+    margin-top:
+        18px !important;
+
+    color:
+        var(--nova-burgundy);
+
+    font-weight:
+        700;
+
+    animation:
+        messageAppear 0.35s ease;
+}
+
+
+/* =================================
+   DIVA EMOJI CHASE
+================================= */
+
+#diva-chase-counter {
+
+    color:
+        var(--nova-burgundy);
+
+    font-weight:
+        700;
+}
+
+
+#diva-chase-game {
+
+    position:
+        relative;
+
+    width:
+        min(700px, 90vw);
+
+    height:
+        360px;
+
+    margin-top:
+        20px;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(243, 227, 165, 0.34),
+            transparent 58%
+        ),
+
+        rgba(255, 253, 245, 0.62);
+
+    box-shadow:
+        var(--nova-shadow);
+
+    overflow:
+        hidden;
+}
+
+
+#diva-chase-game::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        12px;
+
+    border:
+        1px dashed
+        rgba(110, 31, 50, 0.12);
+
+    border-radius:
+        18px;
+
+    pointer-events:
+        none;
+}
+
+
+#diva-chase-target {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    padding:
+        0;
+
+    border:
+        0;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--nova-burgundy);
+
+    font-size:
+        2rem;
+
+    cursor:
+        pointer;
+
+    transform:
+        translate(-50%, -50%);
+
+    box-shadow:
+        0 10px 28px
+        rgba(66, 21, 34, 0.22);
+
+    transition:
+        left 0.22s ease,
+        top 0.22s ease,
+        transform 0.18s ease;
+}
+
+
+#diva-chase-target:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.12);
+}
+
+
+#diva-chase-target:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.92);
+}
+
+
+/* =================================
+   DIVA MEMORY
+================================= */
+
+.diva-memory-display {
+
+    width:
+        min(600px, 100%);
+
+    min-height:
+        110px;
+
+    margin-top:
+        25px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.40),
+            rgba(255, 253, 245, 0.80)
+        );
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size:
+        2.6rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        8px;
+
+    box-shadow:
+        var(--nova-shadow);
+}
+
+
+.diva-memory-options {
+
+    margin-top:
+        18px;
+}
+
+
+.diva-memory-options button {
+
+    font-size:
+        1.8rem;
+}
+
+
+/* =================================
+   DIVA PUZZLE
+================================= */
+
+.diva-puzzle-question {
+
+    width:
+        min(650px, 100%);
+
+    margin-top:
+        25px;
+
+    padding:
+        25px;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.75);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size:
+        clamp(1.5rem, 4vw, 2.5rem);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        5px;
+
+    box-shadow:
+        var(--nova-shadow);
+}
+
+
+/* =================================
+   FINAL LOCK
+================================= */
+
+.diva-final-content {
+
+    width:
+        min(650px, 100%);
+
+    margin-top:
+        25px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        18px;
+}
+
+
+.diva-final-sequence {
+
+    padding:
+        25px 35px;
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.42),
+            rgba(255, 253, 245, 0.78)
+        );
+
+    border:
+        1px solid var(--nova-border);
+
+    font-size:
+        2.5rem;
+
+    letter-spacing:
+        10px;
+
+    box-shadow:
+        var(--nova-shadow);
+}
+
+
+.diva-final-content .diva-choice-grid {
+
+    margin-top:
+        0;
+}
+
+
+.diva-final-slay {
+
+    min-width:
+        230px;
+
+    padding:
+        17px 25px;
+
+    border:
+        0;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--nova-burgundy);
+
+    color:
+        var(--nova-cream);
+
+    font-family:
+        inherit;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        var(--nova-shadow-strong);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.diva-final-slay:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    background:
+        var(--nova-burgundy-dark);
+}
+
+
+.diva-final-slay:active {
+
+    transform:
+        scale(0.97);
+}
+
+
+.diva-final-slay:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.24);
+
+    outline-offset:
+        4px;
+}
+
+
+/* =================================
+   SECRET REWARD
+================================= */
+
+.secret-reward-box {
+
+    width:
+        min(620px, 100%);
+
+    margin:
+        25px 0;
+
+    padding:
+        35px 25px;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid
+        rgba(110, 31, 50, 0.18);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.42),
+            rgba(255, 253, 245, 0.80)
+        );
+
+    box-shadow:
+        var(--nova-shadow-strong);
+
+    animation:
+        rewardAppear 0.8s ease;
+}
+
+
+.secret-reward-icon {
+
+    display:
+        block;
+
+    margin-bottom:
+        15px;
+
+    font-size:
+        4rem;
+
+    animation:
+        divaFloat 1.8s ease-in-out infinite;
+}
+
+
+.secret-reward-box h3 {
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size:
+        1.3rem;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =================================
+   DIVA MODE
+================================= */
+
+.diva-mode-message {
+
+    width:
+        min(650px, 100%);
+
+    min-height:
+        120px;
+
+    margin:
+        25px 0;
+
+    padding:
+        30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.42),
+            rgba(255, 253, 245, 0.80)
+        );
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.5;
+
+    box-shadow:
+        var(--nova-shadow);
+
+    animation:
+        messageAppear 0.45s ease;
+}
+
+
+/* =================================
+   SECONDARY BUTTONS
+================================= */
+
+.secondary-button {
+
+    margin-top:
+        12px;
+
+    background:
+        transparent !important;
+
+    color:
+        var(--nova-burgundy) !important;
+
+    border:
+        1px solid var(--nova-border) !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.secondary-button:hover {
+
+    color:
+        var(--nova-burgundy-dark) !important;
+
+    background:
+        rgba(243, 227, 165, 0.20) !important;
+
+    transform:
+        translateY(-2px);
 }
 
 
@@ -442,50 +1585,62 @@
    SOMETHING SPECIAL
 ================================= */
 
-
-/* =================================
-   PERSONALITY SCAN
-================================= */
-
 .special-scan-results {
+
     width:
         min(620px, 100%);
 
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top:
+        20px;
 
-    padding: 25px;
+    margin-bottom:
+        10px;
 
-    display: flex;
-    flex-direction: column;
+    padding:
+        25px;
 
-    gap: 12px;
+    display:
+        flex;
 
-    border-radius: 22px;
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+    border-radius:
+        22px;
 
     border:
         1px solid var(--nova-border);
 
     background:
-        rgba(255, 253, 245, 0.70);
+        rgba(255, 253, 245, 0.72);
 
     box-shadow:
         var(--nova-shadow);
 
-    text-align: left;
+    text-align:
+        left;
 }
 
+
 .special-scan-results p {
-    width: 100%;
 
-    margin: 0;
+    width:
+        100%;
 
-    padding: 12px 15px;
+    margin:
+        0;
+
+    padding:
+        12px 15px;
 
     border-left:
         4px solid var(--nova-burgundy);
 
-    border-radius: 8px;
+    border-radius:
+        8px;
 
     background:
         rgba(243, 227, 165, 0.30);
@@ -497,10 +1652,14 @@
         "DM Sans",
         sans-serif;
 
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size:
+        0.95rem;
 
-    opacity: 1;
+    font-weight:
+        600;
+
+    opacity:
+        1;
 
     animation:
         scanLineAppear 0.5s ease;
@@ -512,32 +1671,49 @@
 ================================= */
 
 .little-things-grid {
+
     width:
         min(900px, 100%);
 
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top:
+        30px;
 
-    display: grid;
+    margin-bottom:
+        20px;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 16px;
+    gap:
+        16px;
 }
 
+
 .little-thing-card {
-    min-height: 190px;
 
-    padding: 24px 18px;
+    min-height:
+        190px;
 
-    display: flex;
-    flex-direction: column;
+    padding:
+        24px 18px;
 
-    align-items: center;
-    justify-content: center;
+    display:
+        flex;
 
-    border-radius: 22px;
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        22px;
 
     border:
         1px solid var(--nova-border);
@@ -549,52 +1725,84 @@
         var(--nova-shadow);
 
     transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        box-shadow var(--nova-transition),
+        border-color var(--nova-transition);
 }
 
+
 .little-thing-card:hover {
+
     transform:
         translateY(-6px);
 
     background:
         var(--nova-glass-strong);
 
+    border-color:
+        rgba(110, 31, 50, 0.20);
+
     box-shadow:
         var(--nova-shadow-strong);
 }
 
-.little-thing-icon {
-    margin-bottom: 14px;
 
-    font-size: 2.3rem;
+.little-thing-icon {
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        2.3rem;
+
+    transition:
+        transform 0.3s ease;
 }
 
+
+.little-thing-card:hover
+.little-thing-icon {
+
+    transform:
+        translateY(-3px)
+        scale(1.08);
+}
+
+
 .little-thing-card h3 {
-    margin-bottom: 9px;
+
+    margin-bottom:
+        9px;
 
     font-family:
         "Playfair Display",
         serif;
 
-    font-size: 1.15rem;
+    font-size:
+        1.15rem;
 
     color:
         var(--nova-burgundy-dark);
 }
 
+
 .little-thing-card p {
-    margin: 0;
 
-    font-size: 0.88rem;
+    margin:
+        0;
 
-    line-height: 1.5;
+    font-size:
+        0.88rem;
+
+    line-height:
+        1.5;
 
     color:
         var(--nova-muted);
 
-    opacity: 1;
+    opacity:
+        1;
 }
 
 
@@ -603,42 +1811,58 @@
 ================================= */
 
 .memory-list {
+
     width:
         min(650px, 100%);
 
-    margin-top: 30px;
+    margin-top:
+        30px;
 
-    display: flex;
-    flex-direction: column;
+    display:
+        flex;
 
-    gap: 12px;
+    flex-direction:
+        column;
+
+    gap:
+        12px;
 }
 
+
 .memory-card {
-    width: 100%;
 
-    min-height: 70px;
+    width:
+        100%;
 
-    margin-top: 0;
+    min-height:
+        70px;
 
-    padding: 15px 20px;
+    margin-top:
+        0;
 
-    display: grid;
+    padding:
+        15px 20px;
+
+    display:
+        grid;
 
     grid-template-columns:
         45px 1fr auto;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 12px;
+    gap:
+        12px;
 
-    border-radius: 18px;
+    border-radius:
+        18px;
 
     border:
         1px solid var(--nova-border);
 
     background:
-        rgba(255, 253, 245, 0.75);
+        rgba(255, 253, 245, 0.76);
 
     color:
         var(--nova-burgundy-dark);
@@ -647,49 +1871,80 @@
         0 6px 18px
         rgba(66, 21, 34, 0.06);
 
-    text-align: left;
+    text-align:
+        left;
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        box-shadow var(--nova-transition),
+        border-color var(--nova-transition);
 }
 
+
 .memory-card:hover {
+
     transform:
         translateX(6px);
 
     background:
         var(--nova-glass-strong);
 
+    border-color:
+        rgba(110, 31, 50, 0.20);
+
     box-shadow:
         var(--nova-shadow);
 }
 
-.memory-card > span:first-child {
-    font-size: 1.6rem;
 
-    text-align: center;
+.memory-card:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
 }
 
+
+.memory-card > span:first-child {
+
+    font-size:
+        1.6rem;
+
+    text-align:
+        center;
+}
+
+
 .memory-card > span:nth-child(2) {
-    font-size: 0.95rem;
 
-    font-weight: 700;
+    font-size:
+        0.95rem;
 
-    letter-spacing: 1px;
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
 
     color:
         var(--nova-burgundy-dark);
 }
 
+
 .memory-card small {
-    font-size: 0.78rem;
+
+    font-size:
+        0.78rem;
 
     color:
         var(--nova-muted);
 
-    white-space: nowrap;
+    white-space:
+        nowrap;
 }
 
 
@@ -698,37 +1953,54 @@
 ================================= */
 
 .memory-display {
+
     width:
         min(650px, 100%);
 
-    min-height: 70px;
+    min-height:
+        70px;
 
-    margin-top: 20px !important;
-    margin-bottom: 5px !important;
+    margin-top:
+        20px !important;
 
-    padding: 20px;
+    margin-bottom:
+        5px !important;
 
-    border-radius: 18px;
+    padding:
+        20px;
+
+    border-radius:
+        18px;
 
     border:
         1px solid
         rgba(110, 31, 50, 0.18);
 
     background:
-        rgba(243, 227, 165, 0.35);
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.38),
+            rgba(255, 253, 245, 0.72)
+        );
 
     color:
         var(--nova-burgundy-dark);
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 
-    opacity: 1;
+    opacity:
+        1;
 
     box-shadow:
         0 6px 20px
         rgba(66, 21, 34, 0.06);
+
+    animation:
+        messageAppear 0.45s ease;
 }
 
 
@@ -737,36 +2009,52 @@
 ================================= */
 
 .final-analysis {
+
     width:
         min(650px, 100%);
 
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top:
+        25px;
 
-    padding: 25px;
+    margin-bottom:
+        20px;
 
-    border-radius: 22px;
+    padding:
+        25px;
+
+    border-radius:
+        22px;
 
     border:
         1px solid var(--nova-border);
 
     background:
-        rgba(255, 253, 245, 0.70);
+        rgba(255, 253, 245, 0.72);
 
     box-shadow:
         var(--nova-shadow);
 
-    text-align: left;
+    text-align:
+        left;
 }
 
+
 .final-analysis p {
-    width: 100%;
 
-    margin-bottom: 12px;
+    width:
+        100%;
 
-    padding: 10px 12px;
+    margin-bottom:
+        12px;
 
-    border-radius: 10px;
+    padding:
+        11px 13px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(243, 227, 165, 0.16);
 
     color:
         var(--nova-text);
@@ -775,20 +2063,28 @@
         "DM Sans",
         sans-serif;
 
-    font-size: 0.95rem;
+    font-size:
+        0.95rem;
 
-    opacity: 1;
+    opacity:
+        1;
 }
+
 
 .final-analysis p:last-child {
-    margin-bottom: 0;
+
+    margin-bottom:
+        0;
 }
 
+
 .final-analysis strong {
+
     color:
         var(--nova-burgundy);
 
-    font-weight: 700;
+    font-weight:
+        700;
 }
 
 
@@ -797,56 +2093,81 @@
 ================================= */
 
 #quiz-area {
-    width: 100%;
+
+    width:
+        100%;
 }
 
+
 #quiz-question {
-    width: 100%;
+
+    width:
+        100%;
 
     color:
         var(--nova-burgundy-dark);
 
-    opacity: 1;
+    opacity:
+        1;
+
+    text-wrap:
+        balance;
 }
 
+
 .quiz-options {
+
     width:
         min(600px, 100%);
 
-    display: flex;
-    flex-direction: column;
+    display:
+        flex;
 
-    gap: 14px;
+    flex-direction:
+        column;
 
-    margin-top: 20px;
+    gap:
+        14px;
+
+    margin-top:
+        20px;
 }
 
 
-/* =================================
-   QUIZ OPTION BUTTONS
-================================= */
-
 .quiz-option {
-    width: 100%;
 
-    display: block;
+    width:
+        100%;
 
-    padding: 18px 22px;
+    display:
+        block;
 
-    margin-top: 0;
+    padding:
+        18px 22px;
 
-    border-radius: 18px;
+    margin-top:
+        0;
 
-    cursor: pointer;
+    border-radius:
+        18px;
 
-    font-family: inherit;
+    cursor:
+        pointer;
 
-    font-size: 1rem;
-    font-weight: 600;
+    font-family:
+        inherit;
 
-    line-height: 1.4;
+    font-size:
+        1rem;
 
-    text-align: center;
+    font-weight:
+        600;
+
+    line-height:
+        1.4;
+
+    text-align:
+        center;
 
     color:
         var(--nova-burgundy-dark) !important;
@@ -854,9 +2175,11 @@
     -webkit-text-fill-color:
         var(--nova-burgundy-dark);
 
-    opacity: 1 !important;
+    opacity:
+        1 !important;
 
-    visibility: visible !important;
+    visibility:
+        visible !important;
 
     border:
         1px solid var(--nova-border);
@@ -869,13 +2192,16 @@
         rgba(66, 21, 34, 0.06);
 
     transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        transform var(--nova-transition),
+        background var(--nova-transition),
+        box-shadow var(--nova-transition),
+        border-color var(--nova-transition),
+        color var(--nova-transition);
 }
 
+
 .quiz-option:hover {
+
     transform:
         translateY(-3px);
 
@@ -895,7 +2221,9 @@
         var(--nova-shadow-strong);
 }
 
+
 .quiz-option.selected {
+
     color:
         var(--nova-cream) !important;
 
@@ -916,31 +2244,50 @@
 }
 
 
+.quiz-option:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
+}
+
+
 /* =================================
    QUIZ RESULTS
 ================================= */
 
 .quiz-score {
-    margin-top: 10px;
+
+    margin-top:
+        10px;
 
     font-size:
         clamp(1.5rem, 4vw, 2.5rem);
 
-    font-weight: 700;
+    font-weight:
+        700;
 
     color:
         var(--nova-burgundy) !important;
 
-    opacity: 1;
+    opacity:
+        1;
 }
 
+
 #quiz-result-message {
-    font-size: 1.1rem;
+
+    font-size:
+        1.1rem;
 
     color:
         var(--nova-text);
 
-    opacity: 0.85;
+    opacity:
+        0.85;
 }
 
 
@@ -954,7 +2301,9 @@
 #special-memory-btn,
 #special-final-btn,
 #special-back-btn {
-    margin-top: 20px;
+
+    margin-top:
+        20px;
 }
 
 
@@ -965,14 +2314,18 @@
 @keyframes birthdayIntroAppear {
 
     from {
-        opacity: 0;
+
+        opacity:
+            0;
 
         transform:
             translateY(25px);
     }
 
     to {
-        opacity: 1;
+
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -984,17 +2337,23 @@
 @keyframes messageAppear {
 
     from {
-        opacity: 0;
+
+        opacity:
+            0;
 
         transform:
-            translateY(30px);
+            translateY(24px)
+            scale(0.99);
     }
 
     to {
-        opacity: 1;
+
+        opacity:
+            1;
 
         transform:
-            translateY(0);
+            translateY(0)
+            scale(1);
     }
 
 }
@@ -1003,19 +2362,24 @@
 @keyframes birthdayRevealPop {
 
     0% {
-        opacity: 0;
+
+        opacity:
+            0;
 
         transform:
             scale(0.6);
     }
 
     70% {
+
         transform:
             scale(1.05);
     }
 
     100% {
-        opacity: 1;
+
+        opacity:
+            1;
 
         transform:
             scale(1);
@@ -1024,24 +2388,134 @@
 }
 
 
-/* =================================
-   SPECIAL ANIMATIONS
-================================= */
-
 @keyframes scanLineAppear {
 
     from {
-        opacity: 0;
+
+        opacity:
+            0;
 
         transform:
             translateX(-12px);
     }
 
     to {
-        opacity: 1;
+
+        opacity:
+            1;
 
         transform:
             translateX(0);
+    }
+
+}
+
+
+/* =================================
+   DIVA ANIMATIONS
+================================= */
+
+@keyframes divaLockUnlock {
+
+    0% {
+
+        opacity:
+            0.5;
+
+        transform:
+            scale(0.7)
+            rotate(-10deg);
+    }
+
+    60% {
+
+        transform:
+            scale(1.18)
+            rotate(5deg);
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.08)
+            rotate(0);
+    }
+
+}
+
+
+@keyframes rewardAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(0.94);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes divaFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(4deg);
+    }
+
+}
+
+
+/* =================================
+   DESKTOP POLISH
+================================= */
+
+@media (min-width: 900px) {
+
+    .birthday-page {
+
+        padding:
+            30px 35px;
+    }
+
+
+    .vault-grid {
+
+        gap:
+            22px;
+    }
+
+
+    .little-things-grid {
+
+        gap:
+            18px;
     }
 
 }
@@ -1054,26 +2528,66 @@
 @media (max-width: 700px) {
 
     .vault-grid {
+
         grid-template-columns:
             1fr;
     }
 
+
     .vault-card {
-        min-height: 180px;
+
+        min-height:
+            180px;
     }
 
 
-    /* Something Special */
-
     .little-things-grid {
+
         grid-template-columns:
             repeat(2, 1fr);
     }
 
-    .little-thing-card {
-        min-height: 175px;
 
-        padding: 20px 14px;
+    .little-thing-card {
+
+        min-height:
+            175px;
+
+        padding:
+            20px 14px;
+    }
+
+
+    .diva-choice-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .diva-progress {
+
+        gap:
+            8px;
+
+        padding:
+            14px;
+
+        letter-spacing:
+            0;
+    }
+
+
+    .diva-progress span {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            1.2rem;
     }
 
 }
@@ -1082,34 +2596,55 @@
 @media (max-width: 600px) {
 
     .birthday-page {
-        padding: 18px;
+
+        padding:
+            18px;
     }
 
+
     .birthday-nav {
+
         align-items:
             flex-start;
     }
 
-    .nova-small {
-        text-align: right;
 
-        font-size: 0.65rem;
+    .nova-small {
+
+        text-align:
+            right;
+
+        font-size:
+            0.65rem;
     }
+
 
     #game-area {
-        height: 350px;
+
+        height:
+            350px;
     }
+
+
+    #diva-chase-game {
+
+        height:
+            320px;
+    }
+
 
     .quiz-option {
-        padding: 16px;
 
-        font-size: 0.95rem;
+        padding:
+            16px;
+
+        font-size:
+            0.95rem;
     }
 
 
-    /* Memory Archive */
-
     .memory-card {
+
         grid-template-columns:
             38px 1fr;
 
@@ -1117,7 +2652,9 @@
             14px 16px;
     }
 
+
     .memory-card small {
+
         grid-column:
             2;
 
@@ -1126,14 +2663,40 @@
     }
 
 
-    /* Special sections */
-
     .special-scan-results {
-        padding: 18px;
+
+        padding:
+            18px;
     }
 
+
     .final-analysis {
-        padding: 18px;
+
+        padding:
+            18px;
+    }
+
+
+    .diva-puzzle-question {
+
+        padding:
+            20px;
+
+        letter-spacing:
+            2px;
+    }
+
+
+    .diva-final-sequence {
+
+        padding:
+            20px;
+
+        font-size:
+            2rem;
+
+        letter-spacing:
+            5px;
     }
 
 }
@@ -1142,12 +2705,396 @@
 @media (max-width: 430px) {
 
     .little-things-grid {
+
         grid-template-columns:
             1fr;
     }
 
+
     .little-thing-card {
-        min-height: 150px;
+
+        min-height:
+            150px;
+    }
+
+
+    .diva-progress span {
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+        font-size:
+            1rem;
+    }
+
+}
+
+/* =================================
+   ACTUAL SECRET
+================================= */
+
+.actual-secret-trigger {
+
+    position:
+        fixed;
+
+    right:
+        18px;
+
+    bottom:
+        16px;
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid
+        rgba(110, 31, 50, 0.10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 253, 245, 0.20);
+
+    color:
+        rgba(110, 31, 50, 0.38);
+
+    font-family:
+        inherit;
+
+    font-size:
+        0.72rem;
+
+    cursor:
+        pointer;
+
+    opacity:
+        0.45;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.actual-secret-trigger:hover {
+
+    opacity:
+        1;
+
+    color:
+        var(--nova-burgundy);
+
+    background:
+        rgba(243, 227, 165, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.actual-secret-trigger:focus-visible {
+
+    opacity:
+        1;
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =================================
+   SECRET PASSCODE
+================================= */
+
+.secret-passcode-display {
+
+    width:
+        220px;
+
+    margin:
+        25px auto 18px;
+
+    padding:
+        16px;
+
+    border-radius:
+        18px;
+
+    border:
+        1px solid var(--nova-border);
+
+    background:
+        rgba(255, 253, 245, 0.78);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-size:
+        2rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        8px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        var(--nova-shadow);
+
+}
+
+
+.secret-keypad {
+
+    width:
+        min(300px, 100%);
+
+    margin:
+        0 auto 10px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        10px;
+
+}
+
+
+.secret-keypad button {
+
+    min-height:
+        58px;
+
+    border:
+        1px solid var(--nova-border);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255, 253, 245, 0.82);
+
+    color:
+        var(--nova-burgundy-dark);
+
+    font-family:
+        inherit;
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(66, 21, 34, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.secret-keypad button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        var(--nova-burgundy);
+
+    color:
+        var(--nova-cream);
+
+    box-shadow:
+        var(--nova-shadow);
+}
+
+
+.secret-keypad button:active {
+
+    transform:
+        scale(0.95);
+}
+
+
+.secret-keypad button:focus-visible {
+
+    outline:
+        3px solid
+        rgba(110, 31, 50, 0.22);
+
+    outline-offset:
+        3px;
+}
+
+
+.secret-key-clear {
+
+    color:
+        var(--nova-burgundy) !important;
+
+    background:
+        rgba(243, 227, 165, 0.35) !important;
+}
+
+
+.secret-key-enter {
+
+    color:
+        var(--nova-cream) !important;
+
+    background:
+        var(--nova-burgundy) !important;
+}
+
+
+/* =================================
+   ACTUAL SECRET LETTER
+================================= */
+
+.actual-secret-letter {
+
+    width:
+        min(700px, 100%);
+
+    max-height:
+        62vh;
+
+    margin:
+        20px 0;
+
+    padding:
+        30px;
+
+    overflow-y:
+        auto;
+
+    border:
+        1px solid
+        rgba(110, 31, 50, 0.16);
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243, 227, 165, 0.30),
+            rgba(255, 253, 245, 0.82)
+        );
+
+    box-shadow:
+        var(--nova-shadow-strong);
+
+    text-align:
+        left;
+
+}
+
+
+.actual-secret-letter p {
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--nova-text);
+
+    font-size:
+        1rem;
+
+    line-height:
+        1.75;
+
+}
+
+
+.actual-secret-letter p:last-child {
+
+    margin-bottom:
+        0;
+}
+
+
+.actual-secret-letter
+.message-highlight {
+
+    color:
+        var(--nova-burgundy);
+
+    line-height:
+        1.5;
+}
+
+
+/* =================================
+   SECRET RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+
+    .actual-secret-trigger {
+
+        right:
+            10px;
+
+        bottom:
+            10px;
+
+        font-size:
+            0.65rem;
+
+        padding:
+            6px 9px;
+    }
+
+
+    .secret-keypad {
+
+        width:
+            min(270px, 100%);
+    }
+
+
+    .secret-keypad button {
+
+        min-height:
+            52px;
+    }
+
+
+    .actual-secret-letter {
+
+        max-height:
+            58vh;
+
+        padding:
+            20px;
     }
 
 }

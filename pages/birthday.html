@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -11,9 +12,18 @@
 
     <title>Birthday | Project Nova</title>
 
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../css/birthday.css">
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/birthday.css"
+    >
+
 </head>
+
 
 <body>
 
@@ -26,7 +36,10 @@
 
         <nav class="birthday-nav">
 
-            <a href="../index.html" class="back-home-btn">
+            <a
+                href="../index.html"
+                class="back-home-btn"
+            >
                 ← Back to NOVA
             </a>
 
@@ -47,7 +60,9 @@
                 SECTION 01
             </p>
 
-            <h1>So...</h1>
+            <h1>
+                So...
+            </h1>
 
             <p class="birthday-text">
                 You actually made it here.
@@ -268,6 +283,10 @@
                 I have a few things prepared for you.
             </p>
 
+            <p class="message-highlight">
+                Choose wisely.
+            </p>
+
             <button id="show-prepared-btn">
                 Show me.
             </button>
@@ -285,16 +304,12 @@
         >
 
             <p class="birthday-label">
-                PROJECT NOVA
+                THE BIRTHDAY VAULT
             </p>
 
             <h2>
-                The Birthday Vault
+                Three files.
             </h2>
-
-            <p class="vault-description">
-                I made a few things for you.
-            </p>
 
             <p class="vault-description">
                 Choose carefully.
@@ -347,7 +362,7 @@
                 </button>
 
 
-                <!-- LOCKED -->
+                <!-- SECRET FILE -->
 
                 <button
                     id="vault-card-3"
@@ -363,12 +378,720 @@
                     </span>
 
                     <span class="vault-card-text">
-                        Not yet.
+                        Complete the Diva Quest.
                     </span>
 
                 </button>
 
             </div>
+
+        </section>
+
+
+        <!-- ================================
+             SECRET FILE INTRO
+        ================================= -->
+
+        <section
+            id="secret-file-area"
+            class="birthday-message-area secret-file-area"
+        >
+
+            <p class="birthday-label">
+                SECRET FILE
+            </p>
+
+            <h2>
+                The Diva Protocol
+            </h2>
+
+            <p>
+                Apparently, this file requires
+                five levels of authorization.
+            </p>
+
+            <p class="message-highlight">
+                Let's see if you can slay your way through.
+            </p>
+
+            <div class="diva-progress">
+
+                <span id="lock-1-status">
+                    🔒
+                </span>
+
+                <span id="lock-2-status">
+                    🔒
+                </span>
+
+                <span id="lock-3-status">
+                    🔒
+                </span>
+
+                <span id="lock-4-status">
+                    🔒
+                </span>
+
+                <span id="lock-5-status">
+                    🔒
+                </span>
+
+            </div>
+
+            <button id="secret-file-start-btn">
+                Start the Diva Quest 💅
+            </button>
+
+            <button
+                id="secret-file-back-btn"
+                class="secondary-button"
+            >
+                Back to the Vault
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             DIVA CHECK
+             LEVEL 01
+        ================================= -->
+
+        <section
+            id="diva-check-area"
+            class="birthday-message-area diva-challenge-area"
+        >
+
+            <p class="birthday-label">
+                LOCK 01
+            </p>
+
+            <h2>
+                💅 The Diva Check
+            </h2>
+
+            <p>
+                First things first.
+            </p>
+
+            <p>
+                Which emoji officially represents
+                maximum Diva energy?
+            </p>
+
+            <div
+                id="diva-check-options"
+                class="diva-choice-grid"
+            >
+
+                <button
+                    type="button"
+                    data-diva-choice="yes"
+                >
+                    💅
+                </button>
+
+                <button
+                    type="button"
+                    data-diva-choice="no"
+                >
+                    👑
+                </button>
+
+                <button
+                    type="button"
+                    data-diva-choice="no"
+                >
+                    ✨
+                </button>
+
+                <button
+                    type="button"
+                    data-diva-choice="no"
+                >
+                    🎂
+                </button>
+
+            </div>
+
+            <p
+                id="diva-check-feedback"
+                class="diva-feedback"
+            ></p>
+
+        </section>
+
+
+        <!-- ================================
+             DIVA CHASE
+             LEVEL 02
+        ================================= -->
+
+        <section
+            id="diva-chase-area"
+            class="birthday-message-area diva-challenge-area"
+        >
+
+            <p class="birthday-label">
+                LOCK 02
+            </p>
+
+            <h2>
+                💅 The Nailcare Emoji Chase
+            </h2>
+
+            <p>
+                Catch the 💅 three times.
+            </p>
+
+            <p id="diva-chase-counter">
+                Catches: 0 / 3
+            </p>
+
+            <div id="diva-chase-game">
+
+                <button
+                    id="diva-chase-target"
+                    type="button"
+                >
+                    💅
+                </button>
+
+            </div>
+
+            <p
+                id="diva-chase-feedback"
+                class="diva-feedback"
+            ></p>
+
+        </section>
+
+
+        <!-- ================================
+             DIVA MEMORY
+             LEVEL 03
+        ================================= -->
+
+        <section
+            id="diva-memory-area"
+            class="birthday-message-area diva-challenge-area"
+        >
+
+            <p class="birthday-label">
+                LOCK 03
+            </p>
+
+            <h2>
+                🧠 Diva Memory
+            </h2>
+
+            <p id="diva-memory-instruction">
+                Memorize the sequence.
+            </p>
+
+            <div
+                id="diva-memory-display"
+                class="diva-memory-display"
+            >
+                Ready?
+            </div>
+
+            <div
+                id="diva-memory-options"
+                class="diva-choice-grid diva-memory-options"
+            ></div>
+
+            <p
+                id="diva-memory-feedback"
+                class="diva-feedback"
+            ></p>
+
+        </section>
+
+
+        <!-- ================================
+             DIVA PUZZLE
+             LEVEL 04
+        ================================= -->
+
+        <section
+            id="diva-puzzle-area"
+            class="birthday-message-area diva-challenge-area"
+        >
+
+            <p class="birthday-label">
+                LOCK 04
+            </p>
+
+            <h2>
+                🧩 The Diva Puzzle
+            </h2>
+
+            <p>
+                Three puzzles.
+                Increasing levels of disrespect toward
+                your remaining brain cells.
+            </p>
+
+            <div
+                id="diva-puzzle-question"
+                class="diva-puzzle-question"
+            >
+                Puzzle loading...
+            </div>
+
+            <div
+                id="diva-puzzle-options"
+                class="diva-choice-grid"
+            ></div>
+
+            <p
+                id="diva-puzzle-feedback"
+                class="diva-feedback"
+            ></p>
+
+        </section>
+
+
+        <!-- ================================
+             FINAL DIVA LOCK
+             LEVEL 05
+        ================================= -->
+
+        <section
+            id="diva-final-area"
+            class="birthday-message-area diva-challenge-area"
+        >
+
+            <p class="birthday-label">
+                LOCK 05
+            </p>
+
+            <h2>
+                👑 Can the Diva Slay the Final Lock?
+            </h2>
+
+            <p id="diva-final-instruction">
+                One final test.
+            </p>
+
+            <div
+                id="diva-final-content"
+                class="diva-final-content"
+            ></div>
+
+            <p
+                id="diva-final-feedback"
+                class="diva-feedback"
+            ></p>
+
+        </section>
+
+
+        <!-- ================================
+             SECRET FILE UNLOCKED
+        ================================= -->
+
+        <section
+            id="secret-unlocked-area"
+            class="birthday-message-area"
+        >
+
+            <p class="birthday-label">
+                ACCESS GRANTED
+            </p>
+
+            <h2>
+                🎉 Secret File Unlocked
+            </h2>
+
+            <div class="secret-reward-box">
+
+                <span class="secret-reward-icon">
+                    💅
+                </span>
+
+                <h3>
+                    DIVA STATUS: CONFIRMED
+                </h3>
+
+                <p>
+                    Five locks.
+                    Five victories.
+                    Zero evidence of hesitation.
+                </p>
+
+                <p class="message-highlight">
+                    You officially slayed the Project Nova protocol.
+                </p>
+
+            </div>
+
+            <button id="diva-mode-btn">
+                Enter Diva Mode 💅
+            </button>
+
+            <button
+                id="secret-unlocked-back-btn"
+                class="secondary-button"
+            >
+                Back to the Vault
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             DIVA MODE
+        ================================= -->
+
+        <section
+            id="diva-mode-area"
+            class="birthday-message-area diva-mode-area"
+        >
+
+            <p class="birthday-label">
+                DIVA MODE
+            </p>
+
+            <h2>
+                💅 Forever Slay Mode
+            </h2>
+
+            <p>
+                There is no final score here.
+            </p>
+
+            <p>
+                Press the button whenever you feel like it.
+            </p>
+
+            <div
+                id="diva-mode-message"
+                class="diva-mode-message"
+            >
+                Diva Mode ready.
+            </div>
+
+            <button id="diva-mode-generate-btn">
+                Generate Diva Status 💅
+            </button>
+
+            <!--
+                Hidden actual-secret entrance.
+                It is intentionally subtle.
+            -->
+
+            <button
+                id="actual-secret-trigger"
+                class="actual-secret-trigger"
+                type="button"
+            >
+                Wanna know the actual secret? 👀
+            </button>
+
+            <button
+                id="diva-mode-back-btn"
+                class="secondary-button"
+            >
+                Back to Secret File
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             ACTUAL SECRET PASSWORD
+        ================================= -->
+
+        <section
+            id="actual-secret-lock-area"
+            class="birthday-message-area actual-secret-area"
+        >
+
+            <p class="birthday-label">
+                CLASSIFIED
+            </p>
+
+            <h2>
+                🔐 One More Lock
+            </h2>
+
+            <p>
+                You found something that wasn't
+                supposed to be obvious.
+            </p>
+
+            <p class="message-highlight">
+                Enter the 4-digit access code.
+            </p>
+
+            <div
+                id="secret-passcode-display"
+                class="secret-passcode-display"
+            >
+                • • • •
+            </div>
+
+            <div
+                id="secret-keypad"
+                class="secret-keypad"
+            >
+
+                <button
+                    type="button"
+                    data-digit="1"
+                >
+                    1
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="2"
+                >
+                    2
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="3"
+                >
+                    3
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="4"
+                >
+                    4
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="5"
+                >
+                    5
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="6"
+                >
+                    6
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="7"
+                >
+                    7
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="8"
+                >
+                    8
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="9"
+                >
+                    9
+                </button>
+
+                <button
+                    type="button"
+                    data-action="clear"
+                    class="secret-key-clear"
+                >
+                    C
+                </button>
+
+                <button
+                    type="button"
+                    data-digit="0"
+                >
+                    0
+                </button>
+
+                <button
+                    type="button"
+                    data-action="enter"
+                    class="secret-key-enter"
+                >
+                    ✓
+                </button>
+
+            </div>
+
+            <p
+                id="secret-passcode-feedback"
+                class="diva-feedback"
+            ></p>
+
+            <button
+                id="actual-secret-back-btn"
+                class="secondary-button"
+            >
+                Back to Diva Mode
+            </button>
+
+        </section>
+
+
+        <!-- ================================
+             THE ACTUAL SECRET
+        ================================= -->
+
+        <section
+            id="actual-secret-area"
+            class="birthday-message-area actual-secret-area"
+        >
+
+            <p class="birthday-label">
+                ACCESS GRANTED
+            </p>
+
+            <h2>
+                ❤️ The Actual Secret
+            </h2>
+
+            <div class="actual-secret-letter">
+
+                <p>
+                    There are some things I wanted to tell you
+                    that I couldn't really fit into all the games,
+                    jokes, challenges, and chaos of Project Nova.
+                </p>
+
+                <p>
+                    So if you made it this far...
+                </p>
+
+                <p class="message-highlight">
+                    This part is actually for you.
+                </p>
+
+                <p>
+                    You became one of the most important people
+                    in my life.
+                </p>
+
+                <p>
+                    You supported me.
+                    You listened to me.
+                    You were there when I needed someone to talk to.
+                    Somewhere along the way, you became much more
+                    than just someone I talked to.
+                </p>
+
+                <p>
+                    You became one of my closest friends.
+                </p>
+
+                <p>
+                    There were days when talking to you made
+                    difficult things feel easier.
+                    You gave me reasons to smile,
+                    reasons to look forward to messages,
+                    and memories that genuinely matter to me.
+                </p>
+
+                <p>
+                    I don't think I can properly explain
+                    how important that became to me.
+                </p>
+
+                <p>
+                    You were someone I trusted.
+                    Someone I cared about.
+                    Someone I couldn't simply replace.
+                </p>
+
+                <p>
+                    And yeah...
+                    I probably didn't always say
+                    all of that properly.
+                </p>
+
+                <p>
+                    You once told me that when we get to 11th,
+                    we might not talk as much because studies
+                    and life could get busier.
+                </p>
+
+                <p>
+                    Maybe that's true.
+                    Maybe things will change.
+                    Maybe we'll both become busy and end up
+                    going in completely different directions.
+                </p>
+
+                <p>
+                    That's one of the reasons I wanted Project Nova
+                    to be big enough to hold onto a little piece
+                    of this chapter.
+                </p>
+
+                <p>
+                    The games.
+                    The jokes.
+                    The ridiculous 💅 energy.
+                    All of it.
+                </p>
+
+                <p>
+                    Even if life changes,
+                    I hope you remember that you were
+                    genuinely important to me.
+                </p>
+
+                <p class="message-highlight">
+                    You supported me.
+                </p>
+
+                <p class="message-highlight">
+                    You were my best friend.
+                </p>
+
+                <p class="message-highlight">
+                    You were irreplaceable to me.
+                </p>
+
+                <p>
+                    So if someday we're both ridiculously busy
+                    and barely have time to talk,
+                    come back here and remember this chapter
+                    for what it was.
+                </p>
+
+                <p>
+                    Someone cared enough to build an entire
+                    stupid website just to make you smile. 💅
+                </p>
+
+                <p>
+                    Happy Birthday. ❤️
+                </p>
+
+                <p class="message-highlight">
+                    Project Nova wasn't really about the website.
+                </p>
+
+                <p class="message-highlight">
+                    It was about you.
+                </p>
+
+            </div>
+
+            <button
+                id="actual-secret-back-vault-btn"
+                class="secondary-button"
+            >
+                Back to the Vault
+            </button>
 
         </section>
 
@@ -703,7 +1426,6 @@
 
             <div class="final-analysis">
 
-
                 <p>
                     Cares too much ........
                     <strong>CONFIRMED</strong>
@@ -730,7 +1452,6 @@
                 </p>
 
             </div>
-
 
             <p class="message-highlight">
                 And honestly, I wouldn't change that.
@@ -810,7 +1531,9 @@
 
         </section>
 
-<!-- Feature branch test -->
+
+        <!-- Feature branch test -->
+
 
         <!-- ================================
              QUIZ RESULT

@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #172554 0%, #090d1a 45%, #03050b 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.game-shell {
+    width: min(900px, 92%);
+    min-height: 100vh;
+    margin: auto;
+    padding: 35px 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-button {
+    align-self: flex-start;
+    color: #9edcff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid rgba(120, 210, 255, 0.25);
+    border-radius: 10px;
+    background: rgba(20, 35, 65, 0.6);
+    transition: 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-4px);
+    border-color: #67d8ff;
+    background: rgba(30, 55, 95, 0.8);
+}
+
+.game-header {
+    text-align: center;
+    margin: 55px 0 35px;
+}
+
+.eyebrow {
+    color: #70dfff;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.game-header h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #72ddff, #a78bfa, #f0abfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.game-header p:last-child {
+    color: #aab5cc;
+    font-size: 1.05rem;
+}
+
+.game-card {
+    width: min(700px, 100%);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(120, 210, 255, 0.18);
+    background: rgba(10, 18, 35, 0.78);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        0 0 45px rgba(80, 180, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    padding: 15px;
+    text-align: center;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat span {
+    display: block;
+    color: #7f8da5;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+.stat strong {
+    font-size: 1.4rem;
+}
+
+.reaction-area {
+    width: 100%;
+    height: 320px;
+    border: 2px solid rgba(120, 210, 255, 0.2);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle, rgba(70, 150, 255, 0.12), transparent 65%),
+        rgba(255, 255, 255, 0.025);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+.reaction-area:hover {
+    border-color: rgba(120, 210, 255, 0.4);
+}
+
+.reaction-area.ready {
+    background:
+        radial-gradient(circle, rgba(40, 255, 150, 0.35), transparent 65%),
+        #123d2d;
+    border-color: #48f59b;
+    box-shadow: 0 0 45px rgba(60, 255, 160, 0.25);
+}
+
+.reaction-area.too-early {
+    background:
+        radial-gradient(circle, rgba(255, 70, 90, 0.25), transparent 65%),
+        #3a1119;
+    border-color: #ff5c70;
+}
+
+.reaction-area.result {
+    background:
+        radial-gradient(circle, rgba(110, 130, 255, 0.25), transparent 65%),
+        #161d4b;
+    border-color: #8b9cff;
+}
+
+#reactionText {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.message {
+    min-height: 28px;
+    margin: 18px 0;
+    text-align: center;
+    color: #aebbd0;
+}
+
+.start-button {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #39c6ff, #7c5cff);
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(75, 130, 255, 0.35);
+}
+
+.start-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.reset-button {
+    display: block;
+    margin: 12px auto 0;
+    padding: 9px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #9daabd;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 35px;
+    color: #66738a;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .game-shell {
+        padding-top: 20px;
+    }
+
+    .game-header {
+        margin-top: 40px;
+    }
+
+    .game-card {
+        padding: 18px;
+    }
+
+    .reaction-area {
+        height: 250px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
