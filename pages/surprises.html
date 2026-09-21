@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Nova | Surprises</title>
+
+    <link rel="stylesheet" href="../css/surprises.css">
+</head>
+
+<body>
+
+    <!-- Background atmosphere -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="stars"></div>
+
+    <main class="surprises-page">
+
+        <!-- Header -->
+        <header class="surprise-header">
+
+            <a href="../index.html" class="back-button">
+                ← Back to Nova
+            </a>
+
+            <div class="header-content">
+                <span class="eyebrow">PROJECT NOVA • CARD 02</span>
+
+                <h1>
+                    The Surprise Room
+                </h1>
+
+                <p>
+                    Some things are better when you don't know what's coming. 🎁
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- Progress -->
+        <section class="progress-panel">
+
+            <div class="progress-text">
+                <span>Surprises discovered</span>
+                <strong>
+                    <span id="discovered-count">0</span> / 5
+                </strong>
+            </div>
+
+            <div class="progress-track">
+                <div
+                    class="progress-fill"
+                    id="progress-fill"
+                ></div>
+            </div>
+
+        </section>
+
+
+        <!-- Mystery boxes -->
+        <section class="boxes-section">
+
+            <div class="section-heading">
+                <span class="section-number">01</span>
+
+                <div>
+                    <h2>Choose your mystery</h2>
+
+                    <p>
+                        Pick a box. Nova has no idea what will happen either.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="surprise-grid">
+
+                <!-- Box 1 -->
+                <button
+                    class="surprise-box"
+                    data-surprise="0"
+                    aria-label="Open mystery box 1"
+                >
+                    <span class="box-number">01</span>
+                    <span class="box-icon">🎁</span>
+                    <span class="box-question">?</span>
+                    <span class="box-label">Mystery One</span>
+                </button>
+
+
+                <!-- Box 2 -->
+                <button
+                    class="surprise-box"
+                    data-surprise="1"
+                    aria-label="Open mystery box 2"
+                >
+                    <span class="box-number">02</span>
+                    <span class="box-icon">🎁</span>
+                    <span class="box-question">?</span>
+                    <span class="box-label">Mystery Two</span>
+                </button>
+
+
+                <!-- Box 3 -->
+                <button
+                    class="surprise-box"
+                    data-surprise="2"
+                    aria-label="Open mystery box 3"
+                >
+                    <span class="box-number">03</span>
+                    <span class="box-icon">🎁</span>
+                    <span class="box-question">?</span>
+                    <span class="box-label">Mystery Three</span>
+                </button>
+
+
+                <!-- Box 4 -->
+                <button
+                    class="surprise-box"
+                    data-surprise="3"
+                    aria-label="Open mystery box 4"
+                >
+                    <span class="box-number">04</span>
+                    <span class="box-icon">🎁</span>
+                    <span class="box-question">?</span>
+                    <span class="box-label">Mystery Four</span>
+                </button>
+
+
+                <!-- Box 5 -->
+                <button
+                    class="surprise-box"
+                    data-surprise="4"
+                    aria-label="Open mystery box 5"
+                >
+                    <span class="box-number">05</span>
+                    <span class="box-icon">🎁</span>
+                    <span class="box-question">?</span>
+                    <span class="box-label">Mystery Five</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Surprise result -->
+        <section
+            class="result-panel"
+            id="result-panel"
+            aria-live="polite"
+        >
+
+            <div class="result-icon" id="result-icon">
+                ✨
+            </div>
+
+            <span class="result-label">
+                NOVA REVEAL
+            </span>
+
+            <h2 id="result-title">
+                Pick a box.
+            </h2>
+
+            <p id="result-message">
+                Something is waiting for you.
+            </p>
+
+            <button
+                class="another-button"
+                id="another-button"
+            >
+                Open another 🎁
+            </button>
+
+        </section>
+
+
+        <!-- Random surprise -->
+        <section class="random-section">
+
+            <div class="random-card">
+
+                <div>
+                    <span class="section-number">02</span>
+
+                    <h2>
+                        Can't decide?
+                    </h2>
+
+                    <p>
+                        Let Nova make the extremely important decision for you.
+                    </p>
+                </div>
+
+                <button
+                    class="random-button"
+                    id="random-button"
+                >
+                    Surprise me ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Final unlock -->
+        <section
+            class="final-section"
+            id="final-section"
+        >
+
+            <div class="final-lock">
+                🔒
+            </div>
+
+            <span class="result-label">
+                SECRET SURPRISE
+            </span>
+
+            <h2>
+                Something special is hiding here.
+            </h2>
+
+            <p>
+                Discover all five surprises to unlock it.
+            </p>
+
+            <button
+                class="final-button"
+                id="final-button"
+                disabled
+            >
+                Locked 🔒
+            </button>
+
+        </section>
+
+
+        <footer>
+            Project Nova • Surprise Room 🎁
+        </footer>
+
+    </main>
+
+
+<!-- Reveal overlay -->
+<div
+    class="reveal-overlay"
+    id="reveal-overlay"
+>
+    <div class="reveal-card">
+
+        <button
+            class="close-reveal"
+            id="close-reveal"
+            aria-label="Close surprise"
+        >
+            ×
+        </button>
+
+        <div
+            class="reveal-icon"
+            id="overlay-icon"
+        >
+            ✨
+        </div>
+
+        <span class="result-label">
+            SURPRISE UNLOCKED
+        </span>
+
+        <h2 id="overlay-title">
+            Surprise!
+        </h2>
+
+        <p id="overlay-message">
+            Nova found something for you.
+        </p>
+
+        <button
+            class="reveal-close-button"
+            id="reveal-close-button"
+        >
+            Nice 👀
+        </button>
+
+    </div>
+</div>
+
+
+    <script src="../js/surprises.js"></script>
+
+</body>
+</html>

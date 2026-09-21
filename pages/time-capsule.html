@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Nova | Time Capsule</title>
+
+    <link rel="stylesheet" href="../css/time-capsule.css">
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="capsule-page">
+
+        <!-- Header -->
+        <header class="capsule-header">
+            <a href="surprises.html" class="back-button">← Back</a>
+
+            <div class="header-label">
+                PROJECT NOVA • SECRET FILE
+            </div>
+        </header>
+
+        <!-- Intro -->
+        <section class="intro-screen" id="intro-screen">
+
+            <div class="intro-icon">🌌</div>
+
+            <p class="eyebrow">MEMORY ARCHIVE</p>
+
+            <h1>The Time Capsule</h1>
+
+            <p class="intro-text">
+                Some memories deserve their own little place.
+            </p>
+
+            <button class="primary-button" id="start-button">
+                Open Time Capsule
+            </button>
+
+        </section>
+
+
+        <!-- Timeline -->
+        <section class="timeline-section hidden" id="timeline-section">
+
+            <div class="timeline-heading">
+
+                <p class="eyebrow">PROJECT NOVA • MEMORY ARCHIVE</p>
+
+                <h2>Our Timeline</h2>
+
+                <p>
+                    One memory at a time.
+                </p>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="timeline-progress">
+
+                <div class="progress-line">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <span id="progress-text">1 / 7</span>
+
+            </div>
+
+
+            <!-- Timeline card -->
+            <div class="memory-card" id="memory-card">
+
+                <div class="memory-number" id="memory-number">
+                    CHAPTER 01
+                </div>
+
+                <div class="memory-icon" id="memory-icon">
+                    🕷️
+                </div>
+
+                <h2 id="memory-title">
+                    The Random Message
+                </h2>
+
+                <div class="memory-content" id="memory-content">
+                    <p>
+                        I randomly messaged a girl because I wanted to make a new friend.
+                    </p>
+
+                    <p>
+                        We started talking, and I slowly learned more about her.
+                        Her favourite games were Genshin Impact and Mobile Legends:
+                        Bang Bang.
+                    </p>
+
+                    <p>
+                        I thought she was really cool.
+                    </p>
+                </div>
+
+                <button class="primary-button next-button" id="next-button">
+                    Continue →
+                </button>
+
+            </div>
+
+
+            <!-- Final screen -->
+            <div class="timeline-ending hidden" id="timeline-ending">
+
+                <div class="ending-icon">📦</div>
+
+                <p class="eyebrow">MEMORY ARCHIVE COMPLETE</p>
+
+                <h2>The Timeline Ends Here</h2>
+
+                <p>
+                    Life keeps moving. Things change. Days turn into more days.
+                </p>
+
+                <p>
+                    But the memories don't have to disappear with them.
+                </p>
+
+                <button class="primary-button" id="back-to-surprises">
+                    Return to Surprise Room
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/time-capsule.js"></script>
+
+</body>
+</html>

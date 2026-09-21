@@ -243,6 +243,9 @@ const actualSecretBackVaultBtn =
 const actualSecretPassword =
     "7117";
 
+const apologyLetterPassword = 
+    "6969";
+
 let enteredSecretPassword =
     "";
 
@@ -2043,6 +2046,7 @@ if (secretKeypad) {
 
 function checkActualSecretPassword() {
 
+    // Password 1 → Actual Secret / love letter
     if (
         enteredSecretPassword ===
         actualSecretPassword
@@ -2073,6 +2077,37 @@ function checkActualSecretPassword() {
     }
 
 
+    // Password 2 → Apology Letter
+    if (
+        enteredSecretPassword ===
+        apologyLetterPassword
+    ) {
+
+        secretPasscodeFeedback.textContent =
+            "ACCESS GRANTED. 💌";
+
+
+        setTimeout(
+            function () {
+
+                actualSecretLockArea.classList.remove(
+                    "active"
+                );
+
+                window.location.href =
+                    "apology-letter.html";
+
+            },
+            700
+        );
+
+
+        return;
+
+    }
+
+
+    // Any other code → Wrong password
     secretPasscodeFeedback.textContent =
         "Wrong code. The file remains classified. 👀";
 
